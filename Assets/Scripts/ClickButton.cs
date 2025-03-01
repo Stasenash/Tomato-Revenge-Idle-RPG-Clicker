@@ -3,17 +3,17 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class ClickButtonController : MonoBehaviour
+public class ClickButton : MonoBehaviour
 {
     [SerializeField] private Button _button;
     [SerializeField] private Image _image;
 
-    public void Inizialize() //
+    public void Inizialize(Sprite defaultSprite, ColorBlock colorBlock)
     {
-        //TODO: инициализация палитры кнопки
-        //TODO: визуальные изменения кнопки при клике
-        return;
+        _image.sprite = defaultSprite;
+        _button.colors = colorBlock;
     }
+    
     public void SubscribeOnClick(UnityAction action)
     {
         _button.onClick.AddListener(action);
@@ -25,4 +25,5 @@ public class ClickButtonController : MonoBehaviour
     }
     
     //не используем гет компонент, потому что он пробегает по всем элементам и это долго
+
 }

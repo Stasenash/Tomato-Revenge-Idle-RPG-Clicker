@@ -1,24 +1,14 @@
 using System;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private ClickButtonController _clickButton;
-    [SerializeField] private Animator _shurikenAnimator;
-
+    [SerializeField] private ClickButtonManager _clickButtonManager;
+    
     private void Awake()
     {
-        _clickButton.SubscribeOnClick(AnimateClick);
-    }
-
-    private void ShowClick()
-    {
-        Debug.Log("clicked!");
-    }
-    
-    private void AnimateClick()
-    {
-        _shurikenAnimator.SetTrigger("ShurikenAnimation");
+        _clickButtonManager.Inizialize();
     }
 }
