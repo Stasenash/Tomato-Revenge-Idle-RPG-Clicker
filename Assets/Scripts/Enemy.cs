@@ -22,7 +22,8 @@ public class Enemy : MonoBehaviour
       if (damage >= _health)
       {
          _health = 0;
-         OnDamage?.Invoke(_health);
+         
+         OnDamage?.Invoke(damage);
          OnDeath?.Invoke();
       }
       _health -= damage;
