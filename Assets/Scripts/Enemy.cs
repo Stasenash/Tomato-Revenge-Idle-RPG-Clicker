@@ -34,5 +34,4 @@ public class Enemy : MonoBehaviour
    {
       return _health;
    }
-   
 }

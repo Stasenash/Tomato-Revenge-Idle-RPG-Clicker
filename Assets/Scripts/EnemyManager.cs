@@ -1,4 +1,5 @@
-﻿using Unity.VisualScripting;
+﻿using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,9 +23,16 @@ public class EnemyManager : MonoBehaviour
         _currentEnemyData = _enemiesConfig.Enemies[0];
         _currentEnemy = Instantiate(_enemiesConfig.EnemyPrefab, _enemyContainer);
         _currentEnemy.Initialize(_currentEnemyData);
+        _healthBar.Show();
         
+        InitHeathBar();
+    }
+
+    private void InitHeathBar()
+    {
         _healthBar.SetMaxValue(_currentEnemyData.Health);
         _currentEnemy.OnDamage += _healthBar.DecreaseValue;
+        _currentEnemy.OnDeath += _healthBar.Hide;
     }
     
     public void DamageCurrentEnemy(float damage)
