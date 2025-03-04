@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace DefaultNamespace
 {
@@ -8,10 +9,14 @@ namespace DefaultNamespace
         [SerializeField] private ClickButtonConfig _buttonConfig;
         [SerializeField] private Animator _shurikenAnimator;
 
+        
+        public event UnityAction OnClicked;
         public void Inizialize()
         {
             _clickButton.Inizialize(_buttonConfig.DefaultSprite, _buttonConfig.ButtonColors);
-            _clickButton.SubscribeOnClick(AnimateClick);
+            _clickButton.SubscribeOnClick(() => OnClicked?.Invoke());
+            
+            
         }
         
         private void ShowClick()
