@@ -12,6 +12,8 @@ public class EnemyManager : MonoBehaviour
     private Enemy _currentEnemy;
     private HealthBar _healthBar;
 
+    public event UnityAction OnLevelPassed;
+    
     public void Initialize(HealthBar healthBar)
     {
         _healthBar = healthBar;
@@ -21,24 +23,29 @@ public class EnemyManager : MonoBehaviour
     public void SpawnEnemy()
     {
         _currentEnemyData = _enemiesConfig.Enemies[0];
-        _currentEnemy = Instantiate(_enemiesConfig.EnemyPrefab, _enemyContainer);
-        _currentEnemy.Initialize(_currentEnemyData);
-        _healthBar.Show();
-        
         InitHeathBar();
+        if (_currentEnemy == null)
+        {
+            _currentEnemy = Instantiate(_enemiesConfig.EnemyPrefab, _enemyContainer);
+            _currentEnemy.OnDeath += () => OnLevelPassed?.Invoke();
+            _currentEnemy.OnDamage += _healthBar.DecreaseValue;
+            _currentEnemy.OnDeath += _healthBar.Hide;
+        }
+        
+        _currentEnemy.Initialize(_currentEnemyData);
+        
     }
 
     private void InitHeathBar()
     {
+        _healthBar.Show();
         _healthBar.SetMaxValue(_currentEnemyData.Health);
-        _currentEnemy.OnDamage += _healthBar.DecreaseValue;
-        _currentEnemy.OnDeath += _healthBar.Hide;
     }
     
     public void DamageCurrentEnemy(float damage)
     {
         _currentEnemy.TakeDamage(damage);
-        Debug.Log("Damaged. Current health is " + _currentEnemy.GetHealth());
+        //Debug.Log("Damaged. Current health is " + _currentEnemy.GetHealth());
     }
 
     public void SubscribeOnCurrentEnemyDamage(UnityAction<float> callback)

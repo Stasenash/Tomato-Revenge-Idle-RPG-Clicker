@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _clickButtonManager: {fileID: 6256840589641670668}
   _enemyManager: {fileID: 8993465993980245053}
+  _healthBar: {fileID: 0}
 --- !u!1 &3082691246203539269
 GameObject:
   m_ObjectHideFlags: 0
