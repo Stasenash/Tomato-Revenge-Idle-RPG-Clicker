@@ -13,6 +13,7 @@ public class ClickButtonManager : MonoBehaviour
     {
         _clickButton.Inizialize(_buttonConfig.DefaultSprite, _buttonConfig.ButtonColors);
         _clickButton.SubscribeOnClick(() => OnClicked?.Invoke());
+        _clickButton.SubscribeOnClick(AnimateClick);
     }
     
     private void ShowClick()
