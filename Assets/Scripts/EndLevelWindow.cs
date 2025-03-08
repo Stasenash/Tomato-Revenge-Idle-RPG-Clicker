@@ -10,6 +10,9 @@ public class EndLevelWindow : MonoBehaviour
     [SerializeField] private Button _loseRestartButton;
     [SerializeField] private Button _winRestartButton;
     
+    [SerializeField] private AudioSource _loseSound;
+    [SerializeField] private AudioSource _winSound;
+    
     public event UnityAction OnRestartButtonClicked;
 
     public void Initialize()
@@ -23,6 +26,7 @@ public class EndLevelWindow : MonoBehaviour
         _winLevelWindow.SetActive(true);
         _loseLevelWindow.SetActive(false);
         gameObject.SetActive(true);
+        _winSound.Play();
     }
     
     public void ShowLoseLevelWindow()
@@ -30,6 +34,7 @@ public class EndLevelWindow : MonoBehaviour
         _winLevelWindow.SetActive(false);
         _loseLevelWindow.SetActive(true);
         gameObject.SetActive(true);
+        _loseSound.Play();
     }
 
     private void Restart()
