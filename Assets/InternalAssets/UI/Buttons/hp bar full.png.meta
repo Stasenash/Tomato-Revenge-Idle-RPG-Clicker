@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 82de3be795445024e9ba163ffd2c7097
+guid: 6a2f1a552377aac43989a6b31ceb00bc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4345462867533152315
-    second: shuriken_0
+      213: -6626248693340499570
+    second: hp bar full_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shuriken_0
+      name: hp bar full_0
       rect:
         serializedVersion: 2
-        x: 86
-        y: 51
-        width: 862
-        height: 912
+        x: 21
+        y: 16
+        width: 1006
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5cf39049b80d1b3c0800000000000000
-      internalID: -4345462867533152315
+      spriteID: e811b08bbe5da04a0800000000000000
+      internalID: -6626248693340499570
       vertices: []
       indices: 
       edges: []
