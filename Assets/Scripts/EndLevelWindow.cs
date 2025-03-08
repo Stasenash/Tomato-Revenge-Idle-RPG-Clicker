@@ -13,6 +13,8 @@ public class EndLevelWindow : MonoBehaviour
     [SerializeField] private AudioSource _loseSound;
     [SerializeField] private AudioSource _winSound;
     
+    [SerializeField] private StatisticsViewer _statisticsViewer;
+    
     public event UnityAction OnRestartButtonClicked;
 
     public void Initialize()
@@ -26,6 +28,7 @@ public class EndLevelWindow : MonoBehaviour
         _winLevelWindow.SetActive(true);
         _loseLevelWindow.SetActive(false);
         gameObject.SetActive(true);
+        _statisticsViewer.ShowWinStatistics();
         _winSound.Play();
     }
     
@@ -34,6 +37,7 @@ public class EndLevelWindow : MonoBehaviour
         _winLevelWindow.SetActive(false);
         _loseLevelWindow.SetActive(true);
         gameObject.SetActive(true);
+        _statisticsViewer.ShowLoseStatistics();
         _loseSound.Play();
     }
 

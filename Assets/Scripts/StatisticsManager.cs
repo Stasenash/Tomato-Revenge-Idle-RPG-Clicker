@@ -32,6 +32,21 @@ public class StatisticsManager : MonoBehaviour
         }
     }
 
+    public int GetEnemyAttempts(int enemyId)
+    {
+        return gameStats.Enemies[enemyId].Attempts;
+    } 
+    
+    public int GetEnemyHits(int enemyId)
+    {
+        return gameStats.Enemies[enemyId].Hits;
+    } 
+    
+    public int GetEnemyDeaths(int enemyId)
+    {
+        return gameStats.Enemies[enemyId].Deaths;
+    }
+
     public void UpdateEnemyStats(int enemyId, int hits, int deaths, int attempts)
     {
         var enemy = Array.Find(gameStats.Enemies, e => e.EnemyId == enemyId);
