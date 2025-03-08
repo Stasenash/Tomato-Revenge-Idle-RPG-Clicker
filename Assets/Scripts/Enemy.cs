@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 {
    [SerializeField] private Image image;
    [SerializeField] private Animator _enemyAnimator;
+   [SerializeField] private AudioSource _audioSource; //TODO аудио потом занести в конфиг
 
    private float _health;
    public event UnityAction<float> OnDamage; //ключевое слово ивент защищает от того, чтобы мы изменили это поле извне (из других классов)
@@ -33,7 +34,10 @@ public class Enemy : MonoBehaviour
          OnDeath?.Invoke();
       }
       _health -= damage;
-      AnimateDamage();
+      
+      AnimateDamage(); //потом как-то это отдельно сделать анимации и звуки
+      _audioSource.Play();
+      
       statisticsManager.UpdateEnemyStats(0, 1, 0, 0);
       OnDamage?.Invoke(damage);
    }
