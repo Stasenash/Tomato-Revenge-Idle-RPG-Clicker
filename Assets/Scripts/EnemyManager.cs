@@ -22,7 +22,7 @@ public class EnemyManager : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        _currentEnemyData = _enemiesConfig.Enemies[0];
+        _currentEnemyData = _enemiesConfig.Enemies[0]; //если что, тут пока просто зашит айдишник
         InitHeathBar();
         if (_currentEnemy == null)
         {
