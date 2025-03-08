@@ -15,11 +15,6 @@ public class ClickButtonManager : MonoBehaviour
         _clickButton.SubscribeOnClick(() => OnClicked?.Invoke());
         _clickButton.SubscribeOnClick(AnimateClick);
     }
-    
-    private void ShowClick()
-    {
-        Debug.Log("clicked!");
-    }
 
     private void AnimateClick()
     {
