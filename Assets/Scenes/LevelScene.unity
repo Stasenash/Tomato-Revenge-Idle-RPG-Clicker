@@ -556,7 +556,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 162894348245921151, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -198.60242
+      value: 134.3937
+      objectReference: {fileID: 0}
+    - target: {fileID: 162894348245921151, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6500244
+      objectReference: {fileID: 0}
+    - target: {fileID: 162894348245921151, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 67.19702
+      objectReference: {fileID: 0}
+    - target: {fileID: 239562647804772345, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5621555098297688506, guid: cf9af380a00d3964695a67681f7a1433, type: 3}
+    - target: {fileID: 239562647804772345, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: m_Color.a
+      value: 0.14117648
       objectReference: {fileID: 0}
     - target: {fileID: 1135633366121714408, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_PreserveAspect
@@ -566,6 +582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 6098377215308439610, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5477334595077280228, guid: b04e5643f20a9ff43bc28e5501654d81, type: 3}
     - target: {fileID: 6098377215308439610, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_PreserveAspect
       value: 0
@@ -651,8 +671,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6456235082322970336, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1075.3489
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456235082322970336, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 442.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456235082322970336, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000022888
+      objectReference: {fileID: 0}
+    - target: {fileID: 6456235082322970336, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -27.705566
+      value: 295
       objectReference: {fileID: 0}
     - target: {fileID: 8030035308178762379, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: _endLevelWindow
@@ -676,11 +708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8382527621032624098, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -213.0881
       objectReference: {fileID: 0}
     - target: {fileID: 8382527621032624098, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: -213.8592
       objectReference: {fileID: 0}
     - target: {fileID: 8382527621032624098, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -688,7 +720,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8382527621032624098, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864525282024394864, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.6499939
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864525282024394864, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 94
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
