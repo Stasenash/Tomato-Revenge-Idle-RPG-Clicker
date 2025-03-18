@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
@@ -50,5 +51,9 @@ public class Enemy : MonoBehaviour
    private void AnimateDamage()
    {
       _enemyAnimator.SetTrigger("Damage");
+      //Dotween (
+      // DOTween.Sequence().Append(); линку для вереницы событий (отдельный метод для запуска)
+      // gameObject.transform.DOMove(0.5f);
+
    }
 }

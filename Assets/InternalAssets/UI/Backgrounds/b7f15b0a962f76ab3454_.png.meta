@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2258b04278b3a08418320f60631f02ef
+guid: b04e5643f20a9ff43bc28e5501654d81
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7026050760278562044
-    second: dojo_0
+      213: -5477334595077280228
+    second: b7f15b0a962f76ab3454__0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -77,7 +77,7 @@ TextureImporter:
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dojo_0
+      name: b7f15b0a962f76ab3454__0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 1022
-        height: 765
+        x: 0
+        y: 0
+        width: 896
+        height: 1344
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf4544cd0fb818160800000000000000
-      internalID: 7026050760278562044
+      spriteID: c1ee578b4399cf3b0800000000000000
+      internalID: -5477334595077280228
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      dojo_0: 7026050760278562044
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
