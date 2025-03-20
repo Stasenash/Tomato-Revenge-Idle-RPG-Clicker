@@ -5,7 +5,6 @@ public class ClickButtonManager : MonoBehaviour
 {
     [SerializeField] private ClickButton _clickButton;
     [SerializeField] private ClickButtonConfig _buttonConfig;
-    [SerializeField] private Animator _shurikenAnimator;
 
     
     public event UnityAction OnClicked;
@@ -18,7 +17,7 @@ public class ClickButtonManager : MonoBehaviour
     }
 
     private void AnimateClick()
-    {
-        _shurikenAnimator.SetTrigger("ShurikenAnimation");
+    {    //TODO: анимация через дотвин
+        //_shurikenAnimator.SetTrigger("ShurikenAnimation");
     }
 }

@@ -11,23 +11,20 @@ namespace SceneManagement
 
         public void LoadMetaScene(SceneEnterParams enterParams = null)
         {
-            StartCoroutine(LoadAndStart(enterParams, "MetaScene"));
+            StartCoroutine(LoadAndStart(enterParams, Scenes.MetaScene));
         }
 
         public void LoadGameplayScene(SceneEnterParams enterParams = null)
         {
-            StartCoroutine(LoadAndStart(enterParams, "LevelScene"));
+            StartCoroutine(LoadAndStart(enterParams, Scenes.LevelScene));
         }
         
-        private IEnumerator LoadAndStart(SceneEnterParams enterParams, string sceneType)
+        private IEnumerator LoadAndStart(SceneEnterParams enterParams, string sceneName)
         {
             _loadingScreen.SetActive(true);
 
             yield return LoadScene(Scenes.Loader);
-            if(sceneType == "LevelScene")
-                yield return LoadScene(Scenes.LevelScene);
-            else if (sceneType == "MetaScene")
-                yield return LoadScene(Scenes.MetaScene);
+            yield return LoadScene(sceneName);
 
             var sceneEntryPoint = FindFirstObjectByType<EntryPoint>();
             sceneEntryPoint.Run(enterParams);
