@@ -8,12 +8,15 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
    [SerializeField] private Image image;
-   [SerializeField] private Animator _enemyAnimator;
    [SerializeField] private AudioSource _audioSource; //TODO аудио потом занести в конфиг
-
+   [SerializeField] private Image _image;
+   
    private float _health;
    public event UnityAction<float> OnDamage; //ключевое слово ивент защищает от того, чтобы мы изменили это поле извне (из других классов)
    public event UnityAction OnDeath; //мы можем толькоо отписаться или подписаться
+   
+   private Color _originalColor;
+   private Color _damageColor = Color.red;
    
    public StatisticsManager statisticsManager;
    
@@ -21,6 +24,7 @@ public class Enemy : MonoBehaviour
    {
       image.sprite = enemyData.Sprite;
       _health = enemyData.Health;
+      _originalColor = _image.color;
       statisticsManager.Initialize();
       statisticsManager.UpdateEnemyStats(0, 0, 0, 1);
    }
@@ -50,10 +54,12 @@ public class Enemy : MonoBehaviour
 
    private void AnimateDamage()
    {
-      _enemyAnimator.SetTrigger("Damage");
-      //Dotween (
-      // DOTween.Sequence().Append(); линку для вереницы событий (отдельный метод для запуска)
-      // gameObject.transform.DOMove(0.5f);
-
+      transform.DOShakePosition(0.3f, 5f, 10, 90f);
+      
+      _image.DOColor(_damageColor, 0.1f)
+         .OnComplete(() =>
+         {
+            _image.DOColor(_originalColor, 0.1f);
+         });
    }
 }

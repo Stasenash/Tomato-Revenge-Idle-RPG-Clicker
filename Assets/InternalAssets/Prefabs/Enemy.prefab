@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2388758785857537403}
   - component: {fileID: 1493888157230482553}
   - component: {fileID: 3986300971443514004}
-  - component: {fileID: 739042583258238160}
   - component: {fileID: 4794431707873206510}
   m_Layer: 5
   m_Name: Enemy
@@ -92,8 +91,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2388758785857537403}
-  _enemyAnimator: {fileID: 739042583258238160}
   _audioSource: {fileID: 4794431707873206510}
+  _image: {fileID: 2388758785857537403}
   statisticsManager: {fileID: 3986300971443514004}
 --- !u!114 &3986300971443514004
 MonoBehaviour:
@@ -107,28 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cce78b19a91402c9abd49f87029cd59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &739042583258238160
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3908661116237398679}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aa08e97627252f74cb88184d36407463, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!82 &4794431707873206510
 AudioSource:
   m_ObjectHideFlags: 0

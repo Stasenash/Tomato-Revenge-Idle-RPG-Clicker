@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class ClickButtonManager : MonoBehaviour
@@ -17,7 +18,8 @@ public class ClickButtonManager : MonoBehaviour
     }
 
     private void AnimateClick()
-    {    //TODO: анимация через дотвин
-        //_shurikenAnimator.SetTrigger("ShurikenAnimation");
+    {    
+        gameObject.transform.DORotate(new Vector3(0, 0, -360), 0.1f, RotateMode.FastBeyond360)
+            .SetEase(Ease.Linear); // Линейное вращение без ускорения/замедления
     }
 }
