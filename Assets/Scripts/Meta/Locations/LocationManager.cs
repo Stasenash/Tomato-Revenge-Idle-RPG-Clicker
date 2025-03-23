@@ -26,12 +26,12 @@ namespace Meta.Locations
             _nextButton.onClick.AddListener(ShowNextLocation);
             _previousButton.onClick.AddListener(ShowPreviousLocation);
             
-            if (_currentLocation == _locations.Count)
+            if (_currentLocation == _locations.Count - 1)
             {
                 _nextButton.gameObject.SetActive(false);
             }
 
-            if (_currentLocation == 1)
+            if (_currentLocation == 0)
             {
                 _previousButton.gameObject.SetActive(false);
             }
@@ -41,7 +41,7 @@ namespace Meta.Locations
         {
             for (var i = 0; i < _locations.Count; i++)
             {
-                var locationNum = i + 1;
+                var locationNum = i;
                 _locations[i].Initialize(level => startLevelCallback.Invoke(new Vector2Int(locationNum, level)));
                 _locations[i].SetActive(currentLocation == locationNum);
             }
@@ -53,12 +53,12 @@ namespace Meta.Locations
             _currentLocation++;
             _locations[_currentLocation].SetActive(true);
 
-            if (_currentLocation == _locations.Count)
+            if (_currentLocation == _locations.Count - 1)
             {
                 _nextButton.gameObject.SetActive(false);
             }
 
-            if (_currentLocation == 2)
+            if (_currentLocation > 0)
             {
                 _previousButton.gameObject.SetActive(true);
             }
@@ -70,14 +70,14 @@ namespace Meta.Locations
             _currentLocation--;
             _locations[_currentLocation].SetActive(true);
             
-            if (_currentLocation == 1)
+            if (_currentLocation == 0)
             {
                 _previousButton.gameObject.SetActive(false);
             }
 
-            if (_currentLocation == _locations.Count - 1)
+            if (_currentLocation < _locations.Count - 1)
             {
-                _previousButton.gameObject.SetActive(true);
+                _nextButton.gameObject.SetActive(true);
             }
         }
     }

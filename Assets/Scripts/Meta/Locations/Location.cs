@@ -10,11 +10,11 @@ namespace Meta.Locations
 
         public void Initialize(UnityAction<int> levelStartCallback)
         {
-            var currentLevel = 1;
+            var currentLevel = 0;
             
             for (int i = 0; i < _pins.Count; i++)
             {
-                var levelInt = i + 1;
+                var levelInt = i;
                 PinType pinType = currentLevel > levelInt 
                     ? PinType.Passed 
                     :currentLevel == levelInt
@@ -26,7 +26,7 @@ namespace Meta.Locations
 
         public void SetActive(bool isActive)
         {
-            SetActive(isActive);
+            gameObject.SetActive(isActive);
         }
     }
 }

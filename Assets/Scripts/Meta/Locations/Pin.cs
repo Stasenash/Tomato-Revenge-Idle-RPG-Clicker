@@ -19,7 +19,7 @@ namespace Meta.Locations
         
         public void Initialize(int levelNum, PinType pinType, UnityAction clickCallback)
         {
-            _text.text = $"Ур. {levelNum}";
+            _text.text = $"{levelNum + 1}";
 
             _image.color = pinType switch
             {

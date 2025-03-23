@@ -407,6 +407,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 731427289634967764}
     m_Modifications:
+    - target: {fileID: 6686183907292737494, guid: 75390ea24976d284ca41eae215fb1d48, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7650364562591235553, guid: 75390ea24976d284ca41eae215fb1d48, type: 3}
       propertyPath: m_Name
       value: LevelButton1
