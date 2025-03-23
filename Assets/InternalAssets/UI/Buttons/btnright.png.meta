@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: d861fe93bd8ffe749b46ed35f9d7ce5e
+guid: 84b7cc213e378aa40afffbf57f2f7c6e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3208424453598889301
-    second: "\u043A\u043D\u043E\u043F\u043A\u0430_0"
+      213: -5401782252758189514
+    second: btnright_0
+  - first:
+      213: -8458359877467471318
+    second: btnright_1
+  - first:
+      213: 6326309361941919632
+    second: btnright_2
+  - first:
+      213: -4779534995413002018
+    second: btnright_3
+  - first:
+      213: -8932156172478937680
+    second: btnright_4
+  - first:
+      213: 8273462142765934354
+    second: btnright_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +141,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u043A\u043D\u043E\u043F\u043A\u0430_0"
+      name: btnright_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 105
-        height: 105
+        x: 148
+        y: 140
+        width: 725
+        height: 745
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +156,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5554075aa0d968c20800000000000000
-      internalID: 3208424453598889301
+      spriteID: 63ab65639a30905b0800000000000000
+      internalID: -5401782252758189514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: btnright_1
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a228229718edd9a80800000000000000
+      internalID: -8458359877467471318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: btnright_2
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 142
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 097b6c1b8d09bc750800000000000000
+      internalID: 6326309361941919632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: btnright_3
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 140
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed81cd6ae3eabadb0800000000000000
+      internalID: -4779534995413002018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: btnright_4
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 143
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b58415294b9a0480800000000000000
+      internalID: -8932156172478937680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: btnright_5
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 144
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 217a432fbfd31d270800000000000000
+      internalID: 8273462142765934354
       vertices: []
       indices: 
       edges: []
