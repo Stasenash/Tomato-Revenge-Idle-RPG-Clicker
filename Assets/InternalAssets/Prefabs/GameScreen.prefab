@@ -294,7 +294,7 @@ MonoBehaviour:
   _enemyManager: {fileID: 8993465993980245053}
   _healthBar: {fileID: 1796985138416174639}
   _timer: {fileID: 3342453205447987409}
-  _endLevelWindow: {fileID: 0}
+  _endLevelWindow: {fileID: 1428169016686956039, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
 --- !u!1 &3082691246203539269
 GameObject:
   m_ObjectHideFlags: 0
