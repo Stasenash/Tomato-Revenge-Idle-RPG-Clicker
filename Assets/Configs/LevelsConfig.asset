@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 460e024f86d86944f94a67d9b71c27b2, type: 3}
+  m_Name: LevelsConfig
+  m_EditorClassIdentifier: 
+  Levels:
+  - Location: 0
+    LevelNumber: 0
+    Enemies:
+    - Id: First
+      Hp: 20
+      IsBoss: 0
+      BossTime: 0
+    - Id: Second
+      Hp: 50
+      IsBoss: 1
+      BossTime: 10
+    Reward: 0

@@ -1,64 +1,68 @@
 ﻿using System;
 using System.IO;
+using Game.Enemies;
 using UnityEngine;
 
-public class StatisticsManager : MonoBehaviour
+namespace Game.Statistics
 {
-    private string filePath;
-    private GameStatistic gameStats;
-
-    public void Initialize()
+    public class StatisticsManager : MonoBehaviour
     {
-        filePath = Path.Combine(Application.persistentDataPath, "gameStats.json");
-        LoadStats();
-    }
+        private string filePath;
+        private GameStatistic gameStats;
 
-    public void SaveStats()
-    {
-        string json = JsonUtility.ToJson(gameStats, true);
-        File.WriteAllText(filePath, json);
-    }
-
-    public void LoadStats()
-    {
-        if (File.Exists(filePath))
+        public void Initialize()
         {
-            string json = File.ReadAllText(filePath);
-            gameStats = JsonUtility.FromJson<GameStatistic>(json);
+            filePath = Path.Combine(Application.persistentDataPath, "gameStats.json");
+            LoadStats();
         }
-        else
-        {
-            gameStats = new GameStatistic();
-        }
-    }
 
-    public int GetEnemyAttempts(int enemyId)
-    {
-        return gameStats.Enemies[enemyId].Attempts;
-    } 
+        public void SaveStats()
+        {
+            string json = JsonUtility.ToJson(gameStats, true);
+            File.WriteAllText(filePath, json);
+        }
+
+        public void LoadStats()
+        {
+            if (File.Exists(filePath))
+            {
+                string json = File.ReadAllText(filePath);
+                gameStats = JsonUtility.FromJson<GameStatistic>(json);
+            }
+            else
+            {
+                gameStats = new GameStatistic();
+            }
+        }
+
+        public int GetEnemyAttempts(int enemyId)
+        {
+            return gameStats.Enemies[enemyId].Attempts;
+        } 
     
-    public int GetEnemyHits(int enemyId)
-    {
-        return gameStats.Enemies[enemyId].Hits;
-    } 
-    
-    public int GetEnemyDeaths(int enemyId)
-    {
-        return gameStats.Enemies[enemyId].Deaths;
-    }
-
-    public void UpdateEnemyStats(int enemyId, int hits, int deaths, int attempts)
-    {
-        var enemy = Array.Find(gameStats.Enemies, e => e.EnemyId == enemyId);
-        if (enemy == null)
+        public int GetEnemyHits(int enemyId)
         {
-            enemy = new EnemyStatistic { EnemyId = enemyId };
-            Array.Resize(ref gameStats.Enemies, gameStats.Enemies.Length + 1);
-            gameStats.Enemies[gameStats.Enemies.Length - 1] = enemy;
+            return gameStats.Enemies[enemyId].Hits;
+        } 
+    
+        public int GetEnemyDeaths(int enemyId)
+        {
+            return gameStats.Enemies[enemyId].Deaths;
         }
-        enemy.Hits += hits;
-        enemy.Deaths += deaths;
-        enemy.Attempts += attempts;
-        SaveStats();
+
+        public void UpdateEnemyStats(int enemyId, int hits, int deaths, int attempts)
+        {
+            var enemy = Array.Find(gameStats.Enemies, e => e.EnemyId == enemyId);
+            if (enemy == null)
+            {
+                enemy = new EnemyStatistic { EnemyId = enemyId };
+                Array.Resize(ref gameStats.Enemies, gameStats.Enemies.Length + 1);
+                gameStats.Enemies[gameStats.Enemies.Length - 1] = enemy;
+            }
+            enemy.Hits += hits;
+            enemy.Deaths += deaths;
+            enemy.Attempts += attempts;
+            SaveStats();
+        }
     }
 }

@@ -16,10 +16,10 @@ namespace Meta
             _locationManager.Initialize(0, StartLevel);
         }
 
-        private void StartLevel(Vector2Int locationLevel)
+        private void StartLevel(int location, int level)
         {
             var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
-            sceneLoader.LoadGameplayScene();
+            sceneLoader.LoadGameplayScene(new GameEnterParams(location, level));
         }
     }
 }

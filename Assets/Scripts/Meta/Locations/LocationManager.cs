@@ -13,7 +13,7 @@ namespace Meta.Locations
         [SerializeField] private List<Location> _locations;
         private int _currentLocation;
 
-        public void Initialize(int currentLocation, UnityAction<Vector2Int> startLevelCallback)
+        public void Initialize(int currentLocation, UnityAction<int, int> startLevelCallback)
         {
             _currentLocation = currentLocation;
             LocationInitialize(currentLocation, startLevelCallback);
@@ -37,12 +37,12 @@ namespace Meta.Locations
             }
         }
 
-        private void LocationInitialize(int currentLocation, UnityAction<Vector2Int> startLevelCallback)
+        private void LocationInitialize(int currentLocation, UnityAction<int, int> startLevelCallback)
         {
             for (var i = 0; i < _locations.Count; i++)
             {
                 var locationNum = i;
-                _locations[i].Initialize(level => startLevelCallback.Invoke(new Vector2Int(locationNum, level)));
+                _locations[i].Initialize(level => startLevelCallback.Invoke(locationNum, level));
                 _locations[i].SetActive(currentLocation == locationNum);
             }
         }

@@ -1,10 +1,14 @@
-﻿using System;
-public class GameStatistic
+﻿using Game.Enemies;
+
+namespace Game.Statistics
 {
-    public EnemyStatistic[] Enemies;
-    
-    public GameStatistic()
+    public class GameStatistic
     {
-        Enemies = new EnemyStatistic[0];
+        public EnemyStatistic[] Enemies;
+    
+        public GameStatistic()
+        {
+            Enemies = new EnemyStatistic[0];
+        }
     }
 }

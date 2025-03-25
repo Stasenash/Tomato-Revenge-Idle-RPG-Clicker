@@ -1,25 +1,28 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class StatisticsViewer : MonoBehaviour
+namespace Game.Statistics
 {
-    [SerializeField] private StatisticsManager _statisticsManager;
-    [SerializeField] private TextMeshProUGUI _statisticsText;
-
-    public void ShowWinStatistics()
+    public class StatisticsViewer : MonoBehaviour
     {
-        _statisticsManager.Initialize();
-        int hits = _statisticsManager.GetEnemyHits(0);
-        int wins = _statisticsManager.GetEnemyDeaths(0);
+        [SerializeField] private StatisticsManager _statisticsManager;
+        [SerializeField] private TextMeshProUGUI _statisticsText;
 
-        _statisticsText.text = "Всего ударов: " + hits + "\nБосс побежден " + wins +
-                               " раз.";
-    }
+        public void ShowWinStatistics()
+        {
+            _statisticsManager.Initialize();
+            int hits = _statisticsManager.GetEnemyHits(0);
+            int wins = _statisticsManager.GetEnemyDeaths(0);
 
-    public void ShowLoseStatistics()
-    {
-        _statisticsManager.Initialize();
-        int attempts = _statisticsManager.GetEnemyAttempts(0);
-        _statisticsText.text = "Всего попыток: " + attempts;
+            _statisticsText.text = "Всего ударов: " + hits + "\nБосс побежден " + wins +
+                                   " раз.";
+        }
+
+        public void ShowLoseStatistics()
+        {
+            _statisticsManager.Initialize();
+            int attempts = _statisticsManager.GetEnemyAttempts(0);
+            _statisticsText.text = "Всего попыток: " + attempts;
+        }
     }
 }

@@ -1,45 +1,65 @@
-using System;
+using Game.Click_Button;
+using Game.Configs.LevelConfigs;
+using Game.Enemies;
 using SceneManagement;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class GameManager : EntryPoint
+namespace Game
 {
-    [SerializeField] private ClickButtonManager _clickButtonManager;
-    [SerializeField] private EnemyManager _enemyManager;
-    [SerializeField] private HealthBar _healthBar;
-    [SerializeField] private Timer _timer;
-    [SerializeField] private EndLevelWindow _endLevelWindow;
-    
-    public const string SCENE_LOADER_TAG = "SceneLoader";
-
-    private void StartLevel()
+    public class GameManager : EntryPoint
     {
-        _timer.Initialize(10f);
-        _enemyManager.SpawnEnemy();
-        _timer.OnTimerEnd += _endLevelWindow.ShowLoseLevelWindow;
-    }
+        [SerializeField] private ClickButtonManager _clickButtonManager;
+        [SerializeField] private EnemyManager _enemyManager;
+        [SerializeField] private HealthBar.HealthBar _healthBar;
+        [SerializeField] private Timer.Timer _timer;
+        [SerializeField] private EndLevelWindow.EndLevelWindow _endLevelWindow;
+        [SerializeField] private LevelsConfig _levelsConfig;
 
-    public override void Run(SceneEnterParams enterParams)
-    {
-        _clickButtonManager.Inizialize();
-        _enemyManager.Initialize(_healthBar);
-        _endLevelWindow.Initialize();  
-        
-        _clickButtonManager.OnClicked += () => _enemyManager.DamageCurrentEnemy(1f);
-        _endLevelWindow.OnRestartButtonClicked += RestartLevel; //подписка на кнопку рестарта
-        _enemyManager.OnLevelPassed += () =>
+        private GameEnterParams _gameEnterParams;
+        public const string SCENE_LOADER_TAG = "SceneLoader";
+
+        private void StartLevel()
         {
-            _endLevelWindow.ShowWinLevelWindow();
-            _timer.Stop();
-        };
+            var levelData = _levelsConfig.GetLevel(_gameEnterParams.Location, _gameEnterParams.Level);
+            _enemyManager.StartLevel(levelData);
+        }
 
-        StartLevel();
-    }
+        public override void Run(SceneEnterParams enterParams)
+        {
+            if (enterParams is not GameEnterParams gameEnterParams)
+            {
+                Debug.LogError("trouble with Game Enter params");
+                return;
+            }
+            _gameEnterParams = gameEnterParams;
+            
+            _clickButtonManager.Inizialize();
+            _enemyManager.Initialize(_healthBar, _timer);
+            _endLevelWindow.Initialize();  
+        
+            _clickButtonManager.OnClicked += () => _enemyManager.DamageCurrentEnemy(1f);
+            _endLevelWindow.OnRestartButtonClicked += RestartLevel; //подписка на кнопку рестарта
+            _enemyManager.OnLevelPassed += LevelPassed;
 
-    public void RestartLevel()
-    {
-        var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
-        sceneLoader.LoadGameplayScene();
+            StartLevel();
+        }
+
+        public void LevelPassed(bool isPassed)
+        {
+            if (isPassed)
+            {
+                _endLevelWindow.ShowWinLevelWindow();
+            }
+            else
+            {
+                _endLevelWindow.ShowLoseLevelWindow();
+            }
+        }
+
+        public void RestartLevel()
+        {
+            var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
+            sceneLoader.LoadGameplayScene(_gameEnterParams);
+        }
     }
 }
