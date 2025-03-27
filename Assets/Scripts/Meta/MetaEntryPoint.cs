@@ -1,19 +1,27 @@
-﻿using Meta.Locations;
+﻿using Global.SaveSystem;
+using Meta.Locations;
 using SceneManagement;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using Progress = Global.SaveSystem.SavableObjects.Progress;
 
 namespace Meta
 {
     public class MetaEntryPoint : EntryPoint
     {
         [SerializeField] private LocationManager _locationManager;
+        private SaveSystem _saveSystem;
+        
         
         private const string SCENE_LOADER_TAG = "SceneLoader";
         public override void Run(SceneEnterParams enterParams)
         {
-            _locationManager.Initialize(0, StartLevel);
+            _saveSystem = FindFirstObjectByType<SaveSystem>();
+            
+            var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
+            
+            _locationManager.Initialize(progress, StartLevel);
         }
 
         private void StartLevel(int location, int level)

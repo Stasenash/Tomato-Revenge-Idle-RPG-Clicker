@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Progress = Global.SaveSystem.SavableObjects.Progress;
 
 namespace Meta.Locations
 {
@@ -13,10 +15,10 @@ namespace Meta.Locations
         [SerializeField] private List<Location> _locations;
         private int _currentLocation;
 
-        public void Initialize(int currentLocation, UnityAction<int, int> startLevelCallback)
+        public void Initialize(Progress progress, UnityAction<int, int> startLevelCallback)
         {
-            _currentLocation = currentLocation;
-            LocationInitialize(currentLocation, startLevelCallback);
+            _currentLocation = progress.CurrentLocation;
+            InitLocations(progress, startLevelCallback);
             
             InitialMoveLocationsButton();
         }
@@ -37,13 +39,24 @@ namespace Meta.Locations
             }
         }
 
-        private void LocationInitialize(int currentLocation, UnityAction<int, int> startLevelCallback)
+        private void InitLocations(Progress progress, UnityAction<int, int> startLevelCallback)
         {
             for (var i = 0; i < _locations.Count; i++)
             {
                 var locationNum = i;
-                _locations[i].Initialize(level => startLevelCallback.Invoke(locationNum, level));
-                _locations[i].SetActive(currentLocation == locationNum);
+
+                ProgressState isLocationPassed = progress.CurrentLocation > locationNum
+                    ? ProgressState.Passed
+                    : progress.CurrentLocation == locationNum
+                        ? ProgressState.Current
+                        : ProgressState.Closed;
+
+                //var isLocationPassed = progress.CurrentLocation > locationNum;
+                var currentLevel = progress.CurrentLevel;
+                
+                
+                _locations[i].Initialize(isLocationPassed, currentLevel, level => startLevelCallback.Invoke(locationNum, level));
+                _locations[i].SetActive(progress.CurrentLocation == locationNum);
             }
         }
 

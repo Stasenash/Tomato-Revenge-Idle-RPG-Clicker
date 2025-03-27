@@ -1,6 +1,8 @@
 using Game.Click_Button;
 using Game.Configs.LevelConfigs;
 using Game.Enemies;
+using Global.SaveSystem;
+using Global.SaveSystem.SavableObjects;
 using SceneManagement;
 using UnityEngine;
 
@@ -16,6 +18,8 @@ namespace Game
         [SerializeField] private LevelsConfig _levelsConfig;
 
         private GameEnterParams _gameEnterParams;
+        private SaveSystem _saveSystem;
+        
         public const string SCENE_LOADER_TAG = "SceneLoader";
 
         private void StartLevel()
@@ -26,6 +30,7 @@ namespace Game
 
         public override void Run(SceneEnterParams enterParams)
         {
+            _saveSystem = FindFirstObjectByType<SaveSystem>();
             if (enterParams is not GameEnterParams gameEnterParams)
             {
                 Debug.LogError("trouble with Game Enter params");
@@ -48,12 +53,33 @@ namespace Game
         {
             if (isPassed)
             {
+                TrySaveProgress();
                 _endLevelWindow.ShowWinLevelWindow();
             }
             else
             {
                 _endLevelWindow.ShowLoseLevelWindow();
             }
+        }
+
+        private void TrySaveProgress()
+        {
+            var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
+            if (_gameEnterParams.Location != progress.CurrentLocation
+                || _gameEnterParams.Level != progress.CurrentLevel)
+                return;
+            var maxLevel = _levelsConfig.GetMaxLevelOnLocatioon(progress.CurrentLevel);
+
+            if (progress.CurrentLevel >= maxLevel)
+            {
+                progress.CurrentLevel = 0;
+                progress.CurrentLocation++;
+            }
+            else
+            {
+                progress.CurrentLevel++;
+            }
+            _saveSystem.SaveData(SavableObjectType.Progress);
         }
 
         public void RestartLevel()

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Global.SaveSystem;
+using UnityEngine;
 
 namespace SceneManagement
 {
@@ -13,6 +14,10 @@ namespace SceneManagement
             var sceneLoaderPrefab = Resources.Load<SceneLoader>("SceneLoader");
             var sceneLoader = Instantiate(sceneLoaderPrefab);
             DontDestroyOnLoad(sceneLoader);
+            
+            var saveSystem = new GameObject().AddComponent<SaveSystem>();
+            saveSystem.Initialize();
+            DontDestroyOnLoad(saveSystem);
 
             sceneLoader.LoadMetaScene();
         }

@@ -17,15 +17,15 @@ namespace Meta.Locations
         [SerializeField] private Color _closedLevel;
         [SerializeField] private Color _currentLevel;
         
-        public void Initialize(int levelNum, PinType pinType, UnityAction clickCallback)
+        public void Initialize(int levelNum, ProgressState progressState, UnityAction clickCallback)
         {
             _text.text = $"{levelNum + 1}";
 
-            _image.color = pinType switch
+            _image.color = progressState switch
             {
-                PinType.Current => _currentLevel,
-                PinType.Closed => _closedLevel,
-                PinType.Passed => _passedLevel,
+                ProgressState.Current => _currentLevel,
+                ProgressState.Closed => _closedLevel,
+                ProgressState.Passed => _passedLevel,
                 _ => _image.color
             };
             

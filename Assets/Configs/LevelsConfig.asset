@@ -25,3 +25,15 @@ MonoBehaviour:
       IsBoss: 1
       BossTime: 10
     Reward: 0
+  - Location: 0
+    LevelNumber: 1
+    Enemies:
+    - Id: Second
+      Hp: 20
+      IsBoss: 0
+      BossTime: 0
+    - Id: First
+      Hp: 50
+      IsBoss: 1
+      BossTime: 10
+    Reward: 0

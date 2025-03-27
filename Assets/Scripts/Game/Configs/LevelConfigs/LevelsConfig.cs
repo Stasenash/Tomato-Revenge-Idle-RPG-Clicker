@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Game.Configs.LevelConfigs {
@@ -14,6 +15,11 @@ namespace Game.Configs.LevelConfigs {
             
             Debug.LogError($"Not found Level data for location {location} and level {level}");
             return default;
+        }
+
+        public int GetMaxLevelOnLocatioon(int location)
+        {
+            return (from levelData in Levels where location == levelData.Location select levelData.LevelNumber).Prepend(0).Max();
         }
     }
     
