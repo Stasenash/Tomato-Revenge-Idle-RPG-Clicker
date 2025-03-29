@@ -6,6 +6,7 @@ using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Game
 {
@@ -20,10 +21,16 @@ namespace Game
 
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
+        private bool _isBoss;
         
         private void StartLevel()
         {
             var levelData = _levelsConfig.GetLevel(_gameEnterParams.Location, _gameEnterParams.Level);
+            foreach (var enemy in levelData.Enemies)
+            {
+                if (enemy.IsBoss)
+                    _isBoss = true;
+            }
             _enemyManager.StartLevel(levelData);
         }
 
@@ -53,12 +60,44 @@ namespace Game
             if (isPassed)
             {
                 TrySaveProgress();
-                _endLevelWindow.ShowWinLevelWindow();
+                if (_isBoss)
+                {
+                    _endLevelWindow.ShowWinLevelWindow();
+                }
+                else
+                {
+                    //TODO: след уровень автоматически или карту
+                    // var sceneLoader = GameObject.FindWithTag(TAGS.SCENE_LOADER_TAG).GetComponent<SceneLoader>();
+                    // sceneLoader.LoadMetaScene();
+                    StartNextLevel();
+                }
             }
-            else
+            else if(_isBoss)
             {
                 _endLevelWindow.ShowLoseLevelWindow();
             }
+        }
+
+        private void StartNextLevel()
+        {
+            GameEnterParams gameParams = _gameEnterParams;
+            if (_gameEnterParams.Level >= _levelsConfig.GetMaxLevelOnLocation(_gameEnterParams.Location))
+            {
+                if (_gameEnterParams.Location >= _levelsConfig.GetMaxLocationNum())
+                {
+                    Debug.Log("Game passed");
+                }
+                else
+                {
+                    gameParams = new GameEnterParams(_gameEnterParams.Location + 1, 0);
+                }
+            }
+            else
+            {
+                gameParams = new GameEnterParams(_gameEnterParams.Location, _gameEnterParams.Level + 1);
+            }
+            var sceneLoader = GameObject.FindWithTag(TAGS.SCENE_LOADER_TAG).GetComponent<SceneLoader>();
+            sceneLoader.LoadGameplayScene(gameParams);
         }
 
         private void TrySaveProgress()

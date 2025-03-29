@@ -21,6 +21,16 @@ namespace Game.Configs.LevelConfigs {
         {
             return (from levelData in Levels where location == levelData.Location select levelData.LevelNumber).Prepend(0).Max();
         }
+
+        public int GetMaxLocationNum()
+        {
+            var maxLocation = 0;
+            foreach (var levelsData in Levels) {
+                if (levelsData.Location > maxLocation) maxLocation = levelsData.Location;
+            }
+
+            return maxLocation;
+        }
     }
     
 }

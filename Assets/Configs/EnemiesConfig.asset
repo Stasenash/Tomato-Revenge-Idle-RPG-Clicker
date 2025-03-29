@@ -33,7 +33,7 @@ MonoBehaviour:
   - Id: mushroom_officer
     Sprite: {fileID: -5395238454182632213, guid: 9fbce2033c899854dace79107a7c49f3, type: 3}
   - Id: mushroom_boss
-    Sprite: {fileID: -5395238454182632213, guid: 9fbce2033c899854dace79107a7c49f3, type: 3}
+    Sprite: {fileID: -4263639374368320853, guid: 39c4b1062e008974a8a8bb7fbb48363d, type: 3}
   - Id: nut_girl
     Sprite: {fileID: -6408415031373026409, guid: b793e856bd6080744b2302c5fc1d8817, type: 3}
   - Id: nut_boy
