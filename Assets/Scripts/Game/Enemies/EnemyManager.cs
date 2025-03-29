@@ -1,4 +1,5 @@
-﻿using Game.Configs.LevelConfigs;
+﻿using Game.Configs;
+using Game.Configs.LevelConfigs;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -15,8 +16,6 @@ namespace Game.Enemies
         private Timer.Timer _timer;
         private LevelData _levelData;
         private int _currentEnemyIndex;
-        
-        private const string LEVEL_BACKGROUND = "LevelBack";
 
         public event UnityAction<bool> OnLevelPassed;
     
@@ -45,7 +44,7 @@ namespace Game.Enemies
         private void SetBackground()
         {
             //TODO: узнать как лучше
-            var background = GameObject.FindGameObjectWithTag(LEVEL_BACKGROUND);
+            var background = GameObject.FindGameObjectWithTag(TAGS.LEVEL_BACKGROUND);
             background.gameObject.GetComponent<Image>().sprite = _levelData.Background;
         }
 

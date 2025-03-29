@@ -1,4 +1,5 @@
-﻿using Global.SaveSystem;
+﻿using Game.Configs;
+using Global.SaveSystem;
 using Meta.Locations;
 using SceneManagement;
 using UnityEditor;
@@ -13,8 +14,6 @@ namespace Meta
         [SerializeField] private LocationManager _locationManager;
         private SaveSystem _saveSystem;
         
-        
-        private const string SCENE_LOADER_TAG = "SceneLoader";
         public override void Run(SceneEnterParams enterParams)
         {
             _saveSystem = FindFirstObjectByType<SaveSystem>();
@@ -26,7 +25,7 @@ namespace Meta
 
         private void StartLevel(int location, int level)
         {
-            var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
+            var sceneLoader = GameObject.FindWithTag(TAGS.SCENE_LOADER_TAG).GetComponent<SceneLoader>();
             sceneLoader.LoadGameplayScene(new GameEnterParams(location, level));
         }
     }

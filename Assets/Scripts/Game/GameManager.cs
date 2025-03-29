@@ -1,4 +1,5 @@
 using Game.Click_Button;
+using Game.Configs;
 using Game.Configs.LevelConfigs;
 using Game.Enemies;
 using Global.SaveSystem;
@@ -20,8 +21,6 @@ namespace Game
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
         
-        public const string SCENE_LOADER_TAG = "SceneLoader";
-
         private void StartLevel()
         {
             var levelData = _levelsConfig.GetLevel(_gameEnterParams.Location, _gameEnterParams.Level);
@@ -84,7 +83,7 @@ namespace Game
 
         public void RestartLevel()
         {
-            var sceneLoader = GameObject.FindWithTag(SCENE_LOADER_TAG).GetComponent<SceneLoader>();
+            var sceneLoader = GameObject.FindWithTag(TAGS.SCENE_LOADER_TAG).GetComponent<SceneLoader>();
             sceneLoader.LoadGameplayScene(_gameEnterParams);
         }
     }
