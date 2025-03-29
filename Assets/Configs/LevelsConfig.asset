@@ -25,6 +25,7 @@ MonoBehaviour:
       IsBoss: 1
       BossTime: 10
     Reward: 0
+    Background: {fileID: -6987722731212726235, guid: 73b904f437acd324896b1f430f2543d6, type: 3}
   - Location: 0
     LevelNumber: 1
     Enemies:
@@ -37,3 +38,4 @@ MonoBehaviour:
       IsBoss: 1
       BossTime: 10
     Reward: 0
+    Background: {fileID: 8149948061071527619, guid: fff18d8629a451d4099b92db718b3b12, type: 3}

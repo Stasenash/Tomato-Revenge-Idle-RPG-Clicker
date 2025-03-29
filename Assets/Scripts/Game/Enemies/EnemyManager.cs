@@ -1,6 +1,7 @@
 ﻿using Game.Configs.LevelConfigs;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace Game.Enemies
 {
@@ -14,6 +15,8 @@ namespace Game.Enemies
         private Timer.Timer _timer;
         private LevelData _levelData;
         private int _currentEnemyIndex;
+        
+        private const string LEVEL_BACKGROUND = "LevelBack";
 
         public event UnityAction<bool> OnLevelPassed;
     
@@ -34,10 +37,18 @@ namespace Game.Enemies
                 _currentEnemyMonoBehavior.OnDeath += SpawnEnemy;
                 _currentEnemyMonoBehavior.OnDamage += _healthBar.DecreaseValue;
             }
-            
+
+            SetBackground();
             SpawnEnemy();
         }
-        
+
+        private void SetBackground()
+        {
+            //TODO: узнать как лучше
+            var background = GameObject.FindGameObjectWithTag(LEVEL_BACKGROUND);
+            background.gameObject.GetComponent<Image>().sprite = _levelData.Background;
+        }
+
         private void SpawnEnemy()
         {
             _timer.Stop();

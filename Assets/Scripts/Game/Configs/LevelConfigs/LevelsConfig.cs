@@ -17,7 +17,7 @@ namespace Game.Configs.LevelConfigs {
             return default;
         }
 
-        public int GetMaxLevelOnLocatioon(int location)
+        public int GetMaxLevelOnLocation(int location)
         {
             return (from levelData in Levels where location == levelData.Location select levelData.LevelNumber).Prepend(0).Max();
         }
