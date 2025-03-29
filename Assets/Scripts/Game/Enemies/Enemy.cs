@@ -41,7 +41,7 @@ namespace Game.Enemies
          }
          _health -= damage;
       
-         AnimateDamage(); //потом как-то это отдельно сделать анимации и звуки
+         AnimateDamage(); //потом как-то это отдельно сделать звуки
          _audioSource.Play();
       
          statisticsManager.UpdateEnemyStats(0, 1, 0, 0);
