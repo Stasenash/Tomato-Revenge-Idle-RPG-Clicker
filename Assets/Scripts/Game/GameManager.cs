@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using Game.Click_Button;
 using Game.Configs;
 using Game.Configs.LevelConfigs;
@@ -18,6 +19,7 @@ namespace Game
         [SerializeField] private Timer.Timer _timer;
         [SerializeField] private EndLevelWindow.EndLevelWindow _endLevelWindow;
         [SerializeField] private LevelsConfig _levelsConfig;
+        [SerializeField] private GamePanelManager _gamePanelManager;
 
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
@@ -47,12 +49,14 @@ namespace Game
             _clickButtonManager.Inizialize();
             _enemyManager.Initialize(_healthBar, _timer);
             _endLevelWindow.Initialize();  
+            _gamePanelManager.Initialize();
         
             _clickButtonManager.OnClicked += () => _enemyManager.DamageCurrentEnemy(1f);
             _endLevelWindow.OnRestartButtonClicked += RestartLevel; //подписка на кнопку рестарта
             _endLevelWindow.OnNextButtonClicked += StartNextLevel;
             _endLevelWindow.OnBackButtonClicked += ReturnToMap;
             _enemyManager.OnLevelPassed += LevelPassed;
+            _gamePanelManager.OnLoseButtonClicked += ReturnToMap;
 
             StartLevel();
         }
