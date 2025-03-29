@@ -11,7 +11,9 @@ namespace Game.EndLevelWindow
         [SerializeField] private GameObject _loseLevelWindow;
 
         [SerializeField] private Button _loseRestartButton;
-        [SerializeField] private Button _winRestartButton;
+        [SerializeField] private Button _winNextButton;
+        
+        [SerializeField] private Button _winBackButton;
     
         [SerializeField] private AudioSource _loseSound;
         [SerializeField] private AudioSource _winSound;
@@ -19,13 +21,22 @@ namespace Game.EndLevelWindow
         [SerializeField] private StatisticsViewer _statisticsViewer;
     
         public event UnityAction OnRestartButtonClicked;
-
+        public event UnityAction OnNextButtonClicked;
+        public event UnityAction OnBackButtonClicked;
+        
         public void Initialize()
         {
             _loseRestartButton.onClick.AddListener(() => Restart());
-            _winRestartButton.onClick.AddListener(() => Restart());
+            _winNextButton.onClick.AddListener(() => NextLevel());
+            _winBackButton.onClick.AddListener((() => Back()));
         }
-    
+
+        private void Back()
+        {
+            OnBackButtonClicked?.Invoke();
+            gameObject.SetActive(false);
+        }
+
         public void ShowWinLevelWindow()
         {
             _winLevelWindow.SetActive(true);
@@ -47,6 +58,12 @@ namespace Game.EndLevelWindow
         private void Restart()
         {
             OnRestartButtonClicked?.Invoke();
+            gameObject.SetActive(false);
+        }
+
+        private void NextLevel()
+        {
+            OnNextButtonClicked?.Invoke();
             gameObject.SetActive(false);
         }
     }

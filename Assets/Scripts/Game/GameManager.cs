@@ -50,6 +50,8 @@ namespace Game
         
             _clickButtonManager.OnClicked += () => _enemyManager.DamageCurrentEnemy(1f);
             _endLevelWindow.OnRestartButtonClicked += RestartLevel; //подписка на кнопку рестарта
+            _endLevelWindow.OnNextButtonClicked += StartNextLevel;
+            _endLevelWindow.OnBackButtonClicked += ReturnToMap;
             _enemyManager.OnLevelPassed += LevelPassed;
 
             StartLevel();
@@ -66,9 +68,6 @@ namespace Game
                 }
                 else
                 {
-                    //TODO: след уровень автоматически или карту
-                    // var sceneLoader = GameObject.FindWithTag(TAGS.SCENE_LOADER_TAG).GetComponent<SceneLoader>();
-                    // sceneLoader.LoadMetaScene();
                     StartNextLevel();
                 }
             }
@@ -98,6 +97,12 @@ namespace Game
             }
             var sceneLoader = GameObject.FindWithTag(TAGS.SCENE_LOADER_TAG).GetComponent<SceneLoader>();
             sceneLoader.LoadGameplayScene(gameParams);
+        }
+
+        private void ReturnToMap()
+        {
+            var sceneLoader = GameObject.FindWithTag(TAGS.SCENE_LOADER_TAG).GetComponent<SceneLoader>();
+            sceneLoader.LoadMetaScene();
         }
 
         private void TrySaveProgress()
