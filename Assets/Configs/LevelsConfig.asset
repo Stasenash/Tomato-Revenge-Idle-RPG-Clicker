@@ -35,11 +35,11 @@ MonoBehaviour:
     LevelNumber: 2
     Enemies:
     - Id: mushroom_guard1
-      Hp: 30
+      Hp: 20
       IsBoss: 0
       BossTime: 0
     - Id: mushroom_guard2
-      Hp: 30
+      Hp: 20
       IsBoss: 0
       BossTime: 0
     Reward: 0
@@ -48,15 +48,15 @@ MonoBehaviour:
     LevelNumber: 3
     Enemies:
     - Id: mushroom_torso1
-      Hp: 40
+      Hp: 30
       IsBoss: 0
       BossTime: 0
     - Id: mushroom_torso2
-      Hp: 50
+      Hp: 35
       IsBoss: 0
       BossTime: 0
     - Id: mushroom_torso3
-      Hp: 60
+      Hp: 40
       IsBoss: 0
       BossTime: 0
     Reward: 0
@@ -65,17 +65,17 @@ MonoBehaviour:
     LevelNumber: 4
     Enemies:
     - Id: mushroom_officer
-      Hp: 70
+      Hp: 45
       IsBoss: 0
       BossTime: 0
     - Id: mushroom_torso4
-      Hp: 80
+      Hp: 50
       IsBoss: 0
       BossTime: 0
     - Id: mushroom_boss
-      Hp: 100
+      Hp: 60
       IsBoss: 1
-      BossTime: 20
+      BossTime: 11
     Reward: 0
     Background: {fileID: -2586936080781492711, guid: 0926fd506ecabe64a9dce0bed5f0d80d, type: 3}
   - Location: 1
