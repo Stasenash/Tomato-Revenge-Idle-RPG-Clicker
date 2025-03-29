@@ -14,7 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 1493888157230482553, guid: abdd856cbcd1d764389e37550829dd09, type: 3}
   Enemies:
-  - Id: First
+  - Id: mushroom_rec
     Sprite: {fileID: -1295297131038759747, guid: da672366b78beba4cb70cdce046636b4, type: 3}
-  - Id: Second
-    Sprite: {fileID: -8215620671772559455, guid: 40a56ca5bae520e45918bad07757e257, type: 3}
+  - Id: mushroom_traveler
+    Sprite: {fileID: 5718793666121578546, guid: 9b1eab15bbcfd4b43b14b67ac05a9f4f, type: 3}
+  - Id: mushroom_guard1
+    Sprite: {fileID: -3987496677252280110, guid: 9e89b384cd7924441a6c4e8b01fc8f50, type: 3}
+  - Id: mushroom_guard2
+    Sprite: {fileID: -190824858246374983, guid: fd1d2fa53cbad3940ab4948695c78258, type: 3}
+  - Id: mushroom_torso1
+    Sprite: {fileID: -360855525418984524, guid: 8fd96a27661ba154cb1f2a123b53d72a, type: 3}
+  - Id: mushroom_torso2
+    Sprite: {fileID: 2670552954087439900, guid: 162b75e911374e442b14c5a97f5e2a2e, type: 3}
+  - Id: mushroom_torso3
+    Sprite: {fileID: 3672288143177448896, guid: 8000e04f4c4c6ca4586d86f850b50b3d, type: 3}
+  - Id: mushroom_torso4
+    Sprite: {fileID: -3462286061145770123, guid: 9505dc4bbda85744da201f0000367b2f, type: 3}
+  - Id: mushroom_officer
+    Sprite: {fileID: -5395238454182632213, guid: 9fbce2033c899854dace79107a7c49f3, type: 3}
+  - Id: mushroom_boss
+    Sprite: {fileID: -5395238454182632213, guid: 9fbce2033c899854dace79107a7c49f3, type: 3}
+  - Id: nut_girl
+    Sprite: {fileID: -6408415031373026409, guid: b793e856bd6080744b2302c5fc1d8817, type: 3}
+  - Id: nut_boy
+    Sprite: {fileID: 5920710123978582108, guid: 0b373b37c0c5c2c4482eb0eb59224a85, type: 3}
+  - Id: nut_orange
+    Sprite: {fileID: 954505266292841594, guid: 6cece3640518bd14cb472d591abf6ad6, type: 3}
+  - Id: nut_bow
+    Sprite: {fileID: -970033854670006865, guid: 77c7c9d8ff632d448a81e0bf4fb18db2, type: 3}
