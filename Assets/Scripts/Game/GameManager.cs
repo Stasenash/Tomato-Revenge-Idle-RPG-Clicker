@@ -84,7 +84,7 @@ namespace Game
         private void StartNextLevel()
         {
             GameEnterParams gameParams = _gameEnterParams;
-            if (_gameEnterParams.Level >= _levelsConfig.GetMaxLevelOnLocation(_gameEnterParams.Location))
+            if (_gameEnterParams.Level >= _levelsConfig.GetMaxLevelOnLocation())
             {
                 if (_gameEnterParams.Location >= _levelsConfig.GetMaxLocationNum())
                 {
@@ -115,7 +115,7 @@ namespace Game
             if (_gameEnterParams.Location != progress.CurrentLocation
                 || _gameEnterParams.Level != progress.CurrentLevel)
                 return;
-            var maxLevel = _levelsConfig.GetMaxLevelOnLocation(progress.CurrentLevel);
+            var maxLevel = _levelsConfig.GetMaxLevelOnLocation();
 
             if (progress.CurrentLevel >= maxLevel)
             {
