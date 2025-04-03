@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using DefaultNamespace;
 using DG.Tweening;
 using DG.Tweening.Core;
 using Game.Configs;

@@ -1,4 +1,5 @@
 ﻿using Game.Configs;
+using Game.Configs.Enemies_Configs;
 using Game.Configs.LevelConfigs;
 using UnityEngine;
 using UnityEngine.Events;

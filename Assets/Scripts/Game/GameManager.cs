@@ -1,8 +1,9 @@
-using DefaultNamespace;
 using Game.Click_Button;
 using Game.Configs;
 using Game.Configs.LevelConfigs;
+using Game.Configs.SkillsConfigs;
 using Game.Enemies;
+using Game.Skills;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using SceneManagement;
@@ -20,11 +21,14 @@ namespace Game
         [SerializeField] private EndLevelWindow.EndLevelWindow _endLevelWindow;
         [SerializeField] private LevelsConfig _levelsConfig;
         [SerializeField] private GamePanelManager _gamePanelManager;
+        [SerializeField] private SkillsConfig _skillsConfig;
 
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
-        private bool _isBoss;
+        private SkillSystem _skillSystem;
         
+        private bool _isBoss;
+
         private void StartLevel()
         {
             var levelData = _levelsConfig.GetLevel(_gameEnterParams.Location, _gameEnterParams.Level);
@@ -50,8 +54,12 @@ namespace Game
             _enemyManager.Initialize(_healthBar, _timer);
             _endLevelWindow.Initialize();  
             _gamePanelManager.Initialize();
-        
-            _clickButtonManager.OnClicked += () => _enemyManager.DamageCurrentEnemy(1f);
+            
+            var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);
+            _skillSystem = new SkillSystem(openedSkills, _skillsConfig, _enemyManager);
+            
+            _clickButtonManager.OnClicked += () => _skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
+            
             _endLevelWindow.OnRestartButtonClicked += RestartLevel; //подписка на кнопку рестарта
             _endLevelWindow.OnNextButtonClicked += StartNextLevel;
             _endLevelWindow.OnBackButtonClicked += ReturnToMap;

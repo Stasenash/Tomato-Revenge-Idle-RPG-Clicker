@@ -11,6 +11,7 @@ namespace Global.SaveSystem
             _savableObjects = new() {
                 { SavableObjectType.Wallet, new Wallet() },
                 { SavableObjectType.Progress, new Progress() },
+                { SavableObjectType.OpenedSkills, new OpenedSkills() },
             };
 
             LoadData();
