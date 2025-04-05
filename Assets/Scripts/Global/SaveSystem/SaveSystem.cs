@@ -4,10 +4,10 @@ using Global.SaveSystem.SavableObjects;
 
 namespace Global.SaveSystem
 {
-    public class SaveSystem : MonoBehaviour {
+    public class SaveSystem {
         private Dictionary<SavableObjectType, ISavable> _savableObjects;
 
-        public void Initialize() {
+        public SaveSystem() {
             _savableObjects = new() {
                 { SavableObjectType.Wallet, new Wallet() },
                 { SavableObjectType.Progress, new Progress() },

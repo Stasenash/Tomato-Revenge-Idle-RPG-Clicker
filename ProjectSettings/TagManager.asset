@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SceneLoader
   - LevelBack
+  - Circular
+  - CommonObject
   layers:
   - Default
   - TransparentFX

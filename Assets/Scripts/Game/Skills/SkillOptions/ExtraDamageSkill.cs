@@ -1,9 +1,11 @@
 ﻿using Game.Configs.SkillsConfigs;
 using Game.Enemies;
 using Game.Skills.Data;
+using UnityEngine.Scripting;
 
 namespace Game.Skills.SkillOptions
 {
+    [Preserve]
     public class ExtraDamageSkill : Skill
     {
         private EnemyManager _enemyManager;

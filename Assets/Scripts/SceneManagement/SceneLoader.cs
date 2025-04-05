@@ -2,6 +2,7 @@
 using DG.Tweening;
 using DG.Tweening.Core;
 using Game.Configs;
+using Global.AudioSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -73,5 +74,12 @@ namespace SceneManagement
                 Destroy(dotweenComponent);
             }
         }
+
+        //TODO: из занятия по менеджеру
+        // public void Initialize(AudioManager commonObjectAudioManager)
+        // {
+        //     Debug.Log("загрузка");
+        //     //throw new System.NotImplementedException();
+        // }
     }
 }
