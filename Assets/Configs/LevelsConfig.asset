@@ -17,17 +17,30 @@ MonoBehaviour:
     LevelNumber: 0
     Enemies:
     - Id: mushroom_rec
+      Hp: 10
+      IsBoss: 0
+      BossTime: 0
+    Reward: 100
+    Background: {fileID: 6197166666120296195, guid: f05f97a5c29a39b4f9114893f2b7d7fb, type: 3}
+  - Location: 0
+    LevelNumber: 1
+    Enemies:
+    - Id: mushroom_traveler
+      Hp: 12
+      IsBoss: 0
+      BossTime: 0
+    Reward: 110
+    Background: {fileID: 8149948061071527619, guid: fff18d8629a451d4099b92db718b3b12, type: 3}
+  - Location: 0
+    LevelNumber: 1
+    Enemies:
+    - Id: mushroom_guard1
       Hp: 20
       IsBoss: 0
       BossTime: 0
-    - Id: mushroom_traveler
-      Hp: 25
-      IsBoss: 1
+    - Id: mushroom_guard2
+      Hp: 24
+      IsBoss: 0
       BossTime: 0
-    Reward: 0
-    Background: {fileID: 0}
-  - Location: 0
-    LevelNumber: 0
-    Enemies: []
-    Reward: 0
-    Background: {fileID: 0}
+    Reward: 120
+    Background: {fileID: 6197166666120296195, guid: f05f97a5c29a39b4f9114893f2b7d7fb, type: 3}
