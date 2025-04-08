@@ -57,6 +57,11 @@ namespace Game.Configs.LevelConfigs {
                 locationMap[levelData.LevelNumber] = levelData;
             }
         }
+
+        public int GetReward(int location, int level)
+        {
+            return _levelsMap[location][level].Reward;
+        }
     }
     
 }

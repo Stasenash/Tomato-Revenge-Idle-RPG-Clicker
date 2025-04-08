@@ -31,6 +31,8 @@ namespace Game
         
         public void LevelPassed(bool isPassed)
         {
+            SaveCoins();
+
             if (isPassed)
             {
                 TrySaveProgress();
@@ -48,7 +50,14 @@ namespace Game
                 _endLevelWindow.ShowLoseLevelWindow();
             }
         }
-        
+
+        private void SaveCoins()
+        {
+            var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
+            wallet.Coins += _levelsConfig.GetReward(_gameEnterParams.Location, _gameEnterParams.Level);
+            Debug.Log($"coins={wallet.Coins}");
+        }
+
         private void TrySaveProgress()
         {
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
@@ -71,7 +80,9 @@ namespace Game
             {
                 progress.CurrentLevel++;
             }
+            
             _saveSystem.SaveData(SavableObjectType.Progress);
+            _saveSystem.SaveData(SavableObjectType.Wallet);
         }
     }
 }

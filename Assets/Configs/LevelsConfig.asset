@@ -32,7 +32,7 @@ MonoBehaviour:
     Reward: 110
     Background: {fileID: 8149948061071527619, guid: fff18d8629a451d4099b92db718b3b12, type: 3}
   - Location: 0
-    LevelNumber: 1
+    LevelNumber: 2
     Enemies:
     - Id: mushroom_guard1
       Hp: 20
