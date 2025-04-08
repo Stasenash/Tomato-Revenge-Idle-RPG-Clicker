@@ -31,8 +31,6 @@ namespace Game
         
         public void LevelPassed(bool isPassed)
         {
-            SaveCoins();
-
             if (isPassed)
             {
                 TrySaveProgress();
@@ -50,16 +48,14 @@ namespace Game
                 _endLevelWindow.ShowLoseLevelWindow();
             }
         }
-
-        private void SaveCoins()
-        {
-            var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
-            wallet.Coins += _levelsConfig.GetReward(_gameEnterParams.Location, _gameEnterParams.Level);
-            Debug.Log($"coins={wallet.Coins}");
-        }
-
+        
         private void TrySaveProgress()
         {
+            var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
+            var coins = _levelsConfig.GetReward(_gameEnterParams.Location, _gameEnterParams.Level);
+            wallet.Coins += coins;
+            Debug.Log($"coins={wallet.Coins}");
+            
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             if (_gameEnterParams.Location != progress.CurrentLocation
                 || _gameEnterParams.Level != progress.CurrentLevel)
@@ -67,9 +63,9 @@ namespace Game
             var maxLocationAndLevel = _levelsConfig.GetMaxLocationAndLevel();
             var maxLevel = maxLocationAndLevel.y;
             
-            if (progress.CurrentLocation > maxLocationAndLevel.x || 
-                (progress.CurrentLocation == maxLocationAndLevel.x 
-                 && progress.CurrentLevel > maxLocationAndLevel.y)) return;
+            // if (progress.CurrentLocation > maxLocationAndLevel.x || 
+            //     (progress.CurrentLocation == maxLocationAndLevel.x 
+            //      && progress.CurrentLevel > maxLocationAndLevel.y)) return;
             
             if (progress.CurrentLevel >= maxLevel)
             {

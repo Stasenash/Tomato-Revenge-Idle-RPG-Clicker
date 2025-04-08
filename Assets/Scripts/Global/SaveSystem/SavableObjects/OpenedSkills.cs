@@ -11,6 +11,19 @@ namespace Global.SaveSystem.SavableObjects
                 Id="ExtraDamageSkill", 
                 Level = 1
             }
-        }; 
+        };
+
+        //TODO: переввести на словарь по-хорошему, но когда мы будем изменять кол-во скиллов, то придется менять и словарь (подумоть)
+        public SkillWithLevel GetSkillWithLevel(string skillId)
+        {
+            foreach (var skillWithLevel in Skills)
+            {
+                if (skillWithLevel.Id == skillId)
+                {
+                    return skillWithLevel;
+                }
+            }
+            return null;
+        }
     }
 }
