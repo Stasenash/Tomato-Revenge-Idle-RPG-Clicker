@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine.Serialization;
 
 namespace Game.Enemies {
     [Serializable]
@@ -7,5 +8,6 @@ namespace Game.Enemies {
         public float Hp;
         public bool IsBoss;
         public float BossTime;
+        [FormerlySerializedAs("Technique")] public TechniqueType techniqueType;
     }
 }
