@@ -17,6 +17,7 @@ namespace Game.Enemies
         private Timer.Timer _timer;
         private LevelData _levelData;
         private int _currentEnemyIndex;
+        private TechniqueType _currentEnemyTechniqueType;
 
         public event UnityAction<bool> OnLevelPassed;
     
@@ -63,6 +64,7 @@ namespace Game.Enemies
             }
             
             var currentEnemy = _levelData.Enemies[_currentEnemyIndex];
+            _currentEnemyTechniqueType = currentEnemy.TechniqueType;
 
             if (currentEnemy.IsBoss)
             {
@@ -101,5 +103,6 @@ namespace Game.Enemies
         }
 
 
+        public TechniqueType GetCurrentEnemyTechniqueType() => _currentEnemyTechniqueType;
     }
 }

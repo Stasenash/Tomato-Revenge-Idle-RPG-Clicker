@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using Game.Skills;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -6,19 +7,30 @@ namespace Game.Click_Button
 {
     public class ClickButtonManager : MonoBehaviour
     {
-        [SerializeField] private ClickButton _clickButton;
-        [SerializeField] private ClickButtonConfig _buttonConfig;
-
-    
-        public event UnityAction OnClicked;
-        public void Inizialize()
-        {
-            _clickButton.Inizialize(_buttonConfig.DefaultSprite, _buttonConfig.ButtonColors);
+        [SerializeField] private ClickButton _taijutsuButton;
+        [SerializeField] private ClickButton _ninjutsuButton;
+        [SerializeField] private ClickButton _genjutsuButton;
         
-            _clickButton.SubscribeOnClick(() => OnClicked?.Invoke());
-            _clickButton.SubscribeOnClick(AnimateClick);
+        [SerializeField] private ClickButtonConfig _buttonConfig;
+        
+        public void Inizialize(SkillSystem skillSystem)
+        {
+            _taijutsuButton.Inizialize(_buttonConfig.TaijutsuSprite, _buttonConfig.TaijutsuColors);
+            _ninjutsuButton.Inizialize(_buttonConfig.NinjutsuSprite, _buttonConfig.NinjutsuColors);
+            _genjutsuButton.Inizialize(_buttonConfig.GenjutsuSprite, _buttonConfig.GenjutsuColors);
+        
+            _taijutsuButton.SubscribeOnClick(()=>
+            {
+                skillSystem.InvokeTrigger(SkillTrigger.OnTaijutsu);
+                skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
+            });
+            _ninjutsuButton.SubscribeOnClick(()=>skillSystem.InvokeTrigger(SkillTrigger.OnNinjutsu));
+            _genjutsuButton.SubscribeOnClick(()=>skillSystem.InvokeTrigger(SkillTrigger.OnNinjutsu));
+            
+            //_clickButton.SubscribeOnClick(AnimateClick);
         }
 
+        //TODO: придумать для анимаций
         private void AnimateClick()
         {    
             gameObject.transform.DORotate(new Vector3(0, 0, -360), 0.1f, RotateMode.FastBeyond360)

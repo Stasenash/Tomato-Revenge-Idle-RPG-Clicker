@@ -7,5 +7,8 @@
         OnTime = 3,
         OnTimerLeft = 4,
         OnStart = 5,
+        OnTaijutsu = 6,
+        OnNinjutsu = 7,
+        OnGenjutsu = 8,
     }
 }

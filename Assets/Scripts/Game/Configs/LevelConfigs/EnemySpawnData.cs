@@ -8,6 +8,6 @@ namespace Game.Enemies {
         public float Hp;
         public bool IsBoss;
         public float BossTime;
-        [FormerlySerializedAs("Technique")] public TechniqueType techniqueType;
+        public TechniqueType TechniqueType;
     }
 }

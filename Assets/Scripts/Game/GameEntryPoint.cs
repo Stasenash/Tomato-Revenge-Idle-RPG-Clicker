@@ -96,18 +96,16 @@ namespace Game
                 return;
             }
             _gameEnterParams = gameEnterParams;
-            
-            _clickButtonManager.Inizialize();
             _enemyManager.Initialize(_healthBar, _timer);
             _endLevelWindow.Initialize();  
             _gamePanelManager.Initialize();
             
             var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);
             _skillSystem = new SkillSystem(openedSkills, _skillsConfig, _enemyManager);
+            _clickButtonManager.Inizialize(_skillSystem);
             _endLevelSystem =
                 new EndLevelSystem(_endLevelWindow, _saveSystem, _gameEnterParams, _levelsConfig, _isBoss);
             
-            _clickButtonManager.OnClicked += () => _skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
             
             _endLevelWindow.OnRestartButtonClicked += RestartLevel; //подписка на кнопку рестарта
             
