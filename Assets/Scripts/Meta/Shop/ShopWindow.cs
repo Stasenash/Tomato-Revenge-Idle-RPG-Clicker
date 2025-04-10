@@ -52,7 +52,7 @@ namespace Meta.Shop
         {
             foreach (var skillData in _skillsConfig.Skills)
             {
-                var skillWithLevel = _openedSkills.GetSkillWithLevel(skillData.Id);
+                var skillWithLevel = _openedSkills.GetOrCreateSkillWithLevel(skillData.Id);
                 var skillDataByLevel = skillData.GetSkillDataByLevel(skillWithLevel.Level);
                 
                 if (!_itemsMap.ContainsKey(skillData.Id)) continue; 
@@ -75,7 +75,7 @@ namespace Meta.Shop
 
         private void SkillUpgrade(string skillId, int cost)
         {
-           var skillWithLevel = _openedSkills.GetSkillWithLevel(skillId);
+           var skillWithLevel = _openedSkills.GetOrCreateSkillWithLevel(skillId);
            skillWithLevel.Level++;
            _wallet.Coins -= cost;
            
