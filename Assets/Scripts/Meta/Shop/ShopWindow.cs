@@ -45,7 +45,7 @@ namespace Meta.Shop
 
         private void InitializeBlocks()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("InitializeBlocks");
         }
 
         private void ShowShopItems()

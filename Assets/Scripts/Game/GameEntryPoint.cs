@@ -2,6 +2,7 @@ using Game.Click_Button;
 using Game.Configs;
 using Game.Configs.LevelConfigs;
 using Game.Configs.SkillsConfigs;
+using Game.DownPanel;
 using Game.Enemies;
 using Game.Skills;
 using Global.AudioSystem;

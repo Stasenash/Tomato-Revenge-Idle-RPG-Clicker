@@ -12,12 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87b1495d5a04110b1b9791a1ffb1d21, type: 3}
   m_Name: ClickButtonConfig
   m_EditorClassIdentifier: 
-  DefaultSprite: {fileID: -4278347461578417409, guid: c33364c82dd7dc042b47eff201764f4a, type: 3}
-  ButtonColors:
+  TaijutsuSprite: {fileID: 4089859564717514920, guid: 47311319946eced45804ba15f0338f11, type: 3}
+  NinjutsuSprite: {fileID: 1233725759607933571, guid: 427a927b90ce25140adaf6713127c5b2, type: 3}
+  GenjutsuSprite: {fileID: -148980136236378925, guid: 4704132797fca7f4b9379dae05ea247f, type: 3}
+  TaijutsuColors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0}
-    m_PressedColor: {r: 0.6226415, g: 0.06167675, b: 0.06167675, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 0.9528302, g: 0.09438412, b: 0.09438412, a: 1}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 1}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
+  GenjutsuColors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 0.9056604, g: 0.23495908, b: 0.23495908, a: 1}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 1}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
+  NinjutsuColors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 1, g: 0.25, b: 0.25, a: 1}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0
