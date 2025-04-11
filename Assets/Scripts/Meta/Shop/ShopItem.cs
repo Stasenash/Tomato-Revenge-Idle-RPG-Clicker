@@ -9,7 +9,7 @@ namespace Meta.Shop
     public class ShopItem : MonoBehaviour
     {
         //[SerializeField] private TextMeshProUGUI _label;
-        [SerializeField] private Image _skillImage;
+        [SerializeField] private Sprite _skillImage;
         [SerializeField] private TextMeshProUGUI _description;
         [SerializeField] private TextMeshProUGUI _cost;
         [SerializeField] private Button _button;
@@ -17,7 +17,7 @@ namespace Meta.Shop
         [FormerlySerializedAs("_skillName")] [SerializeField] public string SkillId;
         
         public void Initialize(UnityAction<string> onClick, 
-                                Image skillImage, 
+                                Sprite skillImage, 
                                 string description, 
                                 int cost,
                                 bool isEnoughMoney,
@@ -25,7 +25,7 @@ namespace Meta.Shop
         {
             _button.onClick.AddListener(()=>onClick.Invoke(SkillId));
            // _label.text = label;
-           _skillImage.sprite = skillImage.sprite;
+            _skillImage = skillImage;
             _description.text = description;
             
             if (isMaxLevel)

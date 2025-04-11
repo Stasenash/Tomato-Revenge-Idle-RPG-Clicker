@@ -20,6 +20,7 @@ namespace Meta
         [SerializeField] private ShopWindow shopWindow;
         [SerializeField] private SkillsConfig _skillsConfig;
         [SerializeField] private DownPanelManager _downPanelManager;
+        [SerializeField] private SkillShop _skillShop;
         
         private SaveSystem _saveSystem;
         private AudioManager _audioManager;
@@ -31,7 +32,7 @@ namespace Meta
             _saveSystem = commonObject.SaveSystem;
             //_audioManager = commonObject.AudioManager;
             _sceneLoader = commonObject.SceneLoader;
-            
+            _skillShop.Initialize(_saveSystem, _skillsConfig);
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
             _locationManager.Initialize(progress, StartLevel);

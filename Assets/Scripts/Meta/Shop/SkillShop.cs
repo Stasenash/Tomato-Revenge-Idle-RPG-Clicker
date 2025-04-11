@@ -41,7 +41,7 @@ namespace Meta.Shop
                 
                 if (!_itemsMap.ContainsKey(skillData.Id)) continue; 
                 _itemsMap[skillData.Id].Initialize((skillId)=>SkillUpgrade(skillId, skillDataByLevel.Cost), 
-                    skillData.Image, "", skillDataByLevel.Cost, 
+                    skillData.Sprite, "", skillDataByLevel.Cost, 
                     _wallet.Coins >= skillDataByLevel.Cost, 
                     skillData.isMaxLevel(skillWithLevel.Level));
             }

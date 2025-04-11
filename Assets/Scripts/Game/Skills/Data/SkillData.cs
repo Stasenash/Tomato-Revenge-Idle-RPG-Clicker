@@ -10,7 +10,7 @@ namespace Game.Skills.Data
     public struct SkillData
     {
         public string Id;
-        public Image Image;
+        public Sprite Sprite;
         public List<SkillDataByLevel> SkillLevels;
 
         public SkillDataByLevel GetSkillDataByLevel(int level)

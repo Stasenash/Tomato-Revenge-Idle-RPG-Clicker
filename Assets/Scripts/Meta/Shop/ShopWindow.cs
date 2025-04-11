@@ -24,8 +24,6 @@ namespace Meta.Shop
         [SerializeField] private GameObject _buffsUnderline;
         [SerializeField] private GameObject _itemsUnderline;
         [SerializeField] private GameObject _coinsUnderline;
-        
-        //private Tabs _currentTab = Tabs.Skills;
 
         public void Initialize()
         {
