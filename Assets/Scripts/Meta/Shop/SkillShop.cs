@@ -9,10 +9,6 @@ namespace Meta.Shop
 {
     public class SkillShop : MonoBehaviour
     {
-        [SerializeField] private Button _ninjutsuTabButton;
-        [SerializeField] private Button _taijutsuTabButton;
-        [SerializeField] private Button _genjutsuTabButton;
-        
         [SerializeField] private List<ShopItem> _shopItems;
         private Dictionary<string, ShopItem> _itemsMap;
         

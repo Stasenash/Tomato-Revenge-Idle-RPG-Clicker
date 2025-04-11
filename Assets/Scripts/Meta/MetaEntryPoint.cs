@@ -17,10 +17,11 @@ namespace Meta
     public class MetaEntryPoint : EntryPoint
     {
         [SerializeField] private LocationManager _locationManager;
-        [SerializeField] private ShopWindow shopWindow;
+        [FormerlySerializedAs("shopWindow")] [SerializeField] private ShopWindow _shopWindow;
         [SerializeField] private SkillsConfig _skillsConfig;
         [SerializeField] private DownPanelManager _downPanelManager;
         [SerializeField] private SkillShop _skillShop;
+        [SerializeField] private SkillShopWindow _skillShopWindow;
         
         private SaveSystem _saveSystem;
         private AudioManager _audioManager;
@@ -32,12 +33,15 @@ namespace Meta
             _saveSystem = commonObject.SaveSystem;
             //_audioManager = commonObject.AudioManager;
             _sceneLoader = commonObject.SceneLoader;
+            
+            _downPanelManager.Initialize();
+            _shopWindow.Initialize();
             _skillShop.Initialize(_saveSystem, _skillsConfig);
+            _skillShopWindow.Initialize();
+            
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
             _locationManager.Initialize(progress, StartLevel);
-            _downPanelManager.Initialize();
-            shopWindow.Initialize();
             //_audioManager.PlayClip(AudioNames.BackgroundMetaMusic)
         }
 
