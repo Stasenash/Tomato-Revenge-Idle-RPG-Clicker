@@ -26,7 +26,11 @@ namespace Game.DownPanel
 
         private void OpenOrCloseAchievements()
         {
-            Debug.Log("Clicked achievements button");
+            isShopOpen = false;
+            _shopWindow.SetActive(isShopOpen);
+            _shopUnderline.SetActive(isShopOpen);
+            
+            
         }
 
         private void OpenOrCloseShop()
@@ -34,6 +38,12 @@ namespace Game.DownPanel
             isShopOpen = !isShopOpen;
             _shopWindow.SetActive(isShopOpen);
             _shopUnderline.SetActive(isShopOpen);
+
+            isAchievementsOpen = false;
+            //_achievementsWindow.SetActive(isAchievementsOpen);
+            //_achievements.SetActive(isAchievementsOpen);
         }
+        
+        
     }
 }
