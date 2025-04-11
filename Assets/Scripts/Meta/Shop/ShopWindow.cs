@@ -3,6 +3,7 @@ using Game.Configs.SkillsConfigs;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Meta.Shop
@@ -14,79 +15,52 @@ namespace Meta.Shop
         [SerializeField] private Button _itemsTabButton;
         [SerializeField] private Button _coinsTabButton;
         
-        [SerializeField] private Button _ninjutsuTabButton;
-        [SerializeField] private Button _taijutsuTabButton;
-        [SerializeField] private Button _genjutsuTabButton;
+        [SerializeField] private GameObject _skillsTab;
+        [SerializeField] private GameObject _buffsTab;
+        [SerializeField] private GameObject _itemsTab;
+        [SerializeField] private GameObject _coinsTab;
 
-        [SerializeField] private List<GameObject> _blocks;
+        [SerializeField] private GameObject _skillsUnderline;
+        [SerializeField] private GameObject _buffsUnderline;
+        [SerializeField] private GameObject _itemsUnderline;
+        [SerializeField] private GameObject _coinsUnderline;
         
-        [SerializeField] private List<ShopItem> _shopItems;
-        
-        private Dictionary<string, ShopItem> _itemsMap;
-        
-        private Tabs _currentTab = Tabs.Skills;
-        
-        private Wallet _wallet;
-        private OpenedSkills _openedSkills;
-        private SkillsConfig _skillsConfig;
-        private SaveSystem _saveSystem;
+        //private Tabs _currentTab = Tabs.Skills;
 
-        public void Initialize(SaveSystem saveSystem, SkillsConfig skillsConfig)
+        public void Initialize()
         {
-            _saveSystem = saveSystem;
-            _wallet = (Wallet)saveSystem.GetData(SavableObjectType.Wallet);
-            _openedSkills = (OpenedSkills)saveSystem.GetData(SavableObjectType.OpenedSkills);
-            _skillsConfig = skillsConfig;
-            InitializeItemMap();
+            _skillsTabButton.onClick.AddListener(() => ShowTab(_skillsTab, _skillsUnderline));
+            _buffsTabButton.onClick.AddListener(() => ShowTab(_buffsTab,_buffsUnderline));
+            _itemsTabButton.onClick.AddListener(() => ShowTab(_itemsTab, _itemsUnderline));
+            _coinsTabButton.onClick.AddListener(() => ShowTab(_coinsTab, _coinsUnderline));
+            CloseAllTabs();
+            SetMainTabActive();
+        }
+
+        private void SetMainTabActive()
+        {
+            _skillsTab.SetActive(true);
+            _skillsUnderline.SetActive(true);
+        }
+
+        private void ShowTab(GameObject tab, GameObject underline)
+        {
+            CloseAllTabs();
+            tab.SetActive(true);
+            underline.SetActive(true);
+        }
+        
+        private void CloseAllTabs()
+        {
+            _itemsTab.SetActive(false);
+            _skillsTab.SetActive(false);
+            _buffsTab.SetActive(false);
+            _coinsTab.SetActive(false);
             
-            InitializeBlocks();
-            ShowShopItems();
-        }
-
-        private void InitializeBlocks()
-        {
-            Debug.Log("InitializeBlocks");
-        }
-
-        private void ShowShopItems()
-        {
-            foreach (var skillData in _skillsConfig.Skills)
-            {
-                var skillWithLevel = _openedSkills.GetOrCreateSkillWithLevel(skillData.Id);
-                var skillDataByLevel = skillData.GetSkillDataByLevel(skillWithLevel.Level);
-                
-                if (!_itemsMap.ContainsKey(skillData.Id)) continue; 
-                _itemsMap[skillData.Id].Initialize((skillId)=>SkillUpgrade(skillId, skillDataByLevel.Cost), 
-                                                    skillData.Image, "", skillDataByLevel.Cost, 
-                                                    _wallet.Coins >= skillDataByLevel.Cost, 
-                                                    skillData.isMaxLevel(skillWithLevel.Level));
-            }
-        }
-
-        private void InitializeItemMap()
-        {
-            _itemsMap = new();
-
-            foreach (var shopItem in _shopItems)
-            {
-                _itemsMap[shopItem.SkillId] = shopItem;
-            }
-        }
-
-        private void SkillUpgrade(string skillId, int cost)
-        {
-           var skillWithLevel = _openedSkills.GetOrCreateSkillWithLevel(skillId);
-           skillWithLevel.Level++;
-           _wallet.Coins -= cost;
-           
-           _saveSystem.SaveData(SavableObjectType.Wallet);
-           _saveSystem.SaveData(SavableObjectType.OpenedSkills);
-           ShowShopItems();
-        }
-
-        private void ShowBlock(int index)
-        {
-            
+            _skillsUnderline.SetActive(false);
+            _buffsUnderline.SetActive(false);
+            _itemsUnderline.SetActive(false);
+            _coinsUnderline.SetActive(false);
         }
     }
 }

@@ -8,6 +8,7 @@ using Meta.Shop;
 using SceneManagement;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Progress = Global.SaveSystem.SavableObjects.Progress;
 
@@ -16,7 +17,7 @@ namespace Meta
     public class MetaEntryPoint : EntryPoint
     {
         [SerializeField] private LocationManager _locationManager;
-        [SerializeField] private ShopWindow _shopWindow;
+        [SerializeField] private ShopWindow shopWindow;
         [SerializeField] private SkillsConfig _skillsConfig;
         [SerializeField] private DownPanelManager _downPanelManager;
         
@@ -34,8 +35,8 @@ namespace Meta
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
             _locationManager.Initialize(progress, StartLevel);
-            _shopWindow.Initialize(_saveSystem, _skillsConfig);
             _downPanelManager.Initialize();
+            shopWindow.Initialize();
             //_audioManager.PlayClip(AudioNames.BackgroundMetaMusic)
         }
 

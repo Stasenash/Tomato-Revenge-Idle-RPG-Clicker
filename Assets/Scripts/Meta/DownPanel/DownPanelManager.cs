@@ -14,12 +14,14 @@ namespace Game.DownPanel
         
         [SerializeField] private GameObject _shopUnderline;
         [SerializeField] private GameObject _achievementsUnderline;
-        
-        private bool isShopOpen = false;
-        private bool isAchievementsOpen = false;
+
+        private bool isShopOpen;
+        private bool isAchievementsOpen;
 
         public void Initialize()
         {
+            isAchievementsOpen = false;
+            isShopOpen = false;
             _shopButton.onClick.AddListener(() => OpenOrCloseShop());
             _achievementsButton.onClick.AddListener(() => OpenOrCloseAchievements());
         }
