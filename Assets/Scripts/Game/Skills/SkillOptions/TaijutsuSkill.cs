@@ -2,6 +2,7 @@
 using Game.Configs.SkillsConfigs;
 using Game.Enemies;
 using Game.Skills.Data;
+using Global.SaveSystem;
 using UnityEngine.Scripting;
 
 namespace Game.Skills.SkillOptions
@@ -15,7 +16,7 @@ namespace Game.Skills.SkillOptions
         private SkillDataByLevel _skillData;
         private RSPConfig _rspConfig;
 
-        public override void Initialize(SkillScope scope, SkillDataByLevel skillData)
+        public override void Initialize(SkillScope scope, SkillDataByLevel skillData, SaveSystem saveSystem)
         {
             _enemyManager = scope.EnemyManager;
             _skillData = skillData;

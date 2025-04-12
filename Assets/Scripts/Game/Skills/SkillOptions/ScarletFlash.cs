@@ -1,29 +1,27 @@
-﻿using Game.Configs.SkillsConfigs;
-using Game.Enemies;
-using Game.Skills.Data;
+﻿using Game.Skills.Data;
 using Global.SaveSystem;
+using Global.SaveSystem.SavableObjects;
 using UnityEngine.Scripting;
 
 namespace Game.Skills.SkillOptions
 {
-    //preserve позволяет не стирать сборщиком мусора
     [Preserve]
-    public class ExtraDamageSkill : Skill
+    public class ScarletFlash : Skill
     {
-        private EnemyManager _enemyManager;
         private SkillDataByLevel _skillData;
         private SaveSystem _saveSystem;
 
         public override void Initialize(SkillScope scope, SkillDataByLevel skillData, SaveSystem saveSystem)
         {
-            _enemyManager = scope.EnemyManager;
             _skillData = skillData;
             _saveSystem = saveSystem;
         }
 
         public override void SkillProcess()
         {
-            _enemyManager.DamageCurrentEnemy(_skillData.Value);
+            var stats = (Stats)_saveSystem.GetData(SavableObjectType.Stats);
+            stats.CritChance += _skillData.Value;
+            _saveSystem.SaveData(SavableObjectType.Stats);
         }
     }
 }

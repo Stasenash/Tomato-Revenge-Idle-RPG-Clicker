@@ -102,7 +102,7 @@ namespace Game
             _gamePanelManager.Initialize();
             
             var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);
-            _skillSystem = new SkillSystem(openedSkills, _skillsConfig, _enemyManager);
+            _skillSystem = new SkillSystem(openedSkills, _skillsConfig, _enemyManager, _saveSystem);
             _clickButtonManager.Inizialize(_skillSystem);
             _endLevelSystem =
                 new EndLevelSystem(_endLevelWindow, _saveSystem, _gameEnterParams, _levelsConfig, _isBoss);

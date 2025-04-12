@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Game.Configs.SkillsConfigs;
 using Game.Enemies;
+using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using UnityEditor.Experimental.GraphView;
 
@@ -13,11 +14,13 @@ namespace Game.Skills
         private SkillsConfig _skillsConfig;
         
         private Dictionary<SkillTrigger, List<Skill>> _skillsByTrigger;
+        private readonly SaveSystem _saveSystem;
 
-        public SkillSystem(OpenedSkills openedSkills, SkillsConfig skillsConfig, EnemyManager enemyManager)
+        public SkillSystem(OpenedSkills openedSkills, SkillsConfig skillsConfig, EnemyManager enemyManager, SaveSystem saveSystem)
         {
             _skillsByTrigger = new();
             _skillsConfig = skillsConfig;
+            _saveSystem = saveSystem;
             _scope = new()
             {
                 EnemyManager = enemyManager
@@ -56,7 +59,7 @@ namespace Game.Skills
                 throw new Exception($"Cannot create skill with Id: {skill.Id}");
             }
             
-            skillInstance.Initialize(_scope, skillData);
+            skillInstance.Initialize(_scope, skillData, _saveSystem);
 
             if (!_skillsByTrigger.ContainsKey(skillData.Trigger))
             {

@@ -4,5 +4,6 @@
         Wallet = 1,
         Progress = 2,
         OpenedSkills = 3,
+        Stats = 4,
     }
 }
