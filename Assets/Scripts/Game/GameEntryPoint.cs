@@ -1,5 +1,6 @@
 using Game.Click_Button;
 using Game.Configs;
+using Game.Configs.HeroConfigs;
 using Game.Configs.LevelConfigs;
 using Game.Configs.SkillsConfigs;
 using Game.DownPanel;
@@ -24,6 +25,7 @@ namespace Game
         [SerializeField] private LevelsConfig _levelsConfig;
         [SerializeField] private GamePanelManager _gamePanelManager;
         [SerializeField] private SkillsConfig _skillsConfig;
+        [SerializeField] private HeroStatsConfig _heroStatsConfig;
 
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;

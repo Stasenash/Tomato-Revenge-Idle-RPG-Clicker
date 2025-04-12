@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Game.Configs.HeroConfigs;
 using Game.Configs.SkillsConfigs;
 using Game.Enemies;
 using Global.SaveSystem;

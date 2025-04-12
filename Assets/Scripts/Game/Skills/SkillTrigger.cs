@@ -10,5 +10,6 @@
         OnTaijutsu = 6,
         OnNinjutsu = 7,
         OnGenjutsu = 8,
+        OnPassive = 9,
     }
 }

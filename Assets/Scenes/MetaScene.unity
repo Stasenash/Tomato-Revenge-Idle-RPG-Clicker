@@ -3683,6 +3683,7 @@ MonoBehaviour:
   _downPanelManager: {fileID: 1370758326}
   _skillShop: {fileID: 1195242127}
   _skillShopWindow: {fileID: 1743710517}
+  _heroStatsConfig: {fileID: 11400000, guid: 4530db217722f534a88880d990381e75, type: 2}
 --- !u!4 &1567715174
 Transform:
   m_ObjectHideFlags: 0
@@ -4910,6 +4911,10 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u043F\u0435\u0440\u0432\u043E\u0433\u043E
         \u0441\u043A\u0438\u043B\u043B\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216790299428306638, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6548782045965933321, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
       propertyPath: m_AnchorMax.y
