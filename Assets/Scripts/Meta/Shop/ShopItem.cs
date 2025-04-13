@@ -25,7 +25,7 @@ namespace Meta.Shop
         {
             _button.onClick.RemoveAllListeners();
             _button.onClick.AddListener(()=>onClick.Invoke(SkillId));
-           // _label.text = label;
+            
             _skillImage = skillImage;
             _description.text = description;
             

@@ -328,7 +328,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &95564709
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1870,7 +1870,7 @@ GameObject:
   - component: {fileID: 420399448}
   - component: {fileID: 420399447}
   m_Layer: 5
-  m_Name: Weak Scroll View
+  m_Name: Weekly Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2556,7 +2556,7 @@ GameObject:
   - component: {fileID: 555823852}
   - component: {fileID: 555823851}
   m_Layer: 5
-  m_Name: Permanent Scroll View
+  m_Name: Eternal Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3330,7 +3330,7 @@ GameObject:
   - component: {fileID: 653012705}
   - component: {fileID: 653012704}
   m_Layer: 5
-  m_Name: Ivently
+  m_Name: Event
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3866,7 +3866,7 @@ GameObject:
   - component: {fileID: 694316289}
   - component: {fileID: 694316288}
   m_Layer: 5
-  m_Name: Weakly
+  m_Name: Weekly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5904,9 +5904,9 @@ RectTransform:
   - {fileID: 426031736}
   m_Father: {fileID: 2123401710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 570, y: -795}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947618868
@@ -5959,6 +5959,7 @@ GameObject:
   - component: {fileID: 956457093}
   - component: {fileID: 956457092}
   - component: {fileID: 956457091}
+  - component: {fileID: 956457095}
   m_Layer: 5
   m_Name: AchievementsWindow
   m_TagString: Untagged
@@ -6049,6 +6050,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &956457095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956457090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc96bca0476e4cf5b0328a06b35441a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dailyTabButton: {fileID: 1826484830}
+  _weeklyTabButton: {fileID: 694316288}
+  _eternalTabButton: {fileID: 1553998308}
+  _eventsTabButton: {fileID: 653012704}
+  _dailyTab: {fileID: 1528092480}
+  _weeklyTab: {fileID: 420399445}
+  _eternalTab: {fileID: 555823849}
+  _eventsTab: {fileID: 1412174000}
+  _dailyUnderline: {fileID: 1955657473}
+  _weeklyUnderline: {fileID: 469593718}
+  _eternalUnderline: {fileID: 1677380958}
+  _eventsUnderline: {fileID: 1418282572}
 --- !u!1001 &997616025
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7130,9 +7155,9 @@ RectTransform:
   - {fileID: 689705206}
   m_Father: {fileID: 2123401710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 570, y: -220}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1126063377
@@ -7391,9 +7416,9 @@ RectTransform:
   - {fileID: 581437373}
   m_Father: {fileID: 2123401710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 570, y: -565}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1140000276
@@ -7604,9 +7629,9 @@ RectTransform:
   - {fileID: 438755427}
   m_Father: {fileID: 2123401710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 570, y: -680}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184256330
@@ -8538,6 +8563,7 @@ MonoBehaviour:
   _shopButton: {fileID: 1638817507}
   _achievementsButton: {fileID: 1093515450}
   _shopWindow: {fileID: 8883328}
+  _achievementsWindow: {fileID: 956457090}
   _shopUnderline: {fileID: 1382436586}
   _achievementsUnderline: {fileID: 1303990040}
 --- !u!1 &1382436586
@@ -9706,7 +9732,7 @@ GameObject:
   - component: {fileID: 1528092483}
   - component: {fileID: 1528092482}
   m_Layer: 5
-  m_Name: Day Scroll View
+  m_Name: Daily Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10085,7 +10111,7 @@ GameObject:
   - component: {fileID: 1553998309}
   - component: {fileID: 1553998308}
   m_Layer: 5
-  m_Name: Permonently
+  m_Name: Eternal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10228,9 +10254,9 @@ RectTransform:
   - {fileID: 932909878}
   m_Father: {fileID: 2123401710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 570, y: -450}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559687239
@@ -10302,6 +10328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _locationManager: {fileID: 1214208110}
   _shopWindow: {fileID: 8883330}
+  _achievementsWindow: {fileID: 956457095}
   _skillsConfig: {fileID: 11400000, guid: 8fd99ec8ee049004bbb4a37cc6f06146, type: 2}
   _downPanelManager: {fileID: 1370758326}
   _skillShop: {fileID: 1195242127}
@@ -10356,9 +10383,9 @@ RectTransform:
   - {fileID: 124698208}
   m_Father: {fileID: 2123401710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 570, y: -335}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583727936
@@ -11154,9 +11181,9 @@ RectTransform:
   - {fileID: 1526662210}
   m_Father: {fileID: 2123401710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 570, y: -910}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1784222933
@@ -11834,7 +11861,7 @@ GameObject:
   - component: {fileID: 1826484831}
   - component: {fileID: 1826484830}
   m_Layer: 5
-  m_Name: Dayly
+  m_Name: Daily
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13548,6 +13575,10 @@ PrefabInstance:
     - target: {fileID: 5037314588456948108, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5083491298033262568, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5109980535213083727, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
       propertyPath: m_AnchorMax.y

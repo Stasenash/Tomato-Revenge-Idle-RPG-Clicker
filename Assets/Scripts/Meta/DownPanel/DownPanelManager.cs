@@ -11,6 +11,7 @@ namespace Game.DownPanel
         [SerializeField] private Button _achievementsButton;
         
         [SerializeField] private GameObject _shopWindow;
+        [SerializeField] private GameObject _achievementsWindow;
         
         [SerializeField] private GameObject _shopUnderline;
         [SerializeField] private GameObject _achievementsUnderline;
@@ -25,25 +26,27 @@ namespace Game.DownPanel
             _shopButton.onClick.AddListener(() => OpenOrCloseShop());
             _achievementsButton.onClick.AddListener(() => OpenOrCloseAchievements());
         }
-
+        
         private void OpenOrCloseAchievements()
         {
             isShopOpen = false;
             _shopWindow.SetActive(isShopOpen);
             _shopUnderline.SetActive(isShopOpen);
             
-            
+            isAchievementsOpen = !isAchievementsOpen;
+            _achievementsWindow.SetActive(isAchievementsOpen);
+            _achievementsUnderline.SetActive(isAchievementsOpen);
         }
 
         private void OpenOrCloseShop()
         {
+            isAchievementsOpen = false;
+            _achievementsWindow.SetActive(isAchievementsOpen);
+            _achievementsUnderline.SetActive(isAchievementsOpen);
+            
             isShopOpen = !isShopOpen;
             _shopWindow.SetActive(isShopOpen);
             _shopUnderline.SetActive(isShopOpen);
-
-            isAchievementsOpen = false;
-            //_achievementsWindow.SetActive(isAchievementsOpen);
-            //_achievements.SetActive(isAchievementsOpen);
         }
         
         
