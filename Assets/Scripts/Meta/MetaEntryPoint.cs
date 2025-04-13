@@ -7,6 +7,7 @@ using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using Meta.Achievements;
 using Meta.Locations;
+using Meta.Profile;
 using Meta.Shop;
 using SceneManagement;
 using UnityEditor;
@@ -24,6 +25,7 @@ namespace Meta
         [SerializeField] private AchievementsWindow _achievementsWindow;
         [SerializeField] private SkillsConfig _skillsConfig;
         [SerializeField] private DownPanelManager _downPanelManager;
+        [SerializeField] private ProfileWindow _profileWindow;
         [SerializeField] private SkillShop _skillShop;
         [SerializeField] private SkillShopWindow _skillShopWindow;
         [SerializeField] private HeroStatsConfig _heroStatsConfig;
@@ -42,6 +44,7 @@ namespace Meta
             _downPanelManager.Initialize();
             _shopWindow.Initialize();
             _achievementsWindow.Initialize();
+            _profileWindow.Initialize();
             _skillShop.Initialize(_saveSystem, _skillsConfig);
             _skillShopWindow.Initialize();
             
