@@ -75,7 +75,7 @@ MonoBehaviour:
       Trigger: 4
       Cost: 150
       SkillType: 3
-  - Id: GreatBlackSky
+  - Id: ScarletFlash
     Sprite: {fileID: -7607823371933320373, guid: 361cbb71a83ee1946b5c1747f02082a1, type: 3}
     SkillLevels:
     - Level: 0

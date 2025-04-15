@@ -48,13 +48,8 @@ namespace Meta
             _profileWindow.Initialize((Stats)_saveSystem.GetData(SavableObjectType.Stats));
             _skillShop.Initialize(_saveSystem, _skillsConfig);
             _skillShopWindow.Initialize();
-            _skillShop.OnSkillsChanged += () =>
-            {
-                new DamageCalculator(_heroStatsConfig, _saveSystem, _skillsConfig).ApplySkills();
-                _saveSystem.SaveData(SavableObjectType.Stats);
-                //перерисовка статов
-                _profileWindow.UpdateValues((Stats)_saveSystem.GetData(SavableObjectType.Stats));
-            };
+            UpdateStats();
+            _skillShop.OnSkillsChanged += UpdateStats;
             
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
@@ -62,6 +57,14 @@ namespace Meta
             //_audioManager.PlayClip(AudioNames.BackgroundMetaMusic)
             
             
+        }
+
+        private void UpdateStats()
+        {
+            new DamageCalculator(_heroStatsConfig, _saveSystem, _skillsConfig).ApplySkills();
+            _saveSystem.SaveData(SavableObjectType.Stats);
+            //перерисовка статов
+            _profileWindow.UpdateValues((Stats)_saveSystem.GetData(SavableObjectType.Stats));
         }
 
         private void StartLevel(int location, int level)

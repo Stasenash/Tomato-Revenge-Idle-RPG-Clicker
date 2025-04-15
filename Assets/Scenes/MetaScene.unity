@@ -13567,6 +13567,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -100
       objectReference: {fileID: 0}
+    - target: {fileID: 4143250956260873670, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+      propertyPath: SkillId
+      value: ScarletFlash
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143250956260873670, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+      propertyPath: _skillImage
+      value: 
+      objectReference: {fileID: 613405612937999348, guid: ccadb3a52eea4a04aa151ceb2d42a56a, type: 3}
     - target: {fileID: 4623651622950059451, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

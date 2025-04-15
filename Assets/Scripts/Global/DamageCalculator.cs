@@ -26,6 +26,7 @@ namespace Global
         public DamageCalculator(SaveSystem.SaveSystem saveSystem, HeroStatsConfig heroHeroConfig)
         {
             _saveSystem = saveSystem;
+            _heroHeroConfig = heroHeroConfig;
         }
 
         public void ResetStats()
