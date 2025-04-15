@@ -51,7 +51,8 @@ namespace Meta
             _skillShop.OnSkillsChanged += () =>
             {
                 new DamageCalculator(_heroStatsConfig, _saveSystem, _skillsConfig).ApplySkills();
-                //перерисовка магазина и статов
+                _saveSystem.SaveData(SavableObjectType.Stats);
+                //перерисовка статов
                 _profileWindow.UpdateValues((Stats)_saveSystem.GetData(SavableObjectType.Stats));
             };
             

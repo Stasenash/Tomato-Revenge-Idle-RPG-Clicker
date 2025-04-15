@@ -76,7 +76,6 @@ namespace Global
                 switch (skill.SkillType)
                 {
                     case SkillType.Active:
-                        stats.Damage += skill.Value;
                         break;
                     case SkillType.CritChance:
                         stats.CritChance += skill.Value + _heroHeroConfig.BaseCritChance;
