@@ -3625,6 +3625,10 @@ PrefabInstance:
       value: 221.26001
       objectReference: {fileID: 0}
     - target: {fileID: 8030035308178762379, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: _rspConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 37c3f1c5752123243810be27197f660b, type: 2}
+    - target: {fileID: 8030035308178762379, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: _levelsConfig
       value: 
       objectReference: {fileID: 11400000, guid: ba14e3f2e1062304cb9703d5c5334dd2, type: 2}

@@ -1,5 +1,6 @@
 using Game.Click_Button;
 using Game.Configs;
+using Game.Configs.Enemies_Configs;
 using Game.Configs.HeroConfigs;
 using Game.Configs.LevelConfigs;
 using Game.Configs.SkillsConfigs;
@@ -26,6 +27,7 @@ namespace Game
         [SerializeField] private GamePanelManager _gamePanelManager;
         [SerializeField] private SkillsConfig _skillsConfig;
         [SerializeField] private HeroStatsConfig _heroStatsConfig;
+        [SerializeField] private RSPConfig _rspConfig;
 
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
@@ -104,7 +106,7 @@ namespace Game
             _gamePanelManager.Initialize();
             
             var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);
-            _skillSystem = new SkillSystem(openedSkills, _skillsConfig, _enemyManager, _saveSystem);
+            _skillSystem = new SkillSystem(_enemyManager, _saveSystem, _heroStatsConfig, _rspConfig);
             _clickButtonManager.Inizialize(_skillSystem);
             _endLevelSystem =
                 new EndLevelSystem(_endLevelWindow, _saveSystem, _gameEnterParams, _levelsConfig, _isBoss);

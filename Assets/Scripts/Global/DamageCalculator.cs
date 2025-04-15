@@ -19,6 +19,13 @@ namespace Global
             _heroHeroConfig = heroConfig;
             _saveSystem = saveSystem;
             _skillsConfig = skillsConfig;
+            ResetStats();
+            ApplySkills();
+        }
+
+        public DamageCalculator(SaveSystem.SaveSystem saveSystem, HeroStatsConfig heroHeroConfig)
+        {
+            _saveSystem = saveSystem;
         }
 
         public void ResetStats()
@@ -59,6 +66,27 @@ namespace Global
 
             return maxSkillLevels;
         }
+
+        
+        public float CalculateTotalDamage()
+        {
+            var stats = (Stats)_saveSystem.GetData(SavableObjectType.Stats);
+            float damage =  stats.Damage;
+            if (CheckChance(stats.CritChance))
+                damage += stats.CritMultiplier * stats.Damage;
+            if (CheckChance(stats.X2Chance))
+                damage += 2 * stats.Damage;
+            if (CheckChance(stats.InstantKillChance))
+                damage += 100000000;
+            return damage;
+        }
+
+        private bool CheckChance(float chance)
+        {
+            var random = UnityEngine.Random.Range(0f, 1f);
+            return random <= chance;
+        }
+        
         public void ApplySkills()
         {
             ResetStats();

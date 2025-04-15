@@ -18,12 +18,18 @@ namespace Game.Configs.Enemies_Configs
            return _dataMap[from][to] * damage;
         }
 
+        
         private void FillDataMap()
         {
-            _dataMap = new();
+            _dataMap = new Dictionary<TechniqueType, Dictionary<TechniqueType, float>>();
+
             foreach (var data in _data)
             {
-                _dataMap[data.From] ??= new();
+                if (!_dataMap.ContainsKey(data.From))
+                {
+                    _dataMap[data.From] = new Dictionary<TechniqueType, float>();
+                }
+
                 _dataMap[data.From][data.To] = data.Multiplier;
             }
         }

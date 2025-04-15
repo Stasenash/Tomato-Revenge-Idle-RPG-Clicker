@@ -13,60 +13,78 @@ MonoBehaviour:
   m_Name: SkillsConfig
   m_EditorClassIdentifier: 
   Skills:
-  - Id: ExtraDamageSkill
+  - Id: TaijutsuDamageSkill
     Sprite: {fileID: 7675826601332790545, guid: e7b25f9179ccad9429069f46e8fadc6d, type: 3}
     SkillLevels:
     - Level: 0
       Value: 1
       Trigger: 1
-      TriggerValue: 0
       Cost: 100
       SkillType: 8
     - Level: 1
       Value: 2
       Trigger: 1
-      TriggerValue: 0
       Cost: 150
-      SkillType: 8
+      SkillType: 0
     - Level: 2
       Value: 4
       Trigger: 1
-      TriggerValue: 0
       Cost: 150
-      SkillType: 8
+      SkillType: 0
     - Level: 3
       Value: 8
       Trigger: 1
-      TriggerValue: 0
       Cost: 150
-      SkillType: 8
-  - Id: TaijutsuSkill
+      SkillType: 0
+  - Id: NinjutsuDamageSkill
     Sprite: {fileID: -5820101530527839704, guid: 1f5d95114de03c04ea6546a92fe3e685, type: 3}
     SkillLevels:
     - Level: 0
       Value: 1
       Trigger: 6
-      TriggerValue: 0
       Cost: 100
       SkillType: 0
     - Level: 1
       Value: 2
       Trigger: 6
-      TriggerValue: 0
+      Cost: 150
+      SkillType: 0
+  - Id: GenjutsuDamageSkill
+    Sprite: {fileID: -7607823371933320373, guid: 361cbb71a83ee1946b5c1747f02082a1, type: 3}
+    SkillLevels:
+    - Level: 0
+      Value: 1
+      Trigger: 3
+      Cost: 100
+      SkillType: 0
+    - Level: 1
+      Value: 3
+      Trigger: 3
       Cost: 150
       SkillType: 0
   - Id: GreatBlackSky
     Sprite: {fileID: -7607823371933320373, guid: 361cbb71a83ee1946b5c1747f02082a1, type: 3}
     SkillLevels:
     - Level: 0
-      Value: 1
-      Trigger: 6
-      TriggerValue: 0
-      Cost: 100
-      SkillType: 0
-    - Level: 1
       Value: 3
-      Trigger: 6
-      TriggerValue: 0
+      Trigger: 4
+      Cost: 100
+      SkillType: 3
+    - Level: 1
+      Value: 5
+      Trigger: 4
       Cost: 150
-      SkillType: 0
+      SkillType: 3
+  - Id: GreatBlackSky
+    Sprite: {fileID: -7607823371933320373, guid: 361cbb71a83ee1946b5c1747f02082a1, type: 3}
+    SkillLevels:
+    - Level: 0
+      Value: 0.1
+      Trigger: 4
+      Cost: 101
+      SkillType: 1
+    - Level: 1
+      Value: 0.2
+      Trigger: 4
+      Cost: 150
+      SkillType: 1

@@ -22,10 +22,9 @@ namespace Game.Click_Button
             _taijutsuButton.SubscribeOnClick(()=>
             {
                 skillSystem.InvokeTrigger(SkillTrigger.OnTaijutsu);
-                skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
             });
-            _ninjutsuButton.SubscribeOnClick(()=>skillSystem.InvokeTrigger(SkillTrigger.OnDamage));
-            _genjutsuButton.SubscribeOnClick(()=>skillSystem.InvokeTrigger(SkillTrigger.OnNinjutsu));
+            _ninjutsuButton.SubscribeOnClick(()=>skillSystem.InvokeTrigger(SkillTrigger.OnNinjutsu));
+            _genjutsuButton.SubscribeOnClick(()=>skillSystem.InvokeTrigger(SkillTrigger.OnGenjutsu));
             
             //_clickButton.SubscribeOnClick(AnimateClick);
         }

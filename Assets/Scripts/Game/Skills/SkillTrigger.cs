@@ -2,14 +2,9 @@
 {
     public enum SkillTrigger
     {
-        OnDamage = 1,
-        OnDead = 2,
-        OnTime = 3,
-        OnTimerLeft = 4,
-        OnStart = 5,
-        OnTaijutsu = 6,
-        OnNinjutsu = 7,
-        OnGenjutsu = 8,
-        OnPassive = 9,
+        OnTaijutsu = 1,
+        OnNinjutsu = 2,
+        OnGenjutsu = 3,
+        Passive = 4
     }
 }
