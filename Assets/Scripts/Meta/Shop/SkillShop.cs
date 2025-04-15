@@ -3,6 +3,7 @@ using Game.Configs.SkillsConfigs;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Meta.Shop
@@ -17,6 +18,7 @@ namespace Meta.Shop
         private SkillsConfig _skillsConfig;
         private SaveSystem _saveSystem;
         
+        public event UnityAction OnSkillsChanged;
 
         public void Initialize(SaveSystem saveSystem, SkillsConfig skillsConfig)
         {
@@ -58,7 +60,7 @@ namespace Meta.Shop
             var skillWithLevel = _openedSkills.GetOrCreateSkillWithLevel(skillId);
             skillWithLevel.Level++;
             _wallet.Coins -= cost;
-           
+            OnSkillsChanged?.Invoke();
             _saveSystem.SaveData(SavableObjectType.Wallet);
             _saveSystem.SaveData(SavableObjectType.OpenedSkills);
             ShowShopItems();

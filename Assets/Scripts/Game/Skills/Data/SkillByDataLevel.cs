@@ -10,5 +10,6 @@ namespace Game.Skills.Data
         public SkillTrigger Trigger;
         public float TriggerValue;
         public int Cost;
+        public SkillType SkillType;
     }
 }

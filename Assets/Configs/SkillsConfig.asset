@@ -21,11 +21,25 @@ MonoBehaviour:
       Trigger: 1
       TriggerValue: 0
       Cost: 100
+      SkillType: 0
     - Level: 1
       Value: 2
       Trigger: 1
       TriggerValue: 0
       Cost: 150
+      SkillType: 0
+    - Level: 2
+      Value: 4
+      Trigger: 1
+      TriggerValue: 0
+      Cost: 150
+      SkillType: 0
+    - Level: 3
+      Value: 8
+      Trigger: 1
+      TriggerValue: 0
+      Cost: 150
+      SkillType: 0
   - Id: TaijutsuSkill
     Sprite: {fileID: -5820101530527839704, guid: 1f5d95114de03c04ea6546a92fe3e685, type: 3}
     SkillLevels:
@@ -34,11 +48,13 @@ MonoBehaviour:
       Trigger: 6
       TriggerValue: 0
       Cost: 100
+      SkillType: 0
     - Level: 1
       Value: 2
       Trigger: 6
       TriggerValue: 0
       Cost: 150
+      SkillType: 0
   - Id: GreatBlackSky
     Sprite: {fileID: -7607823371933320373, guid: 361cbb71a83ee1946b5c1747f02082a1, type: 3}
     SkillLevels:
@@ -47,8 +63,10 @@ MonoBehaviour:
       Trigger: 6
       TriggerValue: 0
       Cost: 100
+      SkillType: 0
     - Level: 1
       Value: 3
       Trigger: 6
       TriggerValue: 0
       Cost: 150
+      SkillType: 0

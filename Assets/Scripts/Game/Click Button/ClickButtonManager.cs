@@ -24,7 +24,7 @@ namespace Game.Click_Button
                 skillSystem.InvokeTrigger(SkillTrigger.OnTaijutsu);
                 skillSystem.InvokeTrigger(SkillTrigger.OnDamage);
             });
-            _ninjutsuButton.SubscribeOnClick(()=>skillSystem.InvokeTrigger(SkillTrigger.OnNinjutsu));
+            _ninjutsuButton.SubscribeOnClick(()=>skillSystem.InvokeTrigger(SkillTrigger.OnDamage));
             _genjutsuButton.SubscribeOnClick(()=>skillSystem.InvokeTrigger(SkillTrigger.OnNinjutsu));
             
             //_clickButton.SubscribeOnClick(AnimateClick);

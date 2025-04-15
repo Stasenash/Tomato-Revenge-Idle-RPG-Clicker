@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Global.SaveSystem.SavableObjects;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,10 +20,11 @@ namespace Meta.Profile
 
         private bool _isProfileOpen;
 
-        public void Initialize()
+        public void Initialize(Stats stats)
         {
             _isProfileOpen = false;
             InitializeValues();
+            UpdateValues(stats);
             _profilePanel.SetActive(_isProfileOpen);
             _profileButton.onClick.AddListener(() => OpenProfile());
         }
@@ -42,6 +44,17 @@ namespace Meta.Profile
             _comboChanceValue.text = "0";
             _killChanceValue.text = "0";
             _2xChanceValue.text = "0";
+        }
+
+        public void UpdateValues(Stats stats)
+        {
+            _damageValue.text = stats.Damage.ToString();
+            _criticalChanceValue.text = stats.CritChance.ToString();
+            _criticalMultiplierValue.text = stats.CritMultiplier.ToString();
+            _passiveDamageValue.text = stats.PassiveDamage.ToString();
+            _comboChanceValue.text = stats.ComboChance.ToString();
+            _killChanceValue.text = stats.InstantKillChance.ToString();
+            _2xChanceValue.text = stats.X2Chance.ToString();
         }
     }
 }

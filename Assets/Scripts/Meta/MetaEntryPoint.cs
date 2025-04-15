@@ -2,6 +2,7 @@
 using Game.Configs.HeroConfigs;
 using Game.Configs.SkillsConfigs;
 using Game.DownPanel;
+using Global;
 using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
@@ -44,29 +45,27 @@ namespace Meta
             _downPanelManager.Initialize();
             _shopWindow.Initialize();
             _achievementsWindow.Initialize();
-            _profileWindow.Initialize();
+            _profileWindow.Initialize((Stats)_saveSystem.GetData(SavableObjectType.Stats));
             _skillShop.Initialize(_saveSystem, _skillsConfig);
             _skillShopWindow.Initialize();
+            _skillShop.OnSkillsChanged += () =>
+            {
+                new DamageCalculator(_heroStatsConfig, _saveSystem, _skillsConfig).ApplySkills();
+                //перерисовка магазина и статов
+                _profileWindow.UpdateValues((Stats)_saveSystem.GetData(SavableObjectType.Stats));
+            };
             
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
             _locationManager.Initialize(progress, StartLevel);
             //_audioManager.PlayClip(AudioNames.BackgroundMetaMusic)
             
-            var stats = (Stats)_saveSystem.GetData(SavableObjectType.Stats);
-            if (stats.Damage == 0)
-            {
-                stats.Damage = _heroStatsConfig.BaseDamage;
-                stats.CritChance = _heroStatsConfig.BaseCritChance;
-                stats.CritMultiplier = _heroStatsConfig.BaseCritMultiplier;
-                stats.PassiveDamage = _heroStatsConfig.BasePassiveDamage;
-                
-                _saveSystem.SaveData(SavableObjectType.Stats);
-            }
+            
         }
 
         private void StartLevel(int location, int level)
         {
+            //todo: перед загрузкой уровня надо менять дамаг и все такое
             _sceneLoader.LoadGameplayScene(new GameEnterParams(location, level));
         }
     }

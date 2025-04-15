@@ -44,7 +44,6 @@ namespace Game.Skills
             }
         }
         
-        
         private void RegisterSkill(SkillWithLevel skill)
         {
             var skillData = _skillsConfig.GetSkillData(skill.Id, skill.Level);
