@@ -20,21 +20,26 @@ MonoBehaviour:
       Value: 1
       Trigger: 1
       Cost: 100
-      SkillType: 8
+      SkillType: 0
     - Level: 1
       Value: 2
       Trigger: 1
       Cost: 150
       SkillType: 0
     - Level: 2
-      Value: 4
+      Value: 3
       Trigger: 1
-      Cost: 150
+      Cost: 225
       SkillType: 0
     - Level: 3
-      Value: 8
+      Value: 4
       Trigger: 1
-      Cost: 150
+      Cost: 340
+      SkillType: 0
+    - Level: 4
+      Value: 5
+      Trigger: 1
+      Cost: 510
       SkillType: 0
   - Id: NinjutsuDamageSkill
     Sprite: {fileID: -5820101530527839704, guid: 1f5d95114de03c04ea6546a92fe3e685, type: 3}
@@ -63,28 +68,198 @@ MonoBehaviour:
       Cost: 150
       SkillType: 0
   - Id: GreatBlackSky
-    Sprite: {fileID: -7607823371933320373, guid: 361cbb71a83ee1946b5c1747f02082a1, type: 3}
+    Sprite: {fileID: -6406029971490766853, guid: 2ef2e2ab6cbc36444ab2320746bf667b, type: 3}
     SkillLevels:
     - Level: 0
-      Value: 3
+      Value: 1
       Trigger: 4
       Cost: 100
       SkillType: 3
     - Level: 1
-      Value: 5
+      Value: 2
       Trigger: 4
       Cost: 150
       SkillType: 3
+    - Level: 2
+      Value: 4
+      Trigger: 4
+      Cost: 225
+      SkillType: 3
+    - Level: 3
+      Value: 8
+      Trigger: 4
+      Cost: 340
+      SkillType: 3
+    - Level: 4
+      Value: 10
+      Trigger: 4
+      Cost: 510
+      SkillType: 3
   - Id: ScarletFlash
-    Sprite: {fileID: -7607823371933320373, guid: 361cbb71a83ee1946b5c1747f02082a1, type: 3}
+    Sprite: {fileID: 8295897176027835124, guid: 89cff9bd4080da3449b9c47644215468, type: 3}
     SkillLevels:
     - Level: 0
-      Value: 0.1
+      Value: 0.05
       Trigger: 4
-      Cost: 101
+      Cost: 100
       SkillType: 1
     - Level: 1
-      Value: 0.2
+      Value: 0.07
       Trigger: 4
       Cost: 150
       SkillType: 1
+    - Level: 2
+      Value: 0.1
+      Trigger: 4
+      Cost: 225
+      SkillType: 1
+    - Level: 3
+      Value: 0.12
+      Trigger: 4
+      Cost: 340
+      SkillType: 1
+    - Level: 4
+      Value: 0.15
+      Trigger: 4
+      Cost: 510
+      SkillType: 1
+  - Id: MultipleSmokeCloning
+    Sprite: {fileID: 6129229511842999135, guid: 473d0a1a6fae4c146bbb29fc6fd3824e, type: 3}
+    SkillLevels:
+    - Level: 0
+      Value: 0.05
+      Trigger: 4
+      Cost: 100
+      SkillType: 7
+    - Level: 1
+      Value: 0.07
+      Trigger: 4
+      Cost: 150
+      SkillType: 7
+    - Level: 2
+      Value: 0.1
+      Trigger: 4
+      Cost: 225
+      SkillType: 7
+    - Level: 3
+      Value: 0.12
+      Trigger: 4
+      Cost: 340
+      SkillType: 7
+    - Level: 4
+      Value: 0.15
+      Trigger: 4
+      Cost: 510
+      SkillType: 7
+  - Id: SilentFist
+    Sprite: {fileID: -1899164571505412056, guid: 3450ffa48bed84749a4562f4367cccc2, type: 3}
+    SkillLevels:
+    - Level: 0
+      Value: 1
+      Trigger: 4
+      Cost: 100
+      SkillType: 8
+    - Level: 1
+      Value: 2
+      Trigger: 4
+      Cost: 150
+      SkillType: 8
+    - Level: 2
+      Value: 4
+      Trigger: 4
+      Cost: 225
+      SkillType: 8
+    - Level: 3
+      Value: 8
+      Trigger: 4
+      Cost: 340
+      SkillType: 8
+    - Level: 4
+      Value: 16
+      Trigger: 4
+      Cost: 510
+      SkillType: 8
+  - Id: ParalyzingFlute
+    Sprite: {fileID: 5462237021199456871, guid: 4b7c233ce2bf67b4db55cab1efbde4ea, type: 3}
+    SkillLevels:
+    - Level: 0
+      Value: 0.05
+      Trigger: 4
+      Cost: 100
+      SkillType: 7
+    - Level: 1
+      Value: 0.07
+      Trigger: 4
+      Cost: 150
+      SkillType: 7
+    - Level: 2
+      Value: 0.1
+      Trigger: 4
+      Cost: 225
+      SkillType: 7
+    - Level: 3
+      Value: 0.12
+      Trigger: 4
+      Cost: 340
+      SkillType: 7
+    - Level: 4
+      Value: 0.15
+      Trigger: 4
+      Cost: 510
+      SkillType: 7
+  - Id: DemonicIllusion
+    Sprite: {fileID: 8804220869007655518, guid: 0deb9ee3423a19649bff90ad6e8fa5e7, type: 3}
+    SkillLevels:
+    - Level: 0
+      Value: 0.05
+      Trigger: 4
+      Cost: 100
+      SkillType: 6
+    - Level: 1
+      Value: 0.07
+      Trigger: 4
+      Cost: 150
+      SkillType: 6
+    - Level: 2
+      Value: 0.1
+      Trigger: 4
+      Cost: 225
+      SkillType: 6
+    - Level: 3
+      Value: 0.12
+      Trigger: 4
+      Cost: 340
+      SkillType: 6
+    - Level: 4
+      Value: 0.15
+      Trigger: 4
+      Cost: 510
+      SkillType: 6
+  - Id: MindTrick
+    Sprite: {fileID: -8949549116738716853, guid: a4023d7cae4acb1499a574e84e5885cc, type: 3}
+    SkillLevels:
+    - Level: 0
+      Value: 0.01
+      Trigger: 4
+      Cost: 100
+      SkillType: 5
+    - Level: 1
+      Value: 0.02
+      Trigger: 4
+      Cost: 150
+      SkillType: 5
+    - Level: 2
+      Value: 0.05
+      Trigger: 4
+      Cost: 225
+      SkillType: 5
+    - Level: 3
+      Value: 0.07
+      Trigger: 4
+      Cost: 340
+      SkillType: 5
+    - Level: 4
+      Value: 0.1
+      Trigger: 4
+      Cost: 510
+      SkillType: 5

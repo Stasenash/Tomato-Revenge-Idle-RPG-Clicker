@@ -75,6 +75,7 @@ namespace Game
                 if (_gameEnterParams.Location >= _levelsConfig.GetMaxLocationNum())
                 {
                     Debug.Log("Game passed");
+                    //todo: возврат на карту
                 }
                 else
                 {
@@ -84,8 +85,10 @@ namespace Game
             else
             {
                 gameParams = new GameEnterParams(_gameEnterParams.Location, _gameEnterParams.Level + 1);
-            }
+            } 
             _sceneLoader.LoadGameplayScene(gameParams);
+            
+            
         }
 
         public override void Run(SceneEnterParams enterParams)
@@ -108,16 +111,16 @@ namespace Game
             var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);
             _skillSystem = new SkillSystem(_enemyManager, _saveSystem, _heroStatsConfig, _rspConfig);
             _clickButtonManager.Inizialize(_skillSystem);
+            
+            
             _endLevelSystem =
                 new EndLevelSystem(_endLevelWindow, _saveSystem, _gameEnterParams, _levelsConfig, _isBoss);
-            
+            _enemyManager.OnLevelPassed += _endLevelSystem.LevelPassed;
             
             _endLevelWindow.OnRestartButtonClicked += RestartLevel; //подписка на кнопку рестарта
             
             _endLevelWindow.OnNextButtonClicked += StartNextLevel;
             _endLevelSystem.OnStartNextLevel += StartNextLevel;
-            
-            _enemyManager.OnLevelPassed += _endLevelSystem.LevelPassed;
             
             _endLevelWindow.OnBackButtonClicked += ReturnToMap;
             _gamePanelManager.OnLoseButtonClicked += ReturnToMap;

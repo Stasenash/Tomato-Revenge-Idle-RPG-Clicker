@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Extensions;
 
 namespace Global.SaveSystem.SavableObjects
 {
+	[Serializable]
 	public class OpenedSkills : ISavable
 	{
 		public List<SkillWithLevel> Skills = new();
