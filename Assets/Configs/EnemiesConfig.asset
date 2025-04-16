@@ -42,3 +42,45 @@ MonoBehaviour:
     Sprite: {fileID: 954505266292841594, guid: 6cece3640518bd14cb472d591abf6ad6, type: 3}
   - Id: nut_bow
     Sprite: {fileID: -970033854670006865, guid: 77c7c9d8ff632d448a81e0bf4fb18db2, type: 3}
+  - Id: nut_muscle
+    Sprite: {fileID: -8286065388925015485, guid: b1a509835c65a6d4fa1b67c44c5b68fc, type: 3}
+  - Id: nut_grey
+    Sprite: {fileID: -8650999616071765562, guid: fb1c4e0136f7c9047b34040b975635f6, type: 3}
+  - Id: nut_almond
+    Sprite: {fileID: -2796877655539317444, guid: d7f74b511a5acdc4186982e23f6e38d3, type: 3}
+  - Id: nut_grumpy
+    Sprite: {fileID: -6568454798934986372, guid: ef810b859305d2f44a02d246f4c077bd, type: 3}
+  - Id: veg_onion
+    Sprite: {fileID: -8539063999925458223, guid: 85cef2ba0934c9a46b89f01a8feac03c, type: 3}
+  - Id: veg_pumpkin
+    Sprite: {fileID: -2424200384634135391, guid: 59180fef312c1d645b4d868e1cc50ac8, type: 3}
+  - Id: veg_onion_teen
+    Sprite: {fileID: -7721938869297971947, guid: 6ff6f8c841ff8214fbf00695fdd8e64f, type: 3}
+  - Id: veg_warrior_onion
+    Sprite: {fileID: 2413945031062046738, guid: 53037323799559d42896d03d89ceb59e, type: 3}
+  - Id: veg_big_beet
+    Sprite: {fileID: 1655430385278576055, guid: ca2793c30f491b440bdc2482eacb2c6e, type: 3}
+  - Id: veg_green_beet
+    Sprite: {fileID: 3216894812310242582, guid: 08cb3246ae74d0540aa8236eea58bc22, type: 3}
+  - Id: veg_beet
+    Sprite: {fileID: -5247836196502974281, guid: 9ad0e528fd3a0de47afee2b3ce1cff5d, type: 3}
+  - Id: veg_salad
+    Sprite: {fileID: -4960203610583448807, guid: 3c5caa4de2699f948a1d62c81e5cfb45, type: 3}
+  - Id: veg_artichock_2
+    Sprite: {fileID: -838390316586171726, guid: 14a378fc209dcd140a7a59e22e1badf1, type: 3}
+  - Id: veg_artichock
+    Sprite: {fileID: -7528352419928788763, guid: c1f229395a34a2e468ac3a4aefd30d65, type: 3}
+  - Id: veg_creepy_pumpkin
+    Sprite: {fileID: -7887651791421468583, guid: b17f92bc0f7de674095f406e883a37f3, type: 3}
+  - Id: veg_tentacles_pumpkin
+    Sprite: {fileID: -7275036804754334143, guid: cb755a366a7c87947accbebeaf0f8d7d, type: 3}
+  - Id: veg_evil_beet
+    Sprite: {fileID: 2597327934600866292, guid: f6c0e2be84e098449adaafda1b8a8a57, type: 3}
+  - Id: veg_crazy_zucchini
+    Sprite: {fileID: 8063154261064234133, guid: 8a20cc55ac84e5d47a9daa48cb5d67a5, type: 3}
+  - Id: fruit_mandarine
+    Sprite: {fileID: 5811094125913457231, guid: 340b160fb3437564abf627f2fbc58b0a, type: 3}
+  - Id: fruit_mini_orange
+    Sprite: {fileID: -6876587498947221549, guid: c88a7c84931286b478aa272e5338a7da, type: 3}
+  - Id: fruit_mini_pineapple
+    Sprite: {fileID: -7910511692211432037, guid: 5fe682e921a86f74c9b388014c0870ab, type: 3}
