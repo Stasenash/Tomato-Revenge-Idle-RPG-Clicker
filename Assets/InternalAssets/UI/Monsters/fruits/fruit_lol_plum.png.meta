@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_lol_plum_0: 9166807741804682244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      veg_cucumber_0: -8075049216187526726
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

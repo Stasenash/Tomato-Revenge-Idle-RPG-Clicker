@@ -210,7 +210,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_shocked_plum_0: 7562821223533296818
+      fruit_shocked_plum_1: 6960079588770923480
+      fruit_shocked_plum_2: -7639523361422457123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

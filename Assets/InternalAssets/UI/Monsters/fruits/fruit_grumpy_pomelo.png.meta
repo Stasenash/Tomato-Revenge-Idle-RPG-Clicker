@@ -235,7 +235,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_grumpy_pomelo_0: -1751237021255075613
+      fruit_grumpy_pomelo_1: -580039559627378011
+      fruit_grumpy_pomelo_2: -412938276071404376
+      fruit_grumpy_pomelo_3: -7057395724603794244
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 using Extensions;
-using Game.Enemies;
-using NUnit.Framework;
 using UnityEngine;
 
-namespace Game.Configs.Enemies_Configs
+namespace Game.RSPConfig
 {
     [CreateAssetMenu(menuName = "Configs/RSPConfig", fileName = "RSPConfig")]
     public class RSPConfig : ScriptableObject

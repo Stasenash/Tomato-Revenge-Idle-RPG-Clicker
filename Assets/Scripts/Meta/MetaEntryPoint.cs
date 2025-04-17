@@ -1,12 +1,12 @@
 ﻿using Game.Configs;
 using Game.Configs.HeroConfigs;
 using Game.Configs.SkillsConfigs;
-using Game.DownPanel;
 using Global;
 using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using Meta.Achievements;
+using Meta.DownPanel;
 using Meta.Locations;
 using Meta.Profile;
 using Meta.Shop;

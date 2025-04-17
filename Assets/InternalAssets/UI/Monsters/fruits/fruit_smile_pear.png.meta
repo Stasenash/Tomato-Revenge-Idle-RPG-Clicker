@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_smile_pear_0: 5935772712403614659
+      fruit_smile_pear_1: 3718779091243882845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

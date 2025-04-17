@@ -260,7 +260,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_grapefruit_0: -5759705661469576979
+      fruit_grapefruit_1: 5800813870028867796
+      fruit_grapefruit_2: -572430946972023261
+      fruit_grapefruit_3: 2435514813138691001
+      fruit_grapefruit_4: -2877218489084952425
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

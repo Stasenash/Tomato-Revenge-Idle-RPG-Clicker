@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_odd_pineapple_0: -4385469664507146544
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

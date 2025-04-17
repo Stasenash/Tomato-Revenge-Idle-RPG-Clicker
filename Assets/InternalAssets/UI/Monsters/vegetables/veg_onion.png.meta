@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      veg_onion_0: -8539063999925458223
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

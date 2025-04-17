@@ -4,7 +4,6 @@ using Game.Configs.Enemies_Configs;
 using Game.Configs.HeroConfigs;
 using Game.Configs.LevelConfigs;
 using Game.Configs.SkillsConfigs;
-using Game.DownPanel;
 using Game.Enemies;
 using Game.Skills;
 using Global;
@@ -29,7 +28,7 @@ namespace Game
         [SerializeField] private GamePanelManager _gamePanelManager;
         [SerializeField] private SkillsConfig _skillsConfig;
         [SerializeField] private HeroStatsConfig _heroStatsConfig;
-        [SerializeField] private RSPConfig _rspConfig;
+        [SerializeField] private RSPConfig.RSPConfig _rspConfig;
 
         [SerializeField] private TextMeshProUGUI _levelText;
         

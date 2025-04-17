@@ -1,7 +1,7 @@
 ﻿using System;
-using UnityEngine.Serialization;
+using Game.RSPConfig;
 
-namespace Game.Enemies {
+namespace Game.Configs.LevelConfigs {
     [Serializable]
     public struct EnemySpawnData {
         public string Id;

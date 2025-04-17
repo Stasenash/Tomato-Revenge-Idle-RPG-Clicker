@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruitlevelbtn2_0: -3874553520523337950
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

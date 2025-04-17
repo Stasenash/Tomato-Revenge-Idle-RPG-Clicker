@@ -210,7 +210,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_kiwi_0: -4615756232869800164
+      fruit_kiwi_1: 6285245924967677294
+      fruit_kiwi_2: 7096904510831223787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

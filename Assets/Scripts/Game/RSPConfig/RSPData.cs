@@ -1,7 +1,6 @@
 ﻿using System;
-using Game.Enemies;
 
-namespace Game.Configs.Enemies_Configs
+namespace Game.RSPConfig
 {
     [Serializable]
     public struct RSPData

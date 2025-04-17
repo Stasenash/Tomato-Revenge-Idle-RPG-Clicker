@@ -8,6 +8,6 @@ namespace Game.Skills
     public class SkillScope
     {
         public EnemyManager EnemyManager;
-        public RSPConfig RSPConfig;
+        public RSPConfig.RSPConfig RSPConfig;
     }
 }

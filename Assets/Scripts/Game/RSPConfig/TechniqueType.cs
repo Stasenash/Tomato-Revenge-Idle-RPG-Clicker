@@ -1,4 +1,4 @@
-﻿namespace Game.Enemies
+﻿namespace Game.RSPConfig
 {
     public enum TechniqueType
     {

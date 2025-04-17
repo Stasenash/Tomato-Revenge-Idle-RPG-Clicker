@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      veg_artichoke_0: -7528352419928788763
+      veg_artichoke_1: -3126803936389233500
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

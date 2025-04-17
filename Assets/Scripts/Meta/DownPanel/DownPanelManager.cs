@@ -1,9 +1,7 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.DownPanel
+namespace Meta.DownPanel
 {
     public class DownPanelManager : MonoBehaviour
     {

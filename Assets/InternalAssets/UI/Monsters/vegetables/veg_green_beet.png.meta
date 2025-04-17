@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      veg_green_beet_0: 3216894812310242582
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

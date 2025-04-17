@@ -310,7 +310,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_smiling_orange_0: -8803278173308793489
+      fruit_smiling_orange_1: 2578866530132019975
+      fruit_smiling_orange_2: 1053288478766886299
+      fruit_smiling_orange_3: -2416644090708102499
+      fruit_smiling_orange_4: 8266748713159968059
+      fruit_smiling_orange_5: -251907899663175703
+      fruit_smiling_orange_6: -8521433015398013534
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

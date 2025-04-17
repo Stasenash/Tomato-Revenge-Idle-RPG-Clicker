@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      cypress_0: -8827742246383061390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

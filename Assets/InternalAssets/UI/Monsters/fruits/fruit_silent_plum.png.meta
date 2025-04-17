@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_silent_plum_0: 8428021521570745051
+      fruit_silent_plum_1: 5140416417983078313
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

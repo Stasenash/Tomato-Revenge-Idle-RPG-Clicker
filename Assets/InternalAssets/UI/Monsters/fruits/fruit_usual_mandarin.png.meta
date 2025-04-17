@@ -260,7 +260,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_usual_mandarin_0: -6245308973432266859
+      fruit_usual_mandarin_1: -2300343525028478493
+      fruit_usual_mandarin_2: -6079073069786071511
+      fruit_usual_mandarin_3: 4493239991412052420
+      fruit_usual_mandarin_4: 3602090697621575634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

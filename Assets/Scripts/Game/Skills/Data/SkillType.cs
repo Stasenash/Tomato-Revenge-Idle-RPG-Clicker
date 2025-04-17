@@ -1,4 +1,4 @@
-﻿namespace Game.Skills
+﻿namespace Game.Skills.Data
 {
     public enum SkillType
         {

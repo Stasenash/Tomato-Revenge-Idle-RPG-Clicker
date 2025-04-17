@@ -1,10 +1,11 @@
 ﻿using Game.Configs;
 using Game.Configs.Enemies_Configs;
 using Game.Configs.LevelConfigs;
+using Game.RSPConfig;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using EnemyData = Game.Configs.LevelConfigs.EnemyData;
+using EnemyData = Game.Enemies.EnemyData;
 
 namespace Game.Enemies
 {

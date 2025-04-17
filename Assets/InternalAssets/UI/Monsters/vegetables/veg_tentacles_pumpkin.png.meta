@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      veg_tentacles_pumpkin_0: -7275036804754334143
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      nutslevelsbtn2_0: -5820101530527839704
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

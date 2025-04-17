@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fruit_tired_pear_0: 5878245272418314826
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
