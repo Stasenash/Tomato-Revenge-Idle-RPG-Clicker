@@ -14,6 +14,7 @@ using SceneManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Game
 {
@@ -23,6 +24,7 @@ namespace Game
         [SerializeField] private EnemyManager _enemyManager;
         [SerializeField] private HealthBar.HealthBar _healthBar;
         [SerializeField] private Timer.Timer _timer;
+        [SerializeField] private Image _timerImage;
         [SerializeField] private EndLevelWindow.EndLevelWindow _endLevelWindow;
         [SerializeField] private LevelsConfig _levelsConfig;
         [SerializeField] private GamePanelManager _gamePanelManager;
@@ -116,7 +118,7 @@ namespace Game
                 return;
             }
             _gameEnterParams = gameEnterParams;
-            _enemyManager.Initialize(_healthBar, _timer);
+            _enemyManager.Initialize(_healthBar, _timer, _timerImage);
             _endLevelWindow.Initialize();  
             _gamePanelManager.Initialize();
             

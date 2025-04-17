@@ -20,12 +20,14 @@ namespace Game.Enemies
         private LevelData _levelData;
         private int _currentEnemyIndex;
         private TechniqueType _currentEnemyTechniqueType;
+        private Image _timerImage;
 
         public event UnityAction<bool> OnLevelPassed;
     
-        public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer)
+        public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer, Image timerImage)
         {
             _timer = timer;
+            _timerImage = timerImage;
             _healthBar = healthBar;
         }
         
@@ -56,6 +58,7 @@ namespace Game.Enemies
         {
             _timer.Stop();
             _timer.SetActive(false);
+            _timerImage.gameObject.SetActive(false);
             _currentEnemyIndex++;
 
             if (_currentEnemyIndex >= _levelData.Enemies.Count)
@@ -71,6 +74,7 @@ namespace Game.Enemies
             if (currentEnemy.IsBoss)
             {
                 _timer.SetActive(true);
+                _timerImage.gameObject.SetActive(true);
                 _timer.Initialize(currentEnemy.BossTime);
                 _timer.OnTimerEnd += () => OnLevelPassed?.Invoke(false);
             }
