@@ -1,5 +1,7 @@
+using System;
 using Game.Enemies;
 using Game.RSPConfig;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,11 +15,14 @@ namespace Game.HealthBar
         [SerializeField] private Sprite ninjutsuSprite;
         [SerializeField] private Sprite genjutsuSprite;
         [SerializeField] private Sprite taijutsuSprite;
+        
+        [SerializeField] private TextMeshProUGUI _healthText;
 
         public void SetMaxValue(float value)
         {
             _healthSlider.maxValue = value;
             _healthSlider.value = value;
+            _healthText.text = _healthSlider.value.ToString();
         }
         
         public void SetSpriteForTechnique(TechniqueType techniqueType)
@@ -41,6 +46,8 @@ namespace Game.HealthBar
         public void DecreaseValue(float value)
         {
             _healthSlider.value -= value;
+            _healthText.text = (Math.Ceiling(_healthSlider.value) + 1).ToString();
+            
         }
     
     
