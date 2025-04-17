@@ -89,7 +89,7 @@ namespace Game
                 if (_gameEnterParams.Location >= _levelsConfig.GetMaxLocationNum())
                 {
                     Debug.Log("Game passed");
-                    //todo: возврат на карту
+                    ReturnToMap();
                 }
                 else
                 {
