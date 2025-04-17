@@ -14,6 +14,7 @@ namespace Game.EndLevelWindow
         [SerializeField] private Button _winNextButton;
         
         [SerializeField] private Button _winBackButton;
+        [SerializeField] private Button _loseBackButton;
     
         [SerializeField] private AudioSource _loseSound;
         [SerializeField] private AudioSource _winSound;
@@ -29,6 +30,7 @@ namespace Game.EndLevelWindow
             _loseRestartButton.onClick.AddListener(() => Restart());
             _winNextButton.onClick.AddListener(() => NextLevel());
             _winBackButton.onClick.AddListener((() => Back()));
+            _loseBackButton.onClick.AddListener((() => Back()));
         }
 
         private void Back()
