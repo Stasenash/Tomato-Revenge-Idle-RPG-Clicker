@@ -21,7 +21,7 @@ namespace Game.Enemies
    
       public StatisticsManager statisticsManager;
    
-      public void Initialize(Sprite sprite, float health)
+      public void Initialize(Sprite sprite, float health, TechniqueType techniqueType)
       {
          image.sprite =sprite;
          _health = health;

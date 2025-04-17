@@ -3763,6 +3763,22 @@ PrefabInstance:
       propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1796985138416174639, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: genjutsuSprite
+      value: 
+      objectReference: {fileID: 6628930455957081417, guid: c195c02f15265e845803e060ec759867, type: 3}
+    - target: {fileID: 1796985138416174639, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: ninjutsuSprite
+      value: 
+      objectReference: {fileID: -7755262187070527139, guid: 9a2893816e8664046aba97c0d2c03183, type: 3}
+    - target: {fileID: 1796985138416174639, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: taijutsuSprite
+      value: 
+      objectReference: {fileID: 5652184272575706678, guid: 7f1c1d51546e93848a34c4e135b5487c, type: 3}
+    - target: {fileID: 1796985138416174639, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
+      propertyPath: _techniqueImage
+      value: 
+      objectReference: {fileID: 1381919504}
     - target: {fileID: 2025218501372258641, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_Name
       value: GameScreen
@@ -3773,7 +3789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3145134296171840940, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3391912462248325531, guid: 933fa5c93ed41d94f8ba5df4047ba0a0, type: 3}
       propertyPath: m_TagString

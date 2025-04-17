@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Enemies;
 using UnityEngine;
 
 namespace Game.Configs.Enemies_Configs

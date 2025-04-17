@@ -4,6 +4,7 @@ using Game.Configs.LevelConfigs;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using EnemyData = Game.Configs.LevelConfigs.EnemyData;
 
 namespace Game.Enemies
 {
@@ -75,17 +76,18 @@ namespace Game.Enemies
             
             var _currentEnemyData = _enemiesConfig.GetEnemy(currentEnemy.Id); 
             
-            InitHeathBar(currentEnemy.Hp);
+            InitHeathBar(currentEnemy.Hp, _currentEnemyTechniqueType);
             
         
-            _currentEnemyMonoBehavior.Initialize(_currentEnemyData.Sprite, currentEnemy.Hp);
+            _currentEnemyMonoBehavior.Initialize(_currentEnemyData.Sprite, currentEnemy.Hp, currentEnemy.TechniqueType);
         
         }
 
-        private void InitHeathBar(float health)
+        private void InitHeathBar(float health, TechniqueType currentTechniqueType)
         {
             _healthBar.Show();
             _healthBar.SetMaxValue(health);
+            _healthBar.SetSpriteForTechnique(currentTechniqueType);
         }
     
         public void DamageCurrentEnemy(float damage)
