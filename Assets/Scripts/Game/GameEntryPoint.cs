@@ -11,6 +11,7 @@ using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using SceneManagement;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,6 +30,8 @@ namespace Game
         [SerializeField] private HeroStatsConfig _heroStatsConfig;
         [SerializeField] private RSPConfig _rspConfig;
 
+        [SerializeField] private TextMeshProUGUI _levelText;
+        
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
         private SkillSystem _skillSystem;
@@ -41,6 +44,10 @@ namespace Game
         private void StartLevel()
         {
             var _maxLocationAndLevel = _levelsConfig.GetMaxLocationAndLevel();
+            
+            var locationTitle = GetLevelAndLocationTitle();
+            _levelText.text = locationTitle;
+            
             var location = _gameEnterParams.Location;
             var level = _gameEnterParams.Level;
 
@@ -67,8 +74,14 @@ namespace Game
             }
         }
 
+        private string GetLevelAndLocationTitle()
+        {
+            return _levelsConfig.GetLocationName(_gameEnterParams.Location) + " - уровень: " + (_gameEnterParams.Level + 1);
+        }
         public void StartNextLevel()
         {
+            var locationTitle = GetLevelAndLocationTitle();
+            _levelText.text = locationTitle;
             GameEnterParams gameParams = _gameEnterParams;
             if (_gameEnterParams.Level >= _levelsConfig.GetMaxLevelOnLocation(_gameEnterParams.Location))
             {

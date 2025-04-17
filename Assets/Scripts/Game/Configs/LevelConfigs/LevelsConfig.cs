@@ -48,6 +48,19 @@ namespace Game.Configs.LevelConfigs {
             return locationAndLevel;
         }
 
+        public string GetLocationName(int location)
+        {
+            switch (location)
+            {
+                case 0: return "Деревня грибов";
+                case 1: return "Деревня орехов";
+                case 2: return "Деревня овощей";
+                case 3: return "Деревня фруктов";
+            }
+
+            return "Незнакомая локация";
+        }
+
         private void FillLevelMap()
         {
             _levelsMap = new();
