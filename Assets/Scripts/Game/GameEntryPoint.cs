@@ -7,6 +7,7 @@ using Game.Configs.SkillsConfigs;
 using Game.DownPanel;
 using Game.Enemies;
 using Game.Skills;
+using Global;
 using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
@@ -38,8 +39,6 @@ namespace Game
         private EndLevelSystem _endLevelSystem;
         private AudioManager _audioManager;
         private SceneLoader _sceneLoader;
-        
-        private bool _isBoss;
 
         private void StartLevel()
         {
@@ -67,10 +66,11 @@ namespace Game
 
         private void _isLevelHasABoss(LevelData levelData)
         {
+            DataKeeper.IsBoss = false;
             foreach (var enemy in levelData.Enemies)
             {
                 if (enemy.IsBoss)
-                    _isBoss = true;
+                    DataKeeper.IsBoss = true;
             }
         }
 
@@ -127,7 +127,7 @@ namespace Game
             
             
             _endLevelSystem =
-                new EndLevelSystem(_endLevelWindow, _saveSystem, _gameEnterParams, _levelsConfig, _isBoss);
+                new EndLevelSystem(_endLevelWindow, _saveSystem, _gameEnterParams, _levelsConfig);
             _enemyManager.OnLevelPassed += _endLevelSystem.LevelPassed;
             
             _endLevelWindow.OnRestartButtonClicked += RestartLevel; //подписка на кнопку рестарта

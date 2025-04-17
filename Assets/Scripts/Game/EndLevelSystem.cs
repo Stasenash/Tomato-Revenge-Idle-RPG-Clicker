@@ -1,5 +1,6 @@
 ﻿using Game.Configs;
 using Game.Configs.LevelConfigs;
+using Global;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using SceneManagement;
@@ -14,19 +15,16 @@ namespace Game
         private readonly SaveSystem _saveSystem;
         private readonly GameEnterParams _gameEnterParams;
         private readonly LevelsConfig _levelsConfig;
-        private readonly bool _isBoss;
     
         public event UnityAction OnStartNextLevel;
 
         public EndLevelSystem(EndLevelWindow.EndLevelWindow endLevelWindow, SaveSystem saveSystem,
-            GameEnterParams gameEnterParams, LevelsConfig levelsConfig, bool isBoss)
+            GameEnterParams gameEnterParams, LevelsConfig levelsConfig)
         {
             _levelsConfig = levelsConfig;
             _endLevelWindow = endLevelWindow;
             _saveSystem = saveSystem;
             _gameEnterParams = gameEnterParams;
-            _isBoss = isBoss;
-            
         }
         
         public void LevelPassed(bool isPassed)
@@ -34,7 +32,7 @@ namespace Game
             if (isPassed)
             {
                 TrySaveProgress();
-                if (_isBoss)
+                if (DataKeeper.IsBoss)
                 {
                     _endLevelWindow.ShowWinLevelWindow();
                 }
@@ -43,7 +41,7 @@ namespace Game
                     OnStartNextLevel?.Invoke();
                 }
             }
-            else if(_isBoss)
+            else if(DataKeeper.IsBoss)
             {
                 _endLevelWindow.ShowLoseLevelWindow();
             }
