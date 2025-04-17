@@ -2,6 +2,7 @@
 using Game.Configs.SkillsConfigs;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -24,15 +25,23 @@ namespace Meta.Shop
         [SerializeField] private GameObject _buffsUnderline;
         [SerializeField] private GameObject _itemsUnderline;
         [SerializeField] private GameObject _coinsUnderline;
+        
+        [SerializeField] private TextMeshProUGUI _coinsText;
 
-        public void Initialize()
+        public void Initialize(int coins)
         {
             _skillsTabButton.onClick.AddListener(() => ShowTab(_skillsTab, _skillsUnderline));
             _buffsTabButton.onClick.AddListener(() => ShowTab(_buffsTab,_buffsUnderline));
             _itemsTabButton.onClick.AddListener(() => ShowTab(_itemsTab, _itemsUnderline));
             _coinsTabButton.onClick.AddListener(() => ShowTab(_coinsTab, _coinsUnderline));
+            SetCoinsText(coins);
             CloseAllTabs();
             SetMainTabActive();
+        }
+
+        public void SetCoinsText(int coins)
+        {
+            _coinsText.text = ": " + coins;
         }
 
         private void SetMainTabActive()

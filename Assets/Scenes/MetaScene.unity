@@ -13567,6 +13567,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -100
       objectReference: {fileID: 0}
+    - target: {fileID: 3753032608945554311, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+      propertyPath: _coinsText
+      value: 
+      objectReference: {fileID: 8975439796235499506}
     - target: {fileID: 4143250956260873670, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
       propertyPath: SkillId
       value: ScarletFlash
@@ -13736,6 +13740,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+--- !u!114 &8975439796235499506 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1176778864885350771, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+  m_PrefabInstance: {fileID: 8975439796235499505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

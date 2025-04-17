@@ -43,13 +43,19 @@ namespace Meta
             _sceneLoader = commonObject.SceneLoader;
             
             _downPanelManager.Initialize();
-            _shopWindow.Initialize();
+            var wallet = (Wallet) _saveSystem.GetData(SavableObjectType.Wallet);
+            _shopWindow.Initialize(wallet.Coins);
+            
             _achievementsWindow.Initialize();
             _profileWindow.Initialize((Stats)_saveSystem.GetData(SavableObjectType.Stats));
             _skillShop.Initialize(_saveSystem, _skillsConfig);
             _skillShopWindow.Initialize();
             UpdateStats();
-            _skillShop.OnSkillsChanged += UpdateStats;
+            _skillShop.OnSkillsChanged += () =>
+            {
+                UpdateStats();
+                _shopWindow.SetCoinsText(((Wallet)_saveSystem.GetData(SavableObjectType.Wallet)).Coins);
+            };
             
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
