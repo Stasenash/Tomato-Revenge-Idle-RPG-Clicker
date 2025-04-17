@@ -56,6 +56,13 @@ namespace Meta.Shop
             tab.SetActive(true);
             underline.SetActive(true);
         }
+
+        public void ShowCoinsTab()
+        {
+            CloseAllTabs();
+            _coinsTab.SetActive(true);
+            _coinsUnderline.SetActive(true);
+        }
         
         private void CloseAllTabs()
         {

@@ -48,7 +48,7 @@ namespace Meta
             
             _achievementsWindow.Initialize();
             _profileWindow.Initialize((Stats)_saveSystem.GetData(SavableObjectType.Stats));
-            _skillShop.Initialize(_saveSystem, _skillsConfig);
+            _skillShop.Initialize(_saveSystem, _skillsConfig, _shopWindow);
             _skillShopWindow.Initialize();
             UpdateStats();
             _skillShop.OnSkillsChanged += () =>

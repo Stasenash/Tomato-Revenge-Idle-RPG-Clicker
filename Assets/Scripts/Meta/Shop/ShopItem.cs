@@ -21,7 +21,8 @@ namespace Meta.Shop
                                 string description, 
                                 int cost,
                                 bool isEnoughMoney,
-                                bool isMaxLevel)
+                                bool isMaxLevel, 
+                                ShopWindow shopWindow)
         {
             _button.onClick.RemoveAllListeners();
             _button.onClick.AddListener(()=>onClick.Invoke(SkillId));
@@ -35,10 +36,16 @@ namespace Meta.Shop
                 _button.interactable = false;
                 return;
             }
-            
+
+            if (!isEnoughMoney)
+            {
+                _button.onClick.RemoveAllListeners();
+                _button.onClick.AddListener(shopWindow.ShowCoinsTab);
+            }
+
             _cost.text = cost.ToString();
             _cost.color = isEnoughMoney ? Color.black : Color.red;
-            _button.interactable = isEnoughMoney;
+            //_button.interactable = isEnoughMoney;
         }
     }
 }

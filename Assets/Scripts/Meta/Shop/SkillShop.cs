@@ -17,15 +17,18 @@ namespace Meta.Shop
         private OpenedSkills _openedSkills;
         private SkillsConfig _skillsConfig;
         private SaveSystem _saveSystem;
+        private ShopWindow _shopWindow;
         
         public event UnityAction OnSkillsChanged;
 
-        public void Initialize(SaveSystem saveSystem, SkillsConfig skillsConfig)
+        public void Initialize(SaveSystem saveSystem, SkillsConfig skillsConfig, ShopWindow shopWindow)
         {
             _saveSystem = saveSystem;
             _wallet = (Wallet)saveSystem.GetData(SavableObjectType.Wallet);
             _openedSkills = (OpenedSkills)saveSystem.GetData(SavableObjectType.OpenedSkills);
             _skillsConfig = skillsConfig;
+            _shopWindow = shopWindow;
+            
             InitializeItemMap();
             ShowShopItems();
         }
@@ -41,7 +44,7 @@ namespace Meta.Shop
                 _itemsMap[skillData.Id].Initialize((skillId)=>SkillUpgrade(skillId, skillDataByLevel.Cost), 
                     skillData.Sprite, "", skillDataByLevel.Cost, 
                     _wallet.Coins >= skillDataByLevel.Cost, 
-                    skillData.isMaxLevel(skillWithLevel.Level));
+                    skillData.isMaxLevel(skillWithLevel.Level), _shopWindow);
             }
         }
 
