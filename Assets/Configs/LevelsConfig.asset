@@ -318,3 +318,153 @@ MonoBehaviour:
       TechniqueType: 1
     Reward: 16
     Background: {fileID: 4174961495967281301, guid: 6b366f9a4580ef845879ff230dde6723, type: 3}
+  - Location: 3
+    LevelNumber: 0
+    Enemies:
+    - Id: fruit_mandarine
+      Hp: 17637
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 1
+    - Id: fruit_mini_orange
+      Hp: 21165
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 0
+    - Id: fruit_mini_pineapple
+      Hp: 25398
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 2
+    Reward: 16
+    Background: {fileID: -1468263264399175510, guid: a2793f5283631474797ece58410906dd, type: 3}
+  - Location: 3
+    LevelNumber: 1
+    Enemies:
+    - Id: fruit_orange
+      Hp: 30477
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 0
+    - Id: fruit_pear
+      Hp: 36573
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 1
+    Reward: 16
+    Background: {fileID: -1468263264399175510, guid: a2793f5283631474797ece58410906dd, type: 3}
+  - Location: 3
+    LevelNumber: 2
+    Enemies:
+    - Id: fruit_grapefruit
+      Hp: 43887
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 1
+    - Id: fruit_grumpy_pomelo
+      Hp: 52665
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 2
+    Reward: 16
+    Background: {fileID: 7768835113922375065, guid: 470a0f0a0c1e3714dbaec9088b3fbd24, type: 3}
+  - Location: 3
+    LevelNumber: 3
+    Enemies:
+    - Id: fruit_smile_pear
+      Hp: 63197
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 0
+    - Id: fruit_tired_pear
+      Hp: 75837
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 1
+    - Id: fruit_fat_pear
+      Hp: 91004
+      IsBoss: 1
+      BossTime: 20
+      TechniqueType: 1
+    Reward: 16
+    Background: {fileID: 7768835113922375065, guid: 470a0f0a0c1e3714dbaec9088b3fbd24, type: 3}
+  - Location: 3
+    LevelNumber: 4
+    Enemies:
+    - Id: fruit_lol_plum
+      Hp: 109205
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 2
+    - Id: fruit_strange_plum
+      Hp: 131046
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 0
+    - Id: fruit_shocked_plum
+      Hp: 157256
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 2
+    Reward: 16
+    Background: {fileID: 5457862090850240931, guid: c217932bc365cc7438c56840516daa93, type: 3}
+  - Location: 3
+    LevelNumber: 5
+    Enemies:
+    - Id: fruit_mango
+      Hp: 188707
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 1
+    - Id: fruit_smiling_orange
+      Hp: 226448
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 0
+    - Id: fruit_kiwi
+      Hp: 271738
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 1
+    - Id: fruit_lemon
+      Hp: 326085
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 2
+    Reward: 16
+    Background: {fileID: 5457862090850240931, guid: c217932bc365cc7438c56840516daa93, type: 3}
+  - Location: 3
+    LevelNumber: 6
+    Enemies:
+    - Id: fruit_pomelo
+      Hp: 391302
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 2
+    - Id: fruit_banana
+      Hp: 469563
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 0
+    - Id: fruit_yarik_banana
+      Hp: 563475
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 0
+    - Id: fruit_pineapple
+      Hp: 676170
+      IsBoss: 1
+      BossTime: 30
+      TechniqueType: 2
+    - Id: fruit_odd_pineapple
+      Hp: 811404
+      IsBoss: 1
+      BossTime: 30
+      TechniqueType: 0
+    - Id: fruit_crazy_pineapple
+      Hp: 973685
+      IsBoss: 1
+      BossTime: 30
+      TechniqueType: 1
+    Reward: 16
+    Background: {fileID: -5342952666887353405, guid: 81ae4bf440881094ea5b9fd4d9e1a83d, type: 3}

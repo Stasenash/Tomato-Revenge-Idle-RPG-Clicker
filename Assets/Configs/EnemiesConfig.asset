@@ -84,3 +84,43 @@ MonoBehaviour:
     Sprite: {fileID: -6876587498947221549, guid: c88a7c84931286b478aa272e5338a7da, type: 3}
   - Id: fruit_mini_pineapple
     Sprite: {fileID: -7910511692211432037, guid: 5fe682e921a86f74c9b388014c0870ab, type: 3}
+  - Id: fruit_orange
+    Sprite: {fileID: 361475955312932934, guid: 48329cb396ecc8f47b40964a477fa32f, type: 3}
+  - Id: fruit_pear
+    Sprite: {fileID: 3817159687658880847, guid: 3c5b2307a56f6034aa68aa7abf57a30c, type: 3}
+  - Id: fruit_grapefruit
+    Sprite: {fileID: -5759705661469576979, guid: e3428467142db2748af2c8a0a236e076, type: 3}
+  - Id: fruit_grumpy_pomelo
+    Sprite: {fileID: -1751237021255075613, guid: 960b4a982c22e6041a32df670734df4d, type: 3}
+  - Id: fruit_smile_pear
+    Sprite: {fileID: 5935772712403614659, guid: e3c8fdc7f04cc434fbd03e97d6e28e46, type: 3}
+  - Id: fruit_tired_pear
+    Sprite: {fileID: 5878245272418314826, guid: 52dbc9b22f50df44cb299a3dccfc5419, type: 3}
+  - Id: fruit_fat_pear
+    Sprite: {fileID: -1270319718915812780, guid: 8bae5e6d6bb620f4c9a219203943b31e, type: 3}
+  - Id: fruit_lol_plum
+    Sprite: {fileID: 9166807741804682244, guid: c22f4fad656054045abd0393fcf45ec2, type: 3}
+  - Id: fruit_strange_plum
+    Sprite: {fileID: 8343294822679284198, guid: f6785e59060164f4cb386bedac9c6e63, type: 3}
+  - Id: fruit_shocked_plum
+    Sprite: {fileID: 7562821223533296818, guid: d11ab2d2d87f01e4abb0b3c6e1b9bf5b, type: 3}
+  - Id: fruit_mango
+    Sprite: {fileID: -58149820555030909, guid: adfd3fd276ea4f84a97120e3b98c2404, type: 3}
+  - Id: fruit_smiling_orange
+    Sprite: {fileID: -8803278173308793489, guid: 394853cf2b004a744a13f042e13df29f, type: 3}
+  - Id: fruit_kiwi
+    Sprite: {fileID: -4615756232869800164, guid: 123c1528c34103b49a8913f32e54e3d1, type: 3}
+  - Id: fruit_lemon
+    Sprite: {fileID: -6096696902508907536, guid: 7f3ff2be3eec4de4aa0b2bbe357c5a98, type: 3}
+  - Id: fruit_pomelo
+    Sprite: {fileID: 5782666882197835428, guid: 660e924f3df29f3409aaa6363fc7499e, type: 3}
+  - Id: fruit_banana
+    Sprite: {fileID: 764880012322990482, guid: b969a01cee111304bb5a30a40995360e, type: 3}
+  - Id: fruit_yarik_banana
+    Sprite: {fileID: 556791045768354241, guid: b176679cf4947f443a7aa5a006c1de75, type: 3}
+  - Id: fruit_pineapple
+    Sprite: {fileID: 6159133546464396256, guid: 60e6ff2f2a75385428c381830cdefe7f, type: 3}
+  - Id: fruit_odd_pineapple
+    Sprite: {fileID: -4385469664507146544, guid: 6759bb95b1d94fd43be88cc1d53bf632, type: 3}
+  - Id: fruit_crazy_pineapple
+    Sprite: {fileID: -8926087949809730358, guid: 44474411f77e33a4c89ccfb51cff7aa7, type: 3}
