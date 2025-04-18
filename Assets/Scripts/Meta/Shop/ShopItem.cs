@@ -18,7 +18,6 @@ namespace Meta.Shop
         
         public void Initialize(UnityAction<string> onClick, 
                                 Sprite skillImage, 
-                                string description, 
                                 int cost,
                                 bool isEnoughMoney,
                                 bool isMaxLevel, 
@@ -28,7 +27,6 @@ namespace Meta.Shop
             _button.onClick.AddListener(()=>onClick.Invoke(SkillId));
             
             _skillImage = skillImage;
-            _description.text = description;
             
             if (isMaxLevel)
             {
