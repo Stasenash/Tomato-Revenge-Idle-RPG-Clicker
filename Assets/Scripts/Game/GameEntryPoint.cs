@@ -90,6 +90,7 @@ namespace Game
                 {
                     Debug.Log("Game passed");
                     ReturnToMap();
+                    return;
                 }
                 else
                 {

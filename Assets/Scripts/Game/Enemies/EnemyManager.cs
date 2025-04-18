@@ -39,8 +39,8 @@ namespace Game.Enemies
             if (_currentEnemyMonoBehavior == null)
             {
                 _currentEnemyMonoBehavior = Instantiate(_enemiesConfig.EnemyPrefab, _enemyContainer);
-                _currentEnemyMonoBehavior.OnDeath += SpawnEnemy;
                 _currentEnemyMonoBehavior.OnDamage += _healthBar.DecreaseValue;
+                _currentEnemyMonoBehavior.OnDeath += SpawnEnemy;
             }
 
             SetBackground();
@@ -80,19 +80,17 @@ namespace Game.Enemies
             }
             
             var _currentEnemyData = _enemiesConfig.GetEnemy(currentEnemy.Id); 
-            
             InitHeathBar(currentEnemy.Hp, _currentEnemyTechniqueType);
-            
-        
             _currentEnemyMonoBehavior.Initialize(_currentEnemyData.Sprite, currentEnemy.Hp, currentEnemy.TechniqueType);
-        
+
         }
 
         private void InitHeathBar(float health, TechniqueType currentTechniqueType)
         {
-            _healthBar.Show();
+            _healthBar.Hide();
             _healthBar.SetMaxValue(health);
             _healthBar.SetSpriteForTechnique(currentTechniqueType);
+            _healthBar.Show();
         }
     
         public void DamageCurrentEnemy(float damage)

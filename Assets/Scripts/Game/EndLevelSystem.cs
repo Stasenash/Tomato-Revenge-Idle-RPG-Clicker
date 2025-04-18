@@ -66,13 +66,20 @@ namespace Game
             //      && progress.CurrentLevel > maxLocationAndLevel.y)) return;
             if (progress.CurrentLevel >= maxLevel)
             {
-                progress.CurrentLevel = 0;
-                progress.CurrentLocation++;
+                if (progress.CurrentLocation < maxLocationAndLevel.x)
+                {
+                    progress.CurrentLocation++;
+                }
+                else
+                {
+                    progress.CurrentLevel = maxLevel;
+                }
             }
             else
             {
                 progress.CurrentLevel++;
             }
+
             
             _saveSystem.SaveData(SavableObjectType.Progress);
             _saveSystem.SaveData(SavableObjectType.Wallet);

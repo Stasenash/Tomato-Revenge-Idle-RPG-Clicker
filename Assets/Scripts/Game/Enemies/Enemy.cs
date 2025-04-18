@@ -39,6 +39,7 @@ namespace Game.Enemies
             statisticsManager.UpdateEnemyStats(0, 1, 1, 0);
             OnDamage?.Invoke(damage);
             OnDeath?.Invoke();
+            return;
          }
          _health -= damage;
       
