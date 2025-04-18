@@ -34,6 +34,7 @@ namespace Game
                 TrySaveProgress();
                 if (DataKeeper.IsBoss)
                 {
+                    var coins = _levelsConfig.GetReward(_gameEnterParams.Location, _gameEnterParams.Level);
                     _endLevelWindow.ShowWinLevelWindow();
                 }
                 else

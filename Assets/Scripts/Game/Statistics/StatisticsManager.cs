@@ -1,68 +1,98 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Game.Enemies;
+using Global;
+using Global.SaveSystem;
 using UnityEngine;
 
 namespace Game.Statistics
 {
     public class StatisticsManager : MonoBehaviour
     {
-        private string filePath;
-        private GameStatistic gameStats;
+        private SaveSystem _saveSystem;
 
-        public void Initialize()
+        public void Initialize(SaveSystem saveSystem)
         {
-            filePath = Path.Combine(Application.persistentDataPath, "gameStats.json");
-            LoadStats();
+            _saveSystem = saveSystem;
         }
 
-        public void SaveStats()
+        public int GetEnemyAttempts(string enemyId)
         {
-            string json = JsonUtility.ToJson(gameStats, true);
-            File.WriteAllText(filePath, json);
-        }
-
-        public void LoadStats()
-        {
-            if (File.Exists(filePath))
+            var gameStats = (Global.SaveSystem.SavableObjects.Statistics)_saveSystem.GetData(SavableObjectType.Statistics);
+            foreach (var enemyStatistic in gameStats.EnemiesStatistics)
             {
-                string json = File.ReadAllText(filePath);
-                gameStats = JsonUtility.FromJson<GameStatistic>(json);
+                if (enemyStatistic.EnemyId == enemyId)
+                    return enemyStatistic.TotalAttempts;
             }
-            else
-            {
-                gameStats = new GameStatistic();
-            }
-        }
 
-        public int GetEnemyAttempts(int enemyId)
-        {
-            return gameStats.Enemies[enemyId].Attempts;
+            return 0;
         } 
     
-        public int GetEnemyHits(int enemyId)
+        public int GetEnemyHits(string enemyId)
         {
-            return gameStats.Enemies[enemyId].Hits;
+            var gameStats = (Global.SaveSystem.SavableObjects.Statistics)_saveSystem.GetData(SavableObjectType.Statistics);
+            foreach (var enemyStatistic in gameStats.EnemiesStatistics)
+            {
+                if (enemyStatistic.EnemyId == enemyId)
+                    return enemyStatistic.TotalHits;
+            }
+
+            return 0;
         } 
     
-        public int GetEnemyDeaths(int enemyId)
+        public int GetEnemyDeaths(string enemyId)
         {
-            return gameStats.Enemies[enemyId].Deaths;
+            var gameStats = (Global.SaveSystem.SavableObjects.Statistics)_saveSystem.GetData(SavableObjectType.Statistics);
+            foreach (var enemyStatistic in gameStats.EnemiesStatistics)
+            {
+                if (enemyStatistic.EnemyId == enemyId)
+                    return enemyStatistic.TotalDeaths;
+            }
+
+            return 0;
         }
 
-        public void UpdateEnemyStats(int enemyId, int hits, int deaths, int attempts)
+        public void UpdateEnemyStats(int hits, int deaths, int attempts)
         {
-            var enemy = Array.Find(gameStats.Enemies, e => e.EnemyId == enemyId);
-            if (enemy == null)
+            var gameStats = (Global.SaveSystem.SavableObjects.Statistics)_saveSystem.GetData(SavableObjectType.Statistics);
+            if (DataKeeper.IsBoss)
             {
-                enemy = new EnemyStatistic { EnemyId = enemyId };
-                Array.Resize(ref gameStats.Enemies, gameStats.Enemies.Length + 1);
-                gameStats.Enemies[gameStats.Enemies.Length - 1] = enemy;
+                var enemyId = DataKeeper.EnemyId;
+                var enemy = gameStats.GetOrCreateEnemyStatistics(enemyId);
+                
+                enemy.TotalAttempts += attempts;
+                enemy.TotalDeaths += deaths;
+                enemy.TotalHits += hits;
+                enemy.TempHits += hits;
+                _saveSystem.SaveData(SavableObjectType.Statistics);
             }
-            enemy.Hits += hits;
-            enemy.Deaths += deaths;
-            enemy.Attempts += attempts;
-            SaveStats();
+        }
+
+        public int GetEnemyTempHits(string enemyId)
+        {
+            var gameStats = (Global.SaveSystem.SavableObjects.Statistics)_saveSystem.GetData(SavableObjectType.Statistics);
+            foreach (var enemyStatistic in gameStats.EnemiesStatistics)
+            {
+                if (enemyStatistic.EnemyId == enemyId)
+                    return enemyStatistic.TempHits;
+            }
+
+            return 0;
+        }
+
+        public void ClearTemp(string enemyId)
+        {
+            var gameStats = (Global.SaveSystem.SavableObjects.Statistics)_saveSystem.GetData(SavableObjectType.Statistics);
+            foreach (var enemyStatistic in gameStats.EnemiesStatistics)
+            {
+                if (enemyStatistic.EnemyId == enemyId)
+                {
+                    enemyStatistic.TempHits = 0;
+                }
+            }
+            _saveSystem.SaveData(SavableObjectType.Statistics);
         }
     }
 }

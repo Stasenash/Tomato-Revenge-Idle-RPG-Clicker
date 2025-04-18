@@ -2,6 +2,9 @@
 using Game.Configs.Enemies_Configs;
 using Game.Configs.LevelConfigs;
 using Game.RSPConfig;
+using Game.Statistics;
+using Global;
+using Global.SaveSystem;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -13,6 +16,7 @@ namespace Game.Enemies
     {
         [SerializeField] private Transform _enemyContainer;
         [SerializeField] private EnemiesConfig _enemiesConfig;
+        [SerializeField] private StatisticsManager _statisticsManager;
         
         private Enemy _currentEnemyMonoBehavior;
         private HealthBar.HealthBar _healthBar;
@@ -21,14 +25,17 @@ namespace Game.Enemies
         private int _currentEnemyIndex;
         private TechniqueType _currentEnemyTechniqueType;
         private Image _timerImage;
+        private SaveSystem _saveSystem;
 
         public event UnityAction<bool> OnLevelPassed;
     
-        public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer, Image timerImage)
+        public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer, Image timerImage, SaveSystem saveSystem)
         {
+            DataKeeper.Reward = 0;
             _timer = timer;
             _timerImage = timerImage;
             _healthBar = healthBar;
+            _saveSystem = saveSystem;
         }
         
         public void StartLevel(LevelData levelData)
@@ -78,11 +85,10 @@ namespace Game.Enemies
                 _timer.Initialize(currentEnemy.BossTime);
                 _timer.OnTimerEnd += () => OnLevelPassed?.Invoke(false);
             }
-            
             var _currentEnemyData = _enemiesConfig.GetEnemy(currentEnemy.Id); 
             InitHeathBar(currentEnemy.Hp, _currentEnemyTechniqueType);
-            _currentEnemyMonoBehavior.Initialize(_currentEnemyData.Sprite, currentEnemy.Hp, currentEnemy.TechniqueType);
-
+            DataKeeper.Reward = _levelData.Reward;
+            _currentEnemyMonoBehavior.Initialize(_currentEnemyData.Sprite, currentEnemy.Hp, currentEnemy.TechniqueType, currentEnemy.Id,_statisticsManager, _saveSystem);
         }
 
         private void InitHeathBar(float health, TechniqueType currentTechniqueType)

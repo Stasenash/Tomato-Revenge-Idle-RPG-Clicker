@@ -13,6 +13,7 @@ namespace Global.SaveSystem
                 { SavableObjectType.Progress, new Progress() },
                 { SavableObjectType.OpenedSkills, new OpenedSkills() },
                 { SavableObjectType.Stats, new Stats() },
+                { SavableObjectType.Statistics, new Statistics() },
             };
 
             LoadData();

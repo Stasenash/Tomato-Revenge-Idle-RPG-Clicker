@@ -1,4 +1,5 @@
 using Game.Statistics;
+using Global.SaveSystem;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -25,8 +26,9 @@ namespace Game.EndLevelWindow
         public event UnityAction OnNextButtonClicked;
         public event UnityAction OnBackButtonClicked;
         
-        public void Initialize()
+        public void Initialize(SaveSystem saveSystem)
         {
+            _statisticsViewer.Initialize(saveSystem);
             _loseRestartButton.onClick.AddListener(() => Restart());
             _winNextButton.onClick.AddListener(() => NextLevel());
             _winBackButton.onClick.AddListener((() => Back()));

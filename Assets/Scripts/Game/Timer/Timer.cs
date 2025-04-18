@@ -1,3 +1,4 @@
+using Global;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;

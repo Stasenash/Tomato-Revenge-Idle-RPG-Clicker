@@ -119,8 +119,8 @@ namespace Game
                 return;
             }
             _gameEnterParams = gameEnterParams;
-            _enemyManager.Initialize(_healthBar, _timer, _timerImage);
-            _endLevelWindow.Initialize();  
+            _enemyManager.Initialize(_healthBar, _timer, _timerImage, _saveSystem);
+            _endLevelWindow.Initialize(_saveSystem);  
             _gamePanelManager.Initialize();
             
             var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);

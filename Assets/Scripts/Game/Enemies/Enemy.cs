@@ -1,6 +1,8 @@
 using DG.Tweening;
 using Game.RSPConfig;
 using Game.Statistics;
+using Global;
+using Global.SaveSystem;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -19,16 +21,21 @@ namespace Game.Enemies
    
       private Color _originalColor;
       private Color _damageColor = Color.red;
-   
-      public StatisticsManager statisticsManager;
-   
-      public void Initialize(Sprite sprite, float health, TechniqueType techniqueType)
+
+      private string _enemyId;
+      
+      private StatisticsManager _statisticsManager;
+
+      public void Initialize(Sprite sprite, float health, TechniqueType techniqueType, string currentEnemyId, StatisticsManager statisticsManager, SaveSystem saveSystem)
       {
+         _enemyId = currentEnemyId;
          image.sprite =sprite;
          _health = health;
          _originalColor = _image.color;
-         statisticsManager.Initialize();
-         statisticsManager.UpdateEnemyStats(0, 0, 0, 1);
+         DataKeeper.EnemyId = currentEnemyId;
+         _statisticsManager = statisticsManager;
+         _statisticsManager.Initialize(saveSystem);
+         _statisticsManager.UpdateEnemyStats(0,0,1);
       }
 
       public void TakeDamage(float damage)
@@ -36,8 +43,8 @@ namespace Game.Enemies
          if (damage >= _health)
          {
             _health = 0;
-            statisticsManager.UpdateEnemyStats(0, 1, 1, 0);
             OnDamage?.Invoke(damage);
+            _statisticsManager.UpdateEnemyStats(0,1,0);
             OnDeath?.Invoke();
             return;
          }
@@ -46,7 +53,7 @@ namespace Game.Enemies
          AnimateDamage(); //потом как-то это отдельно сделать звуки
          _audioSource.Play();
       
-         statisticsManager.UpdateEnemyStats(0, 1, 0, 0);
+         _statisticsManager.UpdateEnemyStats(1,0,0);
          OnDamage?.Invoke(damage);
       }
 
