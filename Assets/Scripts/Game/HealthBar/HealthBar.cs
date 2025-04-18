@@ -47,9 +47,6 @@ namespace Game.HealthBar
         {
             _healthSlider.value -= value;
             _healthText.text = (Math.Ceiling(_healthSlider.value) + 1).ToString();
-            
         }
-    
-    
     }
 }

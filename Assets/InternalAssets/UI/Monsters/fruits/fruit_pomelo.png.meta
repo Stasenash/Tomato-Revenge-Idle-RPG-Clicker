@@ -132,8 +132,8 @@ TextureImporter:
       name: fruit_pomelo_0
       rect:
         serializedVersion: 2
-        x: 55
-        y: 76
+        x: 13
+        y: 48
         width: 211
         height: 41
       alignment: 0
@@ -154,8 +154,8 @@ TextureImporter:
       name: fruit_pomelo_1
       rect:
         serializedVersion: 2
-        x: 68
-        y: 39
+        x: 26
+        y: 11
         width: 775
         height: 1107
       alignment: 0
@@ -185,9 +185,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      fruit_pomelo_0: 5782666882197835428
-      fruit_pomelo_1: 3054309813676987637
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
