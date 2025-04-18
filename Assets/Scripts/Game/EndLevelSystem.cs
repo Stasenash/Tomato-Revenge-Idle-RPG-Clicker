@@ -69,6 +69,7 @@ namespace Game
                 if (progress.CurrentLocation < maxLocationAndLevel.x)
                 {
                     progress.CurrentLocation++;
+                    progress.CurrentLevel = 0;
                 }
                 else
                 {
