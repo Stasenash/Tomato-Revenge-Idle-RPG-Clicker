@@ -71,29 +71,34 @@ MonoBehaviour:
     Sprite: {fileID: -6406029971490766853, guid: 2ef2e2ab6cbc36444ab2320746bf667b, type: 3}
     SkillLevels:
     - Level: 0
-      Value: 1
+      Value: 0
       Trigger: 4
       Cost: 100
       SkillType: 3
     - Level: 1
-      Value: 2
+      Value: 1
       Trigger: 4
       Cost: 150
       SkillType: 3
     - Level: 2
-      Value: 4
+      Value: 2
       Trigger: 4
       Cost: 225
       SkillType: 3
     - Level: 3
-      Value: 8
+      Value: 4
       Trigger: 4
       Cost: 340
       SkillType: 3
     - Level: 4
-      Value: 10
+      Value: 8
       Trigger: 4
       Cost: 510
+      SkillType: 3
+    - Level: 5
+      Value: 10
+      Trigger: 4
+      Cost: 650
       SkillType: 3
   - Id: ScarletFlash
     Sprite: {fileID: 8295897176027835124, guid: 89cff9bd4080da3449b9c47644215468, type: 3}

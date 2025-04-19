@@ -42,7 +42,7 @@ namespace Meta.Shop
             }
 
             _cost.text = cost.ToString();
-            _cost.color = isEnoughMoney ? Color.black : Color.red;
+            _cost.color = isEnoughMoney ? Color.white : Color.red;
             //_button.interactable = isEnoughMoney;
         }
     }
