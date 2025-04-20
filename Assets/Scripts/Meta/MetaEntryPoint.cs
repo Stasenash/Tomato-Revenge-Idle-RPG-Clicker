@@ -67,7 +67,7 @@ namespace Meta
 
         private void UpdateStats()
         {
-            new DamageCalculator(_heroStatsConfig, _saveSystem, _skillsConfig).ApplySkills();
+            new DamageCalculator(_heroStatsConfig, _saveSystem, _skillsConfig);
             _saveSystem.SaveData(SavableObjectType.Stats);
             //перерисовка статов
             _profileWindow.UpdateValues((Stats)_saveSystem.GetData(SavableObjectType.Stats));

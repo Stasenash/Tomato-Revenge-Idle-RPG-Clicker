@@ -99,7 +99,7 @@ namespace Global
             {
                 listSkillDataByLevel.Add(_skillsConfig.GetSkillData(skill.Key, skill.Value));
             }
-
+            
             foreach (var skill in listSkillDataByLevel)
             {
                 switch (skill.SkillType)
@@ -107,13 +107,13 @@ namespace Global
                     case SkillType.Active:
                         break;
                     case SkillType.CritChance:
-                        stats.CritChance += skill.Value + _heroHeroConfig.BaseCritChance;
+                        stats.CritChance += skill.Value;
                         break;
                     case SkillType.CritMultiplier:
-                        stats.CritMultiplier += skill.Value + _heroHeroConfig.BaseCritMultiplier;
+                        stats.CritMultiplier += skill.Value;
                         break;
                     case SkillType.PassiveDamage:
-                        stats.PassiveDamage += skill.Value + _heroHeroConfig.BasePassiveDamage;
+                        stats.PassiveDamage += skill.Value;
                         break;
                     case SkillType.ComboChance:
                         stats.ComboChance = skill.Value;
@@ -125,10 +125,10 @@ namespace Global
                         stats.X2Chance = skill.Value;
                         break;
                     case SkillType.DamagePercents:
-                        stats.Damage += (1 + skill.Value) * _heroHeroConfig.BaseDamage;
+                        stats.Damage *= 1 + skill.Value;
                         break;
                     case SkillType.DamagePoints:
-                        stats.Damage += skill.Value + _heroHeroConfig.BaseDamage;
+                        stats.Damage += skill.Value;
                         break;
                 }
             }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 179bc3883d0342ef99a34d100402dde5, type: 3}
   m_Name: HeroStatsConfig
   m_EditorClassIdentifier: 
-  BaseDamage: 2
-  BaseCritChance: 0.1
-  BaseCritMultiplier: 1.5
+  BaseDamage: 1
+  BaseCritChance: 0.05
+  BaseCritMultiplier: 3
   BasePassiveDamage: 0
