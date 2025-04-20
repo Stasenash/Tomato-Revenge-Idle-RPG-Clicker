@@ -66,10 +66,8 @@ namespace Meta
 
             var intros = (Cutscenes)_saveSystem.GetData(SavableObjectType.Cutscenes);
             _introCutscene.Initialize();
-            _introCutscene.gameObject.SetActive(true);
-            //_introCutscene.gameObject.SetActive(!intros.IsIntroShowed);
-            //if (!intros.IsIntroShowed)
-            if(true)
+            _introCutscene.gameObject.SetActive(!intros.IsIntroShowed);
+            if (!intros.IsIntroShowed)
             {
                 _introCutscene.ShowIntroCutscene();
                 _helper.Initialize();
