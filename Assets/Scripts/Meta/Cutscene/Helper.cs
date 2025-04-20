@@ -14,6 +14,7 @@ namespace Meta.Cutscene
         
         public void Initialize()
         {
+            gameObject.SetActive(true);
             foreach (var frame in _frames)
             {
                 frame.gameObject.SetActive(false);

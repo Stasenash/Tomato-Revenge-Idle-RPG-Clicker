@@ -10,9 +10,11 @@ using Global;
 using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
+using Meta.Cutscene;
 using SceneManagement;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -31,8 +33,10 @@ namespace Game
         [SerializeField] private SkillsConfig _skillsConfig;
         [SerializeField] private HeroStatsConfig _heroStatsConfig;
         [SerializeField] private RSPConfig.RSPConfig _rspConfig;
-
+        [SerializeField] private EndCutscene _endCutscene;
+        
         [SerializeField] private TextMeshProUGUI _levelText;
+        
         
         private GameEnterParams _gameEnterParams;
         private SaveSystem _saveSystem;
@@ -89,7 +93,20 @@ namespace Game
                 if (_gameEnterParams.Location >= _levelsConfig.GetMaxLocationNum())
                 {
                     Debug.Log("Game passed");
-                    ReturnToMap();
+                    var intros = (Cutscenes)_saveSystem.GetData(SavableObjectType.Cutscenes);
+                    _endCutscene.Initialize();
+                    _endCutscene.gameObject.SetActive(!intros.IsEndingShowed);
+                    
+                    if (!intros.IsEndingShowed)
+                    {
+                        _endCutscene.ShowEndCutscene();
+                        intros.IsEndingShowed = true;
+                        _saveSystem.SaveData(SavableObjectType.Cutscenes);
+                    }
+                    else
+                    {
+                        ReturnToMap();
+                    }
                     return;
                 }
                 else
@@ -140,13 +157,15 @@ namespace Game
             _endLevelWindow.OnBackButtonClicked += ReturnToMap;
             _gamePanelManager.OnLoseButtonClicked += ReturnToMap;
 
+            _endCutscene.OnGameEnd += ReturnToMap;
+
             StartLevel();
         }
 
         private void ReturnToMap()
         {
             _sceneLoader.LoadMetaScene();
-        }
+        } 
 
         public void RestartLevel()
         {
