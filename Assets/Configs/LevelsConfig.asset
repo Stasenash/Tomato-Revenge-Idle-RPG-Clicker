@@ -17,7 +17,7 @@ MonoBehaviour:
     LevelNumber: 0
     Enemies:
     - Id: mushroom_rec
-      Hp: 20
+      Hp: 30
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
@@ -27,181 +27,181 @@ MonoBehaviour:
     LevelNumber: 1
     Enemies:
     - Id: mushroom_traveler
-      Hp: 30
+      Hp: 50
       IsBoss: 0
       BossTime: 0
-      TechniqueType: 0
-    Reward: 110
+      TechniqueType: 1
+    Reward: 15
     Background: {fileID: 8149948061071527619, guid: fff18d8629a451d4099b92db718b3b12, type: 3}
   - Location: 0
     LevelNumber: 2
     Enemies:
     - Id: mushroom_guard1
-      Hp: 40
+      Hp: 60
       IsBoss: 0
       BossTime: 0
-      TechniqueType: 0
+      TechniqueType: 2
     - Id: mushroom_guard2
-      Hp: 45
+      Hp: 70
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
-    Reward: 120
+    Reward: 20
     Background: {fileID: 6197166666120296195, guid: f05f97a5c29a39b4f9114893f2b7d7fb, type: 3}
   - Location: 0
     LevelNumber: 3
     Enemies:
     - Id: mushroom_torso1
-      Hp: 50
+      Hp: 80
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
     - Id: mushroom_torso2
-      Hp: 55
+      Hp: 100
       IsBoss: 0
       BossTime: 0
-      TechniqueType: 2
+      TechniqueType: 1
     - Id: mushroom_torso3
-      Hp: 60
+      Hp: 110
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
-    Reward: 13
+    Reward: 30
     Background: {fileID: 5419309176499164937, guid: ef405468b950028458fd3f5905e02926, type: 3}
   - Location: 0
     LevelNumber: 4
     Enemies:
     - Id: mushroom_officer
-      Hp: 65
+      Hp: 120
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
     - Id: mushroom_torso4
-      Hp: 70
+      Hp: 130
       IsBoss: 0
       BossTime: 0
-      TechniqueType: 0
+      TechniqueType: 2
     - Id: mushroom_boss
-      Hp: 80
+      Hp: 150
       IsBoss: 1
       BossTime: 10
       TechniqueType: 0
-    Reward: 25
+    Reward: 50
     Background: {fileID: -2586936080781492711, guid: 0926fd506ecabe64a9dce0bed5f0d80d, type: 3}
   - Location: 1
     LevelNumber: 0
     Enemies:
     - Id: nut_girl
-      Hp: 62
+      Hp: 130
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
     - Id: nut_boy
-      Hp: 74
+      Hp: 150
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
-    Reward: 16
+    Reward: 40
     Background: {fileID: -9130348366436478418, guid: 425cca24e4a2391459ed6231d1b755fd, type: 3}
   - Location: 1
     LevelNumber: 1
     Enemies:
     - Id: nut_orange
-      Hp: 89
+      Hp: 180
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: nut_bow
-      Hp: 107
+      Hp: 200
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
-    Reward: 16
+    Reward: 50
     Background: {fileID: -9130348366436478418, guid: 425cca24e4a2391459ed6231d1b755fd, type: 3}
   - Location: 1
     LevelNumber: 3
     Enemies:
     - Id: nut_grey
-      Hp: 154
+      Hp: 250
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
     - Id: nut_almond
-      Hp: 185
+      Hp: 400
       IsBoss: 1
       BossTime: 10
       TechniqueType: 0
-    Reward: 16
+    Reward: 100
     Background: {fileID: 7391236363140412631, guid: e68da01962a52654d914fa8a341389b1, type: 3}
   - Location: 1
     LevelNumber: 4
     Enemies:
     - Id: nut_orange
-      Hp: 222
+      Hp: 400
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: nut_muscle
-      Hp: 266
+      Hp: 500
       IsBoss: 0
       BossTime: 0
-      TechniqueType: 0
-    Reward: 16
+      TechniqueType: 2
+    Reward: 70
     Background: {fileID: 7391236363140412631, guid: e68da01962a52654d914fa8a341389b1, type: 3}
   - Location: 1
     LevelNumber: 5
     Enemies:
     - Id: nut_boy
-      Hp: 319
+      Hp: 600
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
     - Id: nut_girl
-      Hp: 383
+      Hp: 750
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
     - Id: nut_bow
-      Hp: 460
+      Hp: 900
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
-    Reward: 16
+    Reward: 120
     Background: {fileID: -7224833429136882821, guid: 3e3983d75e9161b47bae9cd1923e92da, type: 3}
   - Location: 1
     LevelNumber: 6
     Enemies:
     - Id: nut_grey
-      Hp: 552
+      Hp: 1000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
-    Reward: 16
+    Reward: 100
     Background: {fileID: 6937817954938267909, guid: 8150aa9d95daa5c4e8138730dbdf2ef8, type: 3}
   - Location: 1
     LevelNumber: 2
     Enemies:
     - Id: nut_muscle
-      Hp: 128
+      Hp: 1000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
-    Reward: 16
+    Reward: 100
     Background: {fileID: 5102612789952899247, guid: 91896e398d725bc4a8bf9cad9dfd6a76, type: 3}
   - Location: 1
     LevelNumber: 7
     Enemies:
     - Id: nut_almond
-      Hp: 662
+      Hp: 1100
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: nut_grumpy
-      Hp: 795
+      Hp: 1500
       IsBoss: 1
       BossTime: 15
       TechniqueType: 1
-    Reward: 16
+    Reward: 200
     Background: {fileID: 6937817954938267909, guid: 8150aa9d95daa5c4e8138730dbdf2ef8, type: 3}
   - Location: 2
     LevelNumber: 0

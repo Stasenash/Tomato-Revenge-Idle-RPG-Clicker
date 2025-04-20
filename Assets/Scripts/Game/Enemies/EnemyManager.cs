@@ -5,6 +5,7 @@ using Game.RSPConfig;
 using Game.Statistics;
 using Global;
 using Global.SaveSystem;
+using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -89,6 +90,7 @@ namespace Game.Enemies
             InitHeathBar(currentEnemy.Hp, _currentEnemyTechniqueType);
             DataKeeper.Reward = _levelData.Reward;
             _currentEnemyMonoBehavior.Initialize(_currentEnemyData.Sprite, currentEnemy.Hp, currentEnemy.TechniqueType, currentEnemy.Id,_statisticsManager, _saveSystem);
+            InvokeRepeating("PassiveDamage", 1f, 1f);
         }
 
         private void InitHeathBar(float health, TechniqueType currentTechniqueType)
@@ -103,6 +105,13 @@ namespace Game.Enemies
         {
             _currentEnemyMonoBehavior.TakeDamage(damage);
             //Debug.Log("Damaged. Current health is " + _currentEnemy.GetHealth());
+        }
+
+        private void PassiveDamage()
+        {
+            var passiveDamage = ((Stats)_saveSystem.GetData(SavableObjectType.Stats)).PassiveDamage;
+            if (passiveDamage > 0)
+                _currentEnemyMonoBehavior.TakeDamage(passiveDamage);
         }
 
         public void SubscribeOnCurrentEnemyDamage(UnityAction<float> callback)
