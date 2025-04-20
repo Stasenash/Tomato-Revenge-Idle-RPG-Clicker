@@ -32,6 +32,7 @@ namespace Meta
         [SerializeField] private SkillShopWindow _skillShopWindow;
         [SerializeField] private HeroStatsConfig _heroStatsConfig;
         [SerializeField] private IntroCutscene _introCutscene;
+        [SerializeField] private Helper _helper;
         
         private SaveSystem _saveSystem;
         private AudioManager _audioManager;
@@ -65,10 +66,13 @@ namespace Meta
 
             var intros = (Cutscenes)_saveSystem.GetData(SavableObjectType.Cutscenes);
             _introCutscene.Initialize();
-            _introCutscene.gameObject.SetActive(!intros.IsIntroShowed);
-            if (!intros.IsIntroShowed)
+            _introCutscene.gameObject.SetActive(true);
+            //_introCutscene.gameObject.SetActive(!intros.IsIntroShowed);
+            //if (!intros.IsIntroShowed)
+            if(true)
             {
                 _introCutscene.ShowIntroCutscene();
+                _helper.Initialize();
                 intros.IsIntroShowed = true;
                 _saveSystem.SaveData(SavableObjectType.Cutscenes);
             }
