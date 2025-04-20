@@ -14,6 +14,7 @@ namespace Global.SaveSystem
                 { SavableObjectType.OpenedSkills, new OpenedSkills() },
                 { SavableObjectType.Stats, new Stats() },
                 { SavableObjectType.Statistics, new Statistics() },
+                { SavableObjectType.Cutscenes, new Cutscenes() },
             };
 
             LoadData();

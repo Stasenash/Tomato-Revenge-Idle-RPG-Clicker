@@ -6,6 +6,7 @@ using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using Meta.Achievements;
+using Meta.Cutscene;
 using Meta.DownPanel;
 using Meta.Locations;
 using Meta.Profile;
@@ -30,6 +31,7 @@ namespace Meta
         [SerializeField] private SkillShop _skillShop;
         [SerializeField] private SkillShopWindow _skillShopWindow;
         [SerializeField] private HeroStatsConfig _heroStatsConfig;
+        [SerializeField] private IntroCutscene _introCutscene;
         
         private SaveSystem _saveSystem;
         private AudioManager _audioManager;
@@ -60,9 +62,17 @@ namespace Meta
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
             _locationManager.Initialize(progress, StartLevel);
+
+            var intros = (Cutscenes)_saveSystem.GetData(SavableObjectType.Cutscenes);
+            _introCutscene.Initialize();
+            _introCutscene.gameObject.SetActive(!intros.IsIntroShowed);
+            if (!intros.IsIntroShowed)
+            {
+                _introCutscene.ShowIntroCutscene();
+                intros.IsIntroShowed = true;
+                _saveSystem.SaveData(SavableObjectType.Cutscenes);
+            }
             //_audioManager.PlayClip(AudioNames.BackgroundMetaMusic)
-            
-            
         }
 
         private void UpdateStats()
@@ -75,7 +85,6 @@ namespace Meta
 
         private void StartLevel(int location, int level)
         {
-            //todo: перед загрузкой уровня надо менять дамаг и все такое
             _sceneLoader.LoadGameplayScene(new GameEnterParams(location, level));
         }
     }

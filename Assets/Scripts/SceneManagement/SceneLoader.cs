@@ -68,11 +68,11 @@ namespace SceneManagement
             DOTween.Clear();
 
             // Удаляем компонент DOTween, если он есть на GameObject
-            var dotweenComponent = FindObjectOfType<DOTweenComponent>();
-            if (dotweenComponent != null)
-            {
-                Destroy(dotweenComponent);
-            }
+            //var dotweenComponent = FindObjectOfType<DOTweenComponent>();
+            //if (dotweenComponent != null)
+            //{
+               // Destroy(dotweenComponent);
+            //}
         }
 
         //TODO: из занятия по менеджеру
