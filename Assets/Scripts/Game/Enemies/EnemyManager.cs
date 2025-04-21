@@ -1,4 +1,5 @@
-﻿using Game.Configs;
+﻿using DG.Tweening;
+using Game.Configs;
 using Game.Configs.Enemies_Configs;
 using Game.Configs.LevelConfigs;
 using Game.RSPConfig;
@@ -6,6 +7,7 @@ using Game.Statistics;
 using Global;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -18,6 +20,7 @@ namespace Game.Enemies
         [SerializeField] private Transform _enemyContainer;
         [SerializeField] private EnemiesConfig _enemiesConfig;
         [SerializeField] private StatisticsManager _statisticsManager;
+        [SerializeField] private TextMeshProUGUI _damageText;
         
         private Enemy _currentEnemyMonoBehavior;
         private HealthBar.HealthBar _healthBar;
@@ -37,6 +40,10 @@ namespace Game.Enemies
             _timerImage = timerImage;
             _healthBar = healthBar;
             _saveSystem = saveSystem;
+            
+            var color = _damageText.color;
+            color.a = 0f;
+            _damageText.color = color;
         }
         
         public void StartLevel(LevelData levelData)
@@ -103,7 +110,9 @@ namespace Game.Enemies
     
         public void DamageCurrentEnemy(float damage)
         {
+            AnimateDamageText(damage);
             _currentEnemyMonoBehavior.TakeDamage(damage);
+            
             //Debug.Log("Damaged. Current health is " + _currentEnemy.GetHealth());
         }
 
@@ -111,7 +120,8 @@ namespace Game.Enemies
         {
             var passiveDamage = ((Stats)_saveSystem.GetData(SavableObjectType.Stats)).PassiveDamage;
             if (passiveDamage > 0)
-                _currentEnemyMonoBehavior.TakeDamage(passiveDamage);
+                AnimateDamageText(passiveDamage);
+            _currentEnemyMonoBehavior.TakeDamage(passiveDamage);
         }
 
         public void SubscribeOnCurrentEnemyDamage(UnityAction<float> callback)
@@ -122,6 +132,26 @@ namespace Game.Enemies
             }
         }
 
+
+        private void AnimateDamageText(float damage)
+        {
+            var position = new Vector3(_damageText.transform.position.x, _damageText.transform.position.y, _damageText.transform.position.z);
+            var endPosition = new Vector3(_damageText.transform.position.x, _damageText.transform.position.y + 850, _damageText.transform.position.z);
+            
+            var text = Instantiate(_damageText, _enemyContainer);
+            
+            text.transform.position = position;
+            text.text = damage.ToString();
+            //text.fontSize = 80;
+            
+            var color = text.color;
+            color.a = 1f;
+            text.color = color;
+            
+            //text.gameObject.SetActive(true);
+            
+            text.transform.DOMove(endPosition, 0.5f).SetEase(Ease.OutQuad).OnComplete(()=>Destroy(text));
+        }
 
         public TechniqueType GetCurrentEnemyTechniqueType() => _currentEnemyTechniqueType;
     }

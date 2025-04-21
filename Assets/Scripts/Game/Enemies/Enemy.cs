@@ -3,6 +3,7 @@ using Game.RSPConfig;
 using Game.Statistics;
 using Global;
 using Global.SaveSystem;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -66,7 +67,7 @@ namespace Game.Enemies
 
       private void AnimateDamage()
       {
-         transform.DOShakePosition(0.3f, 5f, 10, 90f);
+        transform.DOShakePosition(0.3f, 5f, 10, 90f);
       
          _image.DOColor(_damageColor, 0.1f)
             .OnComplete(() =>
