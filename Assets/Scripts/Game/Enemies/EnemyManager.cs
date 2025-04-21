@@ -121,8 +121,10 @@ namespace Game.Enemies
         {
             var passiveDamage = ((Stats)_saveSystem.GetData(SavableObjectType.Stats)).PassiveDamage;
             if (passiveDamage > 0)
+            {
                 AnimateDamageText(passiveDamage);
-            _currentEnemyMonoBehavior.TakeDamage(passiveDamage);
+                _currentEnemyMonoBehavior.TakeDamage(passiveDamage);
+            }
         }
 
         public void SubscribeOnCurrentEnemyDamage(UnityAction<float> callback)
