@@ -57,7 +57,7 @@ namespace Game
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
 
             if (progress.CurrentLocation >= _gameEnterParams.Location &&
-                progress.CurrentLevel >= _gameEnterParams.Level)
+                progress.CurrentLevel > _gameEnterParams.Level)
             {
                 wallet.Coins += coins / 2;
                 Debug.Log($"coins={wallet.Coins}");

@@ -92,7 +92,11 @@ namespace Game.Enemies
                 _timer.SetActive(true);
                 _timerImage.gameObject.SetActive(true);
                 _timer.Initialize(currentEnemy.BossTime);
-                _timer.OnTimerEnd += () => OnLevelPassed?.Invoke(false);
+                _timer.OnTimerEnd += () =>
+                {
+                    CancelInvoke("PassiveDamage");
+                    OnLevelPassed?.Invoke(false);
+                };
             }
             var _currentEnemyData = _enemiesConfig.GetEnemy(currentEnemy.Id); 
             InitHeathBar(currentEnemy.Hp, _currentEnemyTechniqueType);
