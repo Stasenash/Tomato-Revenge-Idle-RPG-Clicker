@@ -7,6 +7,7 @@ using Game.Statistics;
 using Global;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
+using SceneManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -22,6 +23,11 @@ namespace Game.Enemies
         [SerializeField] private StatisticsManager _statisticsManager;
         [SerializeField] private TextMeshProUGUI _damageText;
         [SerializeField] private TextMeshProUGUI _coinsText;
+        
+        private GameEnterParams _gameEnterParams;
+        private LevelsConfig _levelsConfig;
+        
+        
         private Enemy _currentEnemyMonoBehavior;
         private HealthBar.HealthBar _healthBar;
         private Timer.Timer _timer;
@@ -33,13 +39,15 @@ namespace Game.Enemies
 
         public event UnityAction<bool> OnLevelPassed;
     
-        public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer, Image timerImage, SaveSystem saveSystem)
+        public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer, Image timerImage, SaveSystem saveSystem, GameEnterParams gameEnterParams, LevelsConfig levelsConfig)
         {
             DataKeeper.Reward = 0;
             _timer = timer;
             _timerImage = timerImage;
             _healthBar = healthBar;
             _saveSystem = saveSystem;
+            _gameEnterParams = gameEnterParams;
+            _levelsConfig = levelsConfig;
             
             SetCoinsText();
             
@@ -59,7 +67,11 @@ namespace Game.Enemies
             {
                 _currentEnemyMonoBehavior = Instantiate(_enemiesConfig.EnemyPrefab, _enemyContainer);
                 _currentEnemyMonoBehavior.OnDamage += _healthBar.DecreaseValue;
-                _currentEnemyMonoBehavior.OnDeath += SpawnEnemy;
+                _currentEnemyMonoBehavior.OnDeath += () =>
+                {
+                    AddCoins();
+                    SpawnEnemy();
+                };
             }
 
             SetBackground();
@@ -70,6 +82,29 @@ namespace Game.Enemies
         {
            var coins = ((Wallet) _saveSystem.GetData(SavableObjectType.Wallet)).Coins;
             _coinsText.text = coins.ToString();
+        }
+
+        private void AddCoins()
+        {
+            var enemiesCount = _levelData.Enemies.Count;
+            var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
+            var coins = _levelsConfig.GetReward(_gameEnterParams.Location, _gameEnterParams.Level);
+            
+            var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
+
+            if (progress.CurrentLocation >= _gameEnterParams.Location &&
+                progress.CurrentLevel > _gameEnterParams.Level)
+            {
+                wallet.Coins += coins / (2 * enemiesCount) ;
+                Debug.Log($"coins={wallet.Coins}");
+            }
+            else
+            {
+                wallet.Coins += coins / enemiesCount;
+                Debug.Log($"coins={wallet.Coins}");
+            }
+            _saveSystem.SaveData(SavableObjectType.Wallet);
+            SetCoinsText();
         }
         
         private void SetBackground()

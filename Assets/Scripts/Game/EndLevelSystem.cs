@@ -51,23 +51,8 @@ namespace Game
         
         private void TrySaveProgress()
         {
-            var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
-            var coins = _levelsConfig.GetReward(_gameEnterParams.Location, _gameEnterParams.Level);
-            
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
-
-            if (progress.CurrentLocation >= _gameEnterParams.Location &&
-                progress.CurrentLevel > _gameEnterParams.Level)
-            {
-                wallet.Coins += coins / 2;
-                Debug.Log($"coins={wallet.Coins}");
-            }
-            else
-            {
-                wallet.Coins += coins;
-                Debug.Log($"coins={wallet.Coins}");
-            }
-
+           
             if (_gameEnterParams.Location != progress.CurrentLocation
                 || _gameEnterParams.Level != progress.CurrentLevel)
                 return;
@@ -93,7 +78,6 @@ namespace Game
 
             
             _saveSystem.SaveData(SavableObjectType.Progress);
-            _saveSystem.SaveData(SavableObjectType.Wallet);
         }
     }
 }

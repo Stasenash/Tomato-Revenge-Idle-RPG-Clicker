@@ -136,7 +136,7 @@ namespace Game
                 return;
             }
             _gameEnterParams = gameEnterParams;
-            _enemyManager.Initialize(_healthBar, _timer, _timerImage, _saveSystem);
+            _enemyManager.Initialize(_healthBar, _timer, _timerImage, _saveSystem, _gameEnterParams, _levelsConfig);
             _endLevelWindow.Initialize(_saveSystem);  
             _gamePanelManager.Initialize();
             
