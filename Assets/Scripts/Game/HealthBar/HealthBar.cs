@@ -46,7 +46,7 @@ namespace Game.HealthBar
         public void DecreaseValue(float value)
         {
             _healthSlider.value -= value;
-            _healthText.text = (Math.Ceiling(_healthSlider.value) + 1).ToString();
+            _healthText.text = Math.Ceiling(_healthSlider.value).ToString();
         }
     }
 }
