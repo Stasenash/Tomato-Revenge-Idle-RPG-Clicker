@@ -16878,6 +16878,10 @@ PrefabInstance:
       propertyPath: _achievementsWindow
       value: 
       objectReference: {fileID: 956457090}
+    - target: {fileID: 8603065428020408140, guid: 2a6472ea501cc8b4a889a1edd6cc8169, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8382319691469647391, guid: c9dc95a5b9aa4394692112169bc6befe, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

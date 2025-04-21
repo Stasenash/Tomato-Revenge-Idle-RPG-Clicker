@@ -21,7 +21,7 @@ namespace Game.Enemies
         [SerializeField] private EnemiesConfig _enemiesConfig;
         [SerializeField] private StatisticsManager _statisticsManager;
         [SerializeField] private TextMeshProUGUI _damageText;
-        
+        [SerializeField] private TextMeshProUGUI _coinsText;
         private Enemy _currentEnemyMonoBehavior;
         private HealthBar.HealthBar _healthBar;
         private Timer.Timer _timer;
@@ -41,6 +41,8 @@ namespace Game.Enemies
             _healthBar = healthBar;
             _saveSystem = saveSystem;
             
+            SetCoinsText();
+            
             var color = _damageText.color;
             color.a = 0f;
             _damageText.color = color;
@@ -48,6 +50,8 @@ namespace Game.Enemies
         
         public void StartLevel(LevelData levelData)
         {
+            SetCoinsText();
+            
             _levelData = levelData;
             _currentEnemyIndex = -1;
             
@@ -61,7 +65,13 @@ namespace Game.Enemies
             SetBackground();
             SpawnEnemy();
         }
-
+        
+        private void SetCoinsText()
+        {
+           var coins = ((Wallet) _saveSystem.GetData(SavableObjectType.Wallet)).Coins;
+            _coinsText.text = coins.ToString();
+        }
+        
         private void SetBackground()
         {
             //TODO: узнать как лучше
