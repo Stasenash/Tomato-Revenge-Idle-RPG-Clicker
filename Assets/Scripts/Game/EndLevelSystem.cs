@@ -1,4 +1,5 @@
-﻿using Game.Configs;
+﻿using System;
+using Game.Configs;
 using Game.Configs.LevelConfigs;
 using Global;
 using Global.SaveSystem;
@@ -52,19 +53,27 @@ namespace Game
         {
             var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
             var coins = _levelsConfig.GetReward(_gameEnterParams.Location, _gameEnterParams.Level);
-            wallet.Coins += coins;
-            Debug.Log($"coins={wallet.Coins}");
             
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
+
+            if (progress.CurrentLocation >= _gameEnterParams.Location &&
+                progress.CurrentLevel >= _gameEnterParams.Level)
+            {
+                wallet.Coins += coins / 2;
+                Debug.Log($"coins={wallet.Coins}");
+            }
+            else
+            {
+                wallet.Coins += coins;
+                Debug.Log($"coins={wallet.Coins}");
+            }
+
             if (_gameEnterParams.Location != progress.CurrentLocation
                 || _gameEnterParams.Level != progress.CurrentLevel)
                 return;
             var maxLocationAndLevel = _levelsConfig.GetMaxLocationAndLevel();
             var maxLevel = _levelsConfig.GetMaxLevelOnLocation(_gameEnterParams.Location);
             
-            // if (progress.CurrentLocation > maxLocationAndLevel.x || 
-            //     (progress.CurrentLocation == maxLocationAndLevel.x 
-            //      && progress.CurrentLevel > maxLocationAndLevel.y)) return;
             if (progress.CurrentLevel >= maxLevel)
             {
                 if (progress.CurrentLocation < maxLocationAndLevel.x)
