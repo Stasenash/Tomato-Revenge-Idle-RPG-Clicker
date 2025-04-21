@@ -78,6 +78,7 @@ namespace Game.Enemies
 
             if (_currentEnemyIndex >= _levelData.Enemies.Count)
             {
+                CancelInvoke("PassiveDamage");
                 OnLevelPassed?.Invoke(true);
                 _timer.Stop();
                 return;

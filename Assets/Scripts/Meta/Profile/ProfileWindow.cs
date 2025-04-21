@@ -49,12 +49,12 @@ namespace Meta.Profile
         public void UpdateValues(Stats stats)
         {
             _damageValue.text = stats.Damage.ToString();
-            _criticalChanceValue.text = stats.CritChance.ToString();
+            _criticalChanceValue.text = stats.CritChance * 100 + "%";
             _criticalMultiplierValue.text = stats.CritMultiplier.ToString();
             _passiveDamageValue.text = stats.PassiveDamage.ToString();
-            _comboChanceValue.text = stats.ComboChance.ToString();
-            _killChanceValue.text = stats.InstantKillChance.ToString();
-            _2xChanceValue.text = stats.X2Chance.ToString();
+            _comboChanceValue.text = stats.ComboChance * 100 + "%";
+            _killChanceValue.text = stats.InstantKillChance * 100 + "%";
+            _2xChanceValue.text = stats.X2Chance * 100 + "%";
         }
     }
 }
