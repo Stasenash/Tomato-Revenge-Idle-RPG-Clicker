@@ -36,6 +36,8 @@ namespace Game.Enemies
          _statisticsManager = statisticsManager;
          _statisticsManager.Initialize(saveSystem);
          _statisticsManager.UpdateEnemyStats(0,0,1);
+         
+         transform.DOScale(Vector3.one, 1f).From(Vector3.zero);
       }
 
       public void TakeDamage(float damage)
