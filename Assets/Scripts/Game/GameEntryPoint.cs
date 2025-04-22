@@ -17,6 +17,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YG;
 
 namespace Game
 {
@@ -164,6 +165,7 @@ namespace Game
 
         private void ReturnToMap()
         {
+            YG2.InterstitialAdvShow();
             _sceneLoader.LoadMetaScene();
         } 
 

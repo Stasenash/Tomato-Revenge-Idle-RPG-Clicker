@@ -2,12 +2,14 @@
     "stringKeys": [
         "Stats",
         "Cutscenes",
-        "Wallet"
+        "Wallet",
+        "Progress"
     ],
     "stringValues": [
         "{\"Damage\":1.0,\"CritChance\":0.05000000074505806,\"CritMultiplier\":3.0,\"PassiveDamage\":0.0,\"ComboChance\":0.0,\"InstantKillChance\":0.0,\"X2Chance\":0.0}",
         "{\"IsIntroShowed\":true,\"IsEndingShowed\":false,\"IsHelperShowed\":false}",
-        "{\"Coins\":401}"
+        "{\"Coins\":526}",
+        "{\"CurrentLocation\":0,\"CurrentLevel\":2}"
     ],
     "floatKeys": [],
     "floatValues": [],
@@ -21,5 +23,5 @@
         false,
         false
     ],
-    "idSave": 35
+    "idSave": 49
 }
