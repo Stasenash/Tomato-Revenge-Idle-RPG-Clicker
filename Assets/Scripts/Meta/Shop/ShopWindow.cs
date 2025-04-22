@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using DG.Tweening;
 using Game.Configs.SkillsConfigs;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
@@ -6,6 +8,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using YG;
 
 namespace Meta.Shop
 {
@@ -27,16 +30,42 @@ namespace Meta.Shop
         [SerializeField] private GameObject _coinsUnderline;
         
         [SerializeField] private TextMeshProUGUI _coinsText;
+        
+        [SerializeField] private Button _advButton;
+        
+        private Sequence _sequence;
+        private SaveSystem _saveSystem;
 
-        public void Initialize(int coins)
+        public void Initialize(int coins, SaveSystem saveSystem)
         {
             _skillsTabButton.onClick.AddListener(() => ShowTab(_skillsTab, _skillsUnderline));
             _buffsTabButton.onClick.AddListener(() => ShowTab(_buffsTab,_buffsUnderline));
             _itemsTabButton.onClick.AddListener(() => ShowTab(_itemsTab, _itemsUnderline));
             _coinsTabButton.onClick.AddListener(() => ShowTab(_coinsTab, _coinsUnderline));
+            
+            _saveSystem = saveSystem;
+            
             SetCoinsText(coins);
             CloseAllTabs();
             SetMainTabActive();
+            
+            _advButton.onClick.AddListener(ShowAdvertisment);
+        }
+
+        private void ShowAdvertisment()
+        {
+            YG2.RewardedAdvShow("BuyButton", SetReward);
+            _advButton.interactable = false;
+            _sequence = DOTween.Sequence().AppendInterval(120f).OnComplete(()=> { _advButton.interactable = true; });
+        }
+
+        private void SetReward()
+        {
+            var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet); 
+            wallet.Coins += 100;
+            Debug.Log(wallet.Coins);
+            SetCoinsText(wallet.Coins);
+            _saveSystem.SaveData(SavableObjectType.Wallet);
         }
 
         public void SetCoinsText(int coins)
@@ -75,6 +104,11 @@ namespace Meta.Shop
             _buffsUnderline.SetActive(false);
             _itemsUnderline.SetActive(false);
             _coinsUnderline.SetActive(false);
+        }
+
+        public void OnDestroy()
+        {
+            _sequence.Kill();
         }
     }
 }

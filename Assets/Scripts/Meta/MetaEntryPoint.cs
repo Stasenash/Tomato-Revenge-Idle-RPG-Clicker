@@ -14,6 +14,7 @@ using Meta.Shop;
 using SceneManagement;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Progress = Global.SaveSystem.SavableObjects.Progress;
@@ -37,6 +38,8 @@ namespace Meta
         private SaveSystem _saveSystem;
         private AudioManager _audioManager;
         private SceneLoader _sceneLoader;
+        
+        private event UnityAction OnAdv;
 
         public override void Run(SceneEnterParams enterParams)
         {
@@ -47,7 +50,7 @@ namespace Meta
             
             _downPanelManager.Initialize();
             var wallet = (Wallet) _saveSystem.GetData(SavableObjectType.Wallet);
-            _shopWindow.Initialize(wallet.Coins);
+            _shopWindow.Initialize(wallet.Coins, _saveSystem);
             
             _achievementsWindow.Initialize();
             _profileWindow.Initialize((Stats)_saveSystem.GetData(SavableObjectType.Stats));

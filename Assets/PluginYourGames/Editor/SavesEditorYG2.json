@@ -1,0 +1,25 @@
+{
+    "stringKeys": [
+        "Stats",
+        "Cutscenes",
+        "Wallet"
+    ],
+    "stringValues": [
+        "{\"Damage\":1.0,\"CritChance\":0.05000000074505806,\"CritMultiplier\":3.0,\"PassiveDamage\":0.0,\"ComboChance\":0.0,\"InstantKillChance\":0.0,\"X2Chance\":0.0}",
+        "{\"IsIntroShowed\":true,\"IsEndingShowed\":false,\"IsHelperShowed\":false}",
+        "{\"Coins\":401}"
+    ],
+    "floatKeys": [],
+    "floatValues": [],
+    "intKeys": [],
+    "intValues": [],
+    "intExample": 5,
+    "strExample": "Hello!",
+    "boolExample": [
+        false,
+        false,
+        false,
+        false
+    ],
+    "idSave": 35
+}
