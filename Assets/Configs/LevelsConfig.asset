@@ -207,264 +207,264 @@ MonoBehaviour:
     LevelNumber: 0
     Enemies:
     - Id: veg_onion
-      Hp: 954
+      Hp: 1600
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
-    Reward: 16
+    Reward: 120
     Background: {fileID: 5970720423105874314, guid: f1adf0d984d5c194480bdb62630d2d5f, type: 3}
   - Location: 2
     LevelNumber: 1
     Enemies:
     - Id: veg_pumpkin
-      Hp: 1145
+      Hp: 1700
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
-    Reward: 16
+    Reward: 130
     Background: {fileID: 5970720423105874314, guid: f1adf0d984d5c194480bdb62630d2d5f, type: 3}
   - Location: 2
     LevelNumber: 2
     Enemies:
     - Id: veg_onion_teen
-      Hp: 1374
+      Hp: 2000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: veg_onion
-      Hp: 1648
+      Hp: 2250
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
     - Id: veg_warrior_onion
-      Hp: 1978
+      Hp: 2750
       IsBoss: 1
       BossTime: 15
       TechniqueType: 1
-    Reward: 16
+    Reward: 300
     Background: {fileID: -7416487493718438022, guid: 7b9e57b1c1f7f5b4a94e3ce6c61605d9, type: 3}
   - Location: 2
     LevelNumber: 3
     Enemies:
     - Id: veg_big_beet
-      Hp: 2374
+      Hp: 2350
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
     - Id: veg_green_beet
-      Hp: 2849
+      Hp: 2500
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: veg_beet
-      Hp: 3418
+      Hp: 2500
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
-    Reward: 16
+    Reward: 150
     Background: {fileID: -7416487493718438022, guid: 7b9e57b1c1f7f5b4a94e3ce6c61605d9, type: 3}
   - Location: 2
     LevelNumber: 4
     Enemies:
     - Id: veg_salad
-      Hp: 4102
+      Hp: 3000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
     - Id: veg_cucumber_cowboy
-      Hp: 4922
+      Hp: 4000
       IsBoss: 1
-      BossTime: 18
+      BossTime: 15
       TechniqueType: 0
-    Reward: 16
+    Reward: 250
     Background: {fileID: 4174961495967281301, guid: 6b366f9a4580ef845879ff230dde6723, type: 3}
   - Location: 2
     LevelNumber: 5
     Enemies:
     - Id: veg_artichock_2
-      Hp: 5907
+      Hp: 3500
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
     - Id: veg_artichock
-      Hp: 7088
+      Hp: 4000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
-    Reward: 16
+    Reward: 160
     Background: {fileID: 6937817954938267909, guid: 8150aa9d95daa5c4e8138730dbdf2ef8, type: 3}
   - Location: 2
     LevelNumber: 6
     Enemies:
     - Id: veg_creepy_pumpkin
-      Hp: 8506
+      Hp: 5000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: veg_tentacles_pumpkin
-      Hp: 10207
+      Hp: 6000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
     - Id: veg_evil_beet
-      Hp: 12248
+      Hp: 6500
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
     - Id: veg_crazy_zucchini
-      Hp: 14698
+      Hp: 7500
       IsBoss: 1
       BossTime: 20
       TechniqueType: 1
-    Reward: 16
+    Reward: 400
     Background: {fileID: 4174961495967281301, guid: 6b366f9a4580ef845879ff230dde6723, type: 3}
   - Location: 3
     LevelNumber: 0
     Enemies:
     - Id: fruit_mandarine
-      Hp: 17637
+      Hp: 7000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
     - Id: fruit_mini_orange
-      Hp: 21165
+      Hp: 7750
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: fruit_mini_pineapple
-      Hp: 25398
+      Hp: 8500
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
-    Reward: 16
+    Reward: 200
     Background: {fileID: -1468263264399175510, guid: a2793f5283631474797ece58410906dd, type: 3}
   - Location: 3
     LevelNumber: 1
     Enemies:
     - Id: fruit_orange
-      Hp: 30477
+      Hp: 10000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: fruit_pear
-      Hp: 36573
+      Hp: 11500
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
-    Reward: 16
+    Reward: 190
     Background: {fileID: -1468263264399175510, guid: a2793f5283631474797ece58410906dd, type: 3}
   - Location: 3
     LevelNumber: 2
     Enemies:
     - Id: fruit_grapefruit
-      Hp: 43887
+      Hp: 13000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
     - Id: fruit_grumpy_pomelo
-      Hp: 52665
+      Hp: 15000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
-    Reward: 16
+    Reward: 200
     Background: {fileID: 7768835113922375065, guid: 470a0f0a0c1e3714dbaec9088b3fbd24, type: 3}
   - Location: 3
     LevelNumber: 3
     Enemies:
     - Id: fruit_smile_pear
-      Hp: 63197
+      Hp: 20000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: fruit_tired_pear
-      Hp: 75837
+      Hp: 22500
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
     - Id: fruit_fat_pear
-      Hp: 91004
+      Hp: 30000
       IsBoss: 1
       BossTime: 20
       TechniqueType: 1
-    Reward: 16
+    Reward: 300
     Background: {fileID: 7768835113922375065, guid: 470a0f0a0c1e3714dbaec9088b3fbd24, type: 3}
   - Location: 3
     LevelNumber: 4
     Enemies:
     - Id: fruit_lol_plum
-      Hp: 109205
+      Hp: 25000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
     - Id: fruit_strange_plum
-      Hp: 131046
+      Hp: 27500
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: fruit_shocked_plum
-      Hp: 157256
+      Hp: 32000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
-    Reward: 16
+    Reward: 250
     Background: {fileID: 5457862090850240931, guid: c217932bc365cc7438c56840516daa93, type: 3}
   - Location: 3
     LevelNumber: 5
     Enemies:
     - Id: fruit_mango
-      Hp: 188707
+      Hp: 35000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
     - Id: fruit_smiling_orange
-      Hp: 226448
+      Hp: 40000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: fruit_kiwi
-      Hp: 271738
+      Hp: 50000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 1
     - Id: fruit_lemon
-      Hp: 326085
+      Hp: 60000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
-    Reward: 16
+    Reward: 350
     Background: {fileID: 5457862090850240931, guid: c217932bc365cc7438c56840516daa93, type: 3}
   - Location: 3
     LevelNumber: 6
     Enemies:
     - Id: fruit_pomelo
-      Hp: 391302
+      Hp: 75000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 2
     - Id: fruit_banana
-      Hp: 469563
+      Hp: 90000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: fruit_yarik_banana
-      Hp: 563475
+      Hp: 100000
       IsBoss: 0
       BossTime: 0
       TechniqueType: 0
     - Id: fruit_pineapple
-      Hp: 676170
+      Hp: 150000
       IsBoss: 1
       BossTime: 30
       TechniqueType: 2
     - Id: fruit_odd_pineapple
-      Hp: 811404
+      Hp: 300000
       IsBoss: 1
       BossTime: 30
       TechniqueType: 0
     - Id: fruit_crazy_pineapple
-      Hp: 973685
+      Hp: 450000
       IsBoss: 1
       BossTime: 30
       TechniqueType: 1
-    Reward: 16
+    Reward: 1000
     Background: {fileID: -5342952666887353405, guid: 81ae4bf440881094ea5b9fd4d9e1a83d, type: 3}
