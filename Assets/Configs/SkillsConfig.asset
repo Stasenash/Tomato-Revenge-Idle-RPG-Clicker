@@ -249,22 +249,22 @@ MonoBehaviour:
       Cost: 100
       SkillType: 5
     - Level: 1
-      Value: 0.02
+      Value: 0.0001
       Trigger: 4
       Cost: 150
       SkillType: 5
     - Level: 2
-      Value: 0.05
+      Value: 0.0002
       Trigger: 4
       Cost: 225
       SkillType: 5
     - Level: 3
-      Value: 0.07
+      Value: 0.0005
       Trigger: 4
       Cost: 340
       SkillType: 5
     - Level: 4
-      Value: 0.1
+      Value: 0.0007
       Trigger: 4
       Cost: 510
       SkillType: 5
