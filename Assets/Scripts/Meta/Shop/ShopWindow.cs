@@ -38,6 +38,7 @@ namespace Meta.Shop
         private SaveSystem _saveSystem;
         private AudioManager _audioManager;
 
+        public event UnityAction OnChangeCoins;
         public void Initialize(int coins, SaveSystem saveSystem, AudioManager audioManager)
         {
             _skillsTabButton.onClick.AddListener(() => ShowTab(_skillsTab, _skillsUnderline));
@@ -69,6 +70,7 @@ namespace Meta.Shop
             wallet.Coins += 50;
             Debug.Log(wallet.Coins);
             SetCoinsText(wallet.Coins);
+            OnChangeCoins?.Invoke();
             _saveSystem.SaveData(SavableObjectType.Wallet);
         }
 

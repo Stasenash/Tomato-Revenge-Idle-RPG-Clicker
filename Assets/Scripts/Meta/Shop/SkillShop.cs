@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Game.Configs.SkillsConfigs;
+using Game.EndLevelWindow;
 using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
@@ -20,6 +21,7 @@ namespace Meta.Shop
         private SaveSystem _saveSystem;
         private ShopWindow _shopWindow;
         private AudioManager _audioManager;
+        private EndLevelWindow _endLevelWindow;
 
         public event UnityAction OnSkillsChanged;
 
@@ -31,6 +33,8 @@ namespace Meta.Shop
             _openedSkills = (OpenedSkills)saveSystem.GetData(SavableObjectType.OpenedSkills);
             _skillsConfig = skillsConfig;
             _shopWindow = shopWindow;
+            _shopWindow.OnChangeCoins += ShowShopItems;
+            
             
             InitializeItemMap();
             ShowShopItems();
