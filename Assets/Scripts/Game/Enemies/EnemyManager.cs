@@ -122,6 +122,7 @@ namespace Game.Enemies
 
         private void SpawnEnemy()
         {
+            CancelInvoke("PassiveDamage");
             _timer.Stop();
             _timer.SetActive(false);
             _timerImage.gameObject.SetActive(false);
@@ -194,7 +195,7 @@ namespace Game.Enemies
         private void AnimateDamageText(float damage)
         {
             var position = new Vector3(_damageText.transform.position.x, _damageText.transform.position.y, _damageText.transform.position.z);
-            var endPosition = new Vector3(_damageText.transform.position.x, _damageText.transform.position.y + 850, _damageText.transform.position.z);
+            var endPosition = new Vector3(_damageText.transform.position.x, _damageText.transform.position.y + (_damageText.transform.position.y * 0.75f), _damageText.transform.position.z);
             
             var text = Instantiate(_damageText, _enemyContainer);
             

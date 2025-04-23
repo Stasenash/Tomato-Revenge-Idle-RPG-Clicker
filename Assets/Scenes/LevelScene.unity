@@ -1584,14 +1584,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 714166839634124395, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
-      propertyPath: m_fontSize
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 714166839634124395, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2412317351942262691, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1671,34 +1663,6 @@ PrefabInstance:
     - target: {fileID: 2412317351942262691, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437874269154121236, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 179.3409
-      objectReference: {fileID: 0}
-    - target: {fileID: 3437874269154121236, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -89.67041
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741045690595294818, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741045690595294818, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3741045690595294818, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800069335520779572, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5800069335520779572, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7518559108218161984, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
       propertyPath: m_Name
