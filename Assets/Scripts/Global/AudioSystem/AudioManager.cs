@@ -57,6 +57,15 @@ namespace Global.AudioSystem
             _audioSource.Play();
         }
         
+        public void PlayButShutAll(string clipName)
+        {
+            var clip = _sceneClips[clipName];
+            _audioGlobalSource.Stop();
+            _audioSource.Stop();
+            _audioGlobalSource.clip = clip;
+            _audioGlobalSource.Play();
+        }
+        
         public void StopGlobal()
         {
             _audioGlobalSource.Stop();

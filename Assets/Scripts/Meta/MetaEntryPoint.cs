@@ -46,6 +46,8 @@ namespace Meta
             _audioManager = commonObject.AudioManager;
             _sceneLoader = commonObject.SceneLoader;
             
+            _audioManager.PlayClip(AudioNames.BackgroundMeta, true);
+            
             _downPanelManager.Initialize(_audioManager);
             var wallet = (Wallet) _saveSystem.GetData(SavableObjectType.Wallet);
             _shopWindow.Initialize(wallet.Coins, _saveSystem, _audioManager);
@@ -75,8 +77,6 @@ namespace Meta
                 intros.IsIntroShowed = true;
                 _saveSystem.SaveData(SavableObjectType.Cutscenes);
             }
-
-            _audioManager.PlayClip(AudioNames.BackgroundMeta, true);
         }
 
         private void UpdateStats()

@@ -73,7 +73,7 @@ namespace Game.Enemies
                 _currentEnemyMonoBehavior.OnDeath += () =>
                 {
                     AddCoins();
-                    _audioManager.PlayOnceButShutAll(AudioNames.LevelMoney);
+                    _audioManager.PlayClip(AudioNames.LevelMoney);
                     SpawnEnemy();
                 };
             }
