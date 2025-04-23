@@ -10,10 +10,10 @@
     "stringValues": [
         "{\"Damage\":1.5,\"CritChance\":0.05000000074505806,\"CritMultiplier\":3.0,\"PassiveDamage\":0.0,\"ComboChance\":0.0,\"InstantKillChance\":0.0,\"X2Chance\":0.0}",
         "{\"IsIntroShowed\":true,\"IsEndingShowed\":false,\"IsHelperShowed\":false}",
-        "{\"Coins\":672}",
+        "{\"Coins\":685}",
         "{\"CurrentLocation\":1,\"CurrentLevel\":2}",
         "{\"Skills\":[{\"Id\":\"TaijutsuDamageSkill\",\"Level\":0},{\"Id\":\"NinjutsuDamageSkill\",\"Level\":0},{\"Id\":\"GenjutsuDamageSkill\",\"Level\":0},{\"Id\":\"GreatBlackSky\",\"Level\":0},{\"Id\":\"ScarletFlash\",\"Level\":0},{\"Id\":\"MultipleSmokeCloning\",\"Level\":3},{\"Id\":\"SilentFist\",\"Level\":0},{\"Id\":\"ParalyzingFlute\",\"Level\":0},{\"Id\":\"DemonicIllusion\",\"Level\":0},{\"Id\":\"MindTrick\",\"Level\":0}]}",
-        "{\"EnemiesStatistics\":[{\"EnemyId\":\"mushroom_officer\",\"TotalHits\":387,\"TotalDeaths\":9,\"TotalAttempts\":11,\"TempHits\":387},{\"EnemyId\":\"mushroom_torso4\",\"TotalHits\":358,\"TotalDeaths\":8,\"TotalAttempts\":9,\"TempHits\":358},{\"EnemyId\":\"mushroom_boss\",\"TotalHits\":368,\"TotalDeaths\":8,\"TotalAttempts\":8,\"TempHits\":0}]}"
+        "{\"EnemiesStatistics\":[{\"EnemyId\":\"mushroom_officer\",\"TotalHits\":507,\"TotalDeaths\":10,\"TotalAttempts\":14,\"TempHits\":507},{\"EnemyId\":\"mushroom_torso4\",\"TotalHits\":419,\"TotalDeaths\":8,\"TotalAttempts\":10,\"TempHits\":419},{\"EnemyId\":\"mushroom_boss\",\"TotalHits\":368,\"TotalDeaths\":8,\"TotalAttempts\":8,\"TempHits\":0}]}"
     ],
     "floatKeys": [],
     "floatValues": [],
@@ -27,5 +27,5 @@
         false,
         false
     ],
-    "idSave": 1333
+    "idSave": 1532
 }

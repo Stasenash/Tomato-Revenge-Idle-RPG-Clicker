@@ -137,12 +137,12 @@ namespace Game
                 return;
             }
             _gameEnterParams = gameEnterParams;
-            _enemyManager.Initialize(_healthBar, _timer, _timerImage, _saveSystem, _gameEnterParams, _levelsConfig);
+            _enemyManager.Initialize(_healthBar, _timer, _timerImage, _saveSystem, _gameEnterParams, _levelsConfig, _audioManager);
             _endLevelWindow.Initialize(_saveSystem);  
             _gamePanelManager.Initialize();
             
             var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);
-            _skillSystem = new SkillSystem(_enemyManager, _saveSystem, _heroStatsConfig, _rspConfig);
+            _skillSystem = new SkillSystem(_enemyManager, _saveSystem, _heroStatsConfig, _rspConfig, _audioManager);
             _clickButtonManager.Inizialize(_skillSystem);
             
             

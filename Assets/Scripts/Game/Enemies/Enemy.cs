@@ -2,6 +2,7 @@ using DG.Tweening;
 using Game.RSPConfig;
 using Game.Statistics;
 using Global;
+using Global.AudioSystem;
 using Global.SaveSystem;
 using TMPro;
 using UnityEngine;
@@ -13,7 +14,6 @@ namespace Game.Enemies
    public class Enemy : MonoBehaviour
    {
       [SerializeField] private Image image;
-      [SerializeField] private AudioSource _audioSource; //TODO аудио потом занести в конфиг
       [SerializeField] private Image _image;
    
       private float _health;
@@ -26,13 +26,15 @@ namespace Game.Enemies
       private string _enemyId;
       
       private StatisticsManager _statisticsManager;
+      private AudioManager _audioManager;
 
-      public void Initialize(Sprite sprite, float health, TechniqueType techniqueType, string currentEnemyId, StatisticsManager statisticsManager, SaveSystem saveSystem)
+      public void Initialize(Sprite sprite, float health, TechniqueType techniqueType, string currentEnemyId, StatisticsManager statisticsManager, SaveSystem saveSystem, AudioManager audioManager)
       {
          _enemyId = currentEnemyId;
          image.sprite =sprite;
          _health = health;
          _originalColor = _image.color;
+         _audioManager = audioManager;
          DataKeeper.EnemyId = currentEnemyId;
          _statisticsManager = statisticsManager;
          _statisticsManager.Initialize(saveSystem);
@@ -52,9 +54,9 @@ namespace Game.Enemies
             return;
          }
          _health -= damage;
-      
-         AnimateDamage(); //потом как-то это отдельно сделать звуки
-         _audioSource.Play();
+
+         _audioManager.PlayClip(AudioNames.DamageSound);
+         AnimateDamage();
       
          _statisticsManager.UpdateEnemyStats(1,0,0);
          OnDamage?.Invoke(damage);

@@ -22,9 +22,6 @@ namespace Game.EndLevelWindow
         [SerializeField] private Button _winBackButton;
         [SerializeField] private Button _loseBackButton;
     
-        [SerializeField] private AudioSource _loseSound;
-        [SerializeField] private AudioSource _winSound;
-    
         [SerializeField] private StatisticsViewer _statisticsViewer;
         
         [SerializeField] private Button _x2AdvButton;
@@ -72,7 +69,6 @@ namespace Game.EndLevelWindow
             _loseLevelWindow.SetActive(false);
             gameObject.SetActive(true);
             _statisticsViewer.ShowWinStatistics();
-            _winSound.Play();
         }
     
         public void ShowLoseLevelWindow()
@@ -81,7 +77,6 @@ namespace Game.EndLevelWindow
             _loseLevelWindow.SetActive(true);
             gameObject.SetActive(true);
             _statisticsViewer.ShowLoseStatistics();
-            _loseSound.Play();
         }
 
         private void Restart()

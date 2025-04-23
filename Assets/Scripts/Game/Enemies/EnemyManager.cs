@@ -5,6 +5,7 @@ using Game.Configs.LevelConfigs;
 using Game.RSPConfig;
 using Game.Statistics;
 using Global;
+using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using SceneManagement;
@@ -36,10 +37,11 @@ namespace Game.Enemies
         private TechniqueType _currentEnemyTechniqueType;
         private Image _timerImage;
         private SaveSystem _saveSystem;
+        private AudioManager _audioManager;
 
         public event UnityAction<bool> OnLevelPassed;
     
-        public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer, Image timerImage, SaveSystem saveSystem, GameEnterParams gameEnterParams, LevelsConfig levelsConfig)
+        public void Initialize(HealthBar.HealthBar healthBar, Timer.Timer timer, Image timerImage, SaveSystem saveSystem, GameEnterParams gameEnterParams, LevelsConfig levelsConfig, AudioManager audioManager)
         {
             DataKeeper.Reward = 0;
             _timer = timer;
@@ -48,6 +50,7 @@ namespace Game.Enemies
             _saveSystem = saveSystem;
             _gameEnterParams = gameEnterParams;
             _levelsConfig = levelsConfig;
+            _audioManager = audioManager;
             
             SetCoinsText();
             
@@ -148,7 +151,7 @@ namespace Game.Enemies
             var _currentEnemyData = _enemiesConfig.GetEnemy(currentEnemy.Id); 
             InitHeathBar(currentEnemy.Hp, _currentEnemyTechniqueType);
             //DataKeeper.Reward = _levelData.Reward;
-            _currentEnemyMonoBehavior.Initialize(_currentEnemyData.Sprite, currentEnemy.Hp, currentEnemy.TechniqueType, currentEnemy.Id,_statisticsManager, _saveSystem);
+            _currentEnemyMonoBehavior.Initialize(_currentEnemyData.Sprite, currentEnemy.Hp, currentEnemy.TechniqueType, currentEnemy.Id,_statisticsManager, _saveSystem, _audioManager);
             InvokeRepeating("PassiveDamage", 1f, 1f);
         }
 
