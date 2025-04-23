@@ -67,8 +67,12 @@ namespace Game.Enemies
 
       private void AnimateDamage()
       {
-        transform.DOShakePosition(0.3f, 5f, 10, 90f);
-      
+         var initialPosition = transform.localPosition;
+         transform.DOShakePosition(0.3f, 5f, 10, 90f).SetRelative(true).OnComplete(() =>
+         {
+            transform.localPosition = initialPosition;
+         });
+
          _image.DOColor(_damageColor, 0.1f)
             .OnComplete(() =>
             {

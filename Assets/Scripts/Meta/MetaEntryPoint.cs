@@ -38,8 +38,6 @@ namespace Meta
         private SaveSystem _saveSystem;
         private AudioManager _audioManager;
         private SceneLoader _sceneLoader;
-        
-        private event UnityAction OnAdv;
 
         public override void Run(SceneEnterParams enterParams)
         {
