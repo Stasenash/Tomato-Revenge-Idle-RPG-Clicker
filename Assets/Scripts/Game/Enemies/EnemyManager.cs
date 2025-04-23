@@ -92,15 +92,17 @@ namespace Game.Enemies
             
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
 
-            if (progress.CurrentLocation >= _gameEnterParams.Location &&
-                progress.CurrentLevel > _gameEnterParams.Level)
+            if (progress.CurrentLocation > _gameEnterParams.Location || (progress.CurrentLocation == _gameEnterParams.Location &&
+                progress.CurrentLevel > _gameEnterParams.Level))
             {
                 wallet.Coins += coins / (2 * enemiesCount) ;
+                DataKeeper.Reward = coins / 2;
                 Debug.Log($"coins={wallet.Coins}");
             }
             else
             {
                 wallet.Coins += coins / enemiesCount;
+                DataKeeper.Reward = coins;
                 Debug.Log($"coins={wallet.Coins}");
             }
             _saveSystem.SaveData(SavableObjectType.Wallet);
@@ -145,7 +147,7 @@ namespace Game.Enemies
             }
             var _currentEnemyData = _enemiesConfig.GetEnemy(currentEnemy.Id); 
             InitHeathBar(currentEnemy.Hp, _currentEnemyTechniqueType);
-            DataKeeper.Reward = _levelData.Reward;
+            //DataKeeper.Reward = _levelData.Reward;
             _currentEnemyMonoBehavior.Initialize(_currentEnemyData.Sprite, currentEnemy.Hp, currentEnemy.TechniqueType, currentEnemy.Id,_statisticsManager, _saveSystem);
             InvokeRepeating("PassiveDamage", 1f, 1f);
         }
