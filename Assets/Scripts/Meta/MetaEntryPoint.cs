@@ -43,7 +43,7 @@ namespace Meta
         {
             var commonObject = GameObject.FindWithTag(TAGS.COMMON_OBJECT_TAG).GetComponent<CommonObject>();
             _saveSystem = commonObject.SaveSystem;
-            //_audioManager = commonObject.AudioManager;
+            _audioManager = commonObject.AudioManager;
             _sceneLoader = commonObject.SceneLoader;
             
             _downPanelManager.Initialize();
@@ -75,7 +75,8 @@ namespace Meta
                 intros.IsIntroShowed = true;
                 _saveSystem.SaveData(SavableObjectType.Cutscenes);
             }
-            //_audioManager.PlayClip(AudioNames.BackgroundMetaMusic)
+
+            _audioManager.PlayClip(AudioNames.BackgroundMetaMusic);
         }
 
         private void UpdateStats()

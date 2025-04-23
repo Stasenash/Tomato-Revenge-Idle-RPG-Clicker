@@ -13,7 +13,8 @@ namespace SceneManagement
     {
         
         [SerializeField] private GameObject _loadingScreen;
-        
+        private AudioManager _audioManager;
+
         public void LoadMetaScene(SceneEnterParams enterParams = null)
         {
             StartCoroutine(LoadAndStart(enterParams, Scenes.MetaScene));
@@ -49,6 +50,7 @@ namespace SceneManagement
 
         private IEnumerator LoadScene(string sceneName)
         {
+            _audioManager.Load(sceneName);
             yield return SceneManager.LoadSceneAsync(sceneName);
         }
 
@@ -74,12 +76,10 @@ namespace SceneManagement
                // Destroy(dotweenComponent);
             //}
         }
-
-        //TODO: из занятия по менеджеру
-        // public void Initialize(AudioManager commonObjectAudioManager)
-        // {
-        //     Debug.Log("загрузка");
-        //     //throw new System.NotImplementedException();
-        // }
+        
+        public void Initialize(AudioManager audioManager)
+        {
+            _audioManager = audioManager;
+        }
     }
 }

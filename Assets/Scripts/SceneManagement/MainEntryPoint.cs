@@ -14,8 +14,8 @@ namespace SceneManagement
             var commonObject = Instantiate(commonObjectPrefab);
             DontDestroyOnLoad(commonObject);
 
-            //commonObject.AudioManager.LoadOnce();
-            //commonObject.SceneLoader.Initialize(commonObject.AudioManager);
+            commonObject.AudioManager.LoadOnce();
+            commonObject.SceneLoader.Initialize(commonObject.AudioManager);
             commonObject.SaveSystem = new();
             commonObject.SceneLoader.LoadMetaScene();
             
