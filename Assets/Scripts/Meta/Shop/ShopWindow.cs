@@ -62,7 +62,7 @@ namespace Meta.Shop
         private void SetReward()
         {
             var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet); 
-            wallet.Coins += 100;
+            wallet.Coins += 50;
             Debug.Log(wallet.Coins);
             SetCoinsText(wallet.Coins);
             _saveSystem.SaveData(SavableObjectType.Wallet);
