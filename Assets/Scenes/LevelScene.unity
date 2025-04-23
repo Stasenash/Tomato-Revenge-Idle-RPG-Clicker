@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 260423821}
   - component: {fileID: 260423820}
   m_Layer: 5
-  m_Name: Button
+  m_Name: X2Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1982,6 +1982,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1428169016686956039, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
+      propertyPath: _x2AdvButton
+      value: 
+      objectReference: {fileID: 260423820}
     - target: {fileID: 2193942628197379305, guid: ccce407a9fe67fb4690376ca9397a4f1, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5

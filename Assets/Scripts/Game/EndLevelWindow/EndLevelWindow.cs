@@ -1,8 +1,13 @@
+using System;
+using DG.Tweening;
 using Game.Statistics;
+using Global;
 using Global.SaveSystem;
+using Global.SaveSystem.SavableObjects;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using YG;
 
 namespace Game.EndLevelWindow
 {
@@ -21,18 +26,38 @@ namespace Game.EndLevelWindow
         [SerializeField] private AudioSource _winSound;
     
         [SerializeField] private StatisticsViewer _statisticsViewer;
-    
+        
+        [SerializeField] private Button _x2AdvButton;
+        private SaveSystem _saveSystem;
+
         public event UnityAction OnRestartButtonClicked;
         public event UnityAction OnNextButtonClicked;
         public event UnityAction OnBackButtonClicked;
         
         public void Initialize(SaveSystem saveSystem)
         {
+            _saveSystem = saveSystem;
             _statisticsViewer.Initialize(saveSystem);
             _loseRestartButton.onClick.AddListener(() => Restart());
             _winNextButton.onClick.AddListener(() => NextLevel());
             _winBackButton.onClick.AddListener((() => Back()));
             _loseBackButton.onClick.AddListener((() => Back()));
+
+            _x2AdvButton.interactable = true;
+            _x2AdvButton.onClick.AddListener(() => ShowAdvertisment());
+        }
+
+        private void ShowAdvertisment()
+        {
+            YG2.RewardedAdvShow("X2Button", SetReward);
+            _x2AdvButton.interactable = false;
+        }
+
+        private void SetReward()
+        {
+            var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet); 
+            wallet.Coins += DataKeeper.Reward;
+            _saveSystem.SaveData(SavableObjectType.Wallet);
         }
 
         private void Back()
