@@ -76,7 +76,7 @@ namespace Global
             if (CheckChance(stats.CritChance))
                 damage += stats.CritMultiplier * stats.Damage;
             if (CheckChance(stats.X2Chance))
-                damage += 2 * stats.Damage;
+                damage += stats.Damage;
             if (CheckChance(stats.InstantKillChance))
                 damage += 100000000;
             return damage;
