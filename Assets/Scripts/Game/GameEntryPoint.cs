@@ -103,7 +103,7 @@ namespace Game
                 {
                     Debug.Log("Game passed");
                     var intros = (Cutscenes)_saveSystem.GetData(SavableObjectType.Cutscenes);
-                    _endCutscene.Initialize();
+                    _endCutscene.Initialize(_audioManager);
                     _endCutscene.gameObject.SetActive(!intros.IsEndingShowed);
                     
                     if (!intros.IsEndingShowed)

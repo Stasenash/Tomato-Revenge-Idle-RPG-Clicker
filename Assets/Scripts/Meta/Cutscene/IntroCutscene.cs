@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DG.Tweening;
+using Global.AudioSystem;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -13,9 +14,11 @@ namespace Meta.Cutscene
         [SerializeField] private Button _hideCutscene;
         private Sequence _sequence;
         private List<float> _durations;
+        private AudioManager _audioManager;
 
-        public void Initialize()
+        public void Initialize(AudioManager audioManager)
         {
+            _audioManager = audioManager;
             Debug.Log("IntroCutscene initialized");
             _durations = new List<float>()
             {
@@ -33,9 +36,10 @@ namespace Meta.Cutscene
         }
 
         public void ShowIntroCutscene()
-        {
-           _sequence = DOTween.Sequence();
-           _sequence.AppendInterval(2f);
+        { 
+            _audioManager.PlayOnceButShutAll(AudioNames.IntroCutscene);
+            _sequence = DOTween.Sequence();
+            _sequence.AppendInterval(2f);
            for (var i = 0; i < _images.Length; i++)
            {
                _sequence.Append(_images[i].DOFade(1, 1f));

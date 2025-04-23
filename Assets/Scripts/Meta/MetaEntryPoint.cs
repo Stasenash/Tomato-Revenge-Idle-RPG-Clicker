@@ -51,7 +51,7 @@ namespace Meta
             _shopWindow.Initialize(wallet.Coins, _saveSystem, _audioManager);
             
             _achievementsWindow.Initialize();
-            _profileWindow.Initialize((Stats)_saveSystem.GetData(SavableObjectType.Stats));
+            _profileWindow.Initialize((Stats)_saveSystem.GetData(SavableObjectType.Stats), _audioManager);
             _skillShop.Initialize(_saveSystem, _skillsConfig, _shopWindow, _audioManager);
             _skillShopWindow.Initialize(_audioManager);
             UpdateStats();
@@ -66,7 +66,7 @@ namespace Meta
             _locationManager.Initialize(progress, StartLevel, _audioManager);
 
             var intros = (Cutscenes)_saveSystem.GetData(SavableObjectType.Cutscenes);
-            _introCutscene.Initialize();
+            _introCutscene.Initialize(_audioManager);
             _introCutscene.gameObject.SetActive(!intros.IsIntroShowed);
             if (!intros.IsIntroShowed)
             {

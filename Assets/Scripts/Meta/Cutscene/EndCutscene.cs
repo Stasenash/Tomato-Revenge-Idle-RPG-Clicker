@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using DG.Tweening;
 using Game;
+using Global.AudioSystem;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,9 +19,11 @@ namespace Meta.Cutscene
         
         private Sequence _sequence;
         private List<float> _durations;
+        private AudioManager _audioManager;
 
-        public void Initialize()
+        public void Initialize(AudioManager audioManager)
         {
+            _audioManager = audioManager;
             Debug.Log("EndCutscene initialized");
             _durations = new List<float>()
             {
@@ -37,6 +40,7 @@ namespace Meta.Cutscene
 
         public void ShowEndCutscene()
         {
+            _audioManager.PlayOnceButShutAll(AudioNames.EndCutscene);
             gameObject.SetActive(true);
            _sequence = DOTween.Sequence();
            _sequence.AppendInterval(2f);

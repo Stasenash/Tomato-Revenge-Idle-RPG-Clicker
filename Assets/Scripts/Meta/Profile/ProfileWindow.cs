@@ -1,4 +1,6 @@
-﻿using Global.SaveSystem.SavableObjects;
+﻿using Global.AudioSystem;
+using Global.SaveSystem;
+using Global.SaveSystem.SavableObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,10 +21,12 @@ namespace Meta.Profile
         [SerializeField] private GameObject _profilePanel;
 
         private bool _isProfileOpen;
+        private AudioManager _audioManager;
 
-        public void Initialize(Stats stats)
+        public void Initialize(Stats stats, AudioManager audioManager)
         {
             _isProfileOpen = false;
+            _audioManager = audioManager;
             InitializeValues();
             UpdateValues(stats);
             _profilePanel.SetActive(_isProfileOpen);
@@ -31,6 +35,7 @@ namespace Meta.Profile
 
         private void OpenProfile()
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             _isProfileOpen = !_isProfileOpen;
             _profilePanel.SetActive(_isProfileOpen);
         }
