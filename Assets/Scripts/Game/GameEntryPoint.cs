@@ -62,6 +62,14 @@ namespace Game
                 location = _maxLocationAndLevel.x;
                 level = _maxLocationAndLevel.y;
             }
+
+            switch (location)
+            {
+                case 0: _audioManager.StopGlobal(); _audioManager.PlayClip(AudioNames.MushroomsBattle, true);break;
+                case 1: _audioManager.StopGlobal(); _audioManager.PlayClip(AudioNames.NutsBattle, true);break;
+                case 2: _audioManager.StopGlobal(); _audioManager.PlayClip(AudioNames.VegetablesBattle, true);break;
+                case 3: _audioManager.StopGlobal(); _audioManager.PlayClip(AudioNames.FruitsBattle, true);break;
+            }
             
             var levelData = _levelsConfig.GetLevel(location, level);
             
@@ -138,7 +146,7 @@ namespace Game
             }
             _gameEnterParams = gameEnterParams;
             _enemyManager.Initialize(_healthBar, _timer, _timerImage, _saveSystem, _gameEnterParams, _levelsConfig, _audioManager);
-            _endLevelWindow.Initialize(_saveSystem);  
+            _endLevelWindow.Initialize(_saveSystem, _audioManager);  
             _gamePanelManager.Initialize();
             
             var openedSkills = (OpenedSkills)_saveSystem.GetData(SavableObjectType.OpenedSkills);
@@ -159,7 +167,6 @@ namespace Game
             _gamePanelManager.OnLoseButtonClicked += ReturnToMap;
 
             _endCutscene.OnGameEnd += ReturnToMap;
-
             StartLevel();
         }
 

@@ -36,6 +36,7 @@ namespace Global.AudioSystem
             if (isGlobal) {
                 clip = _globalClips[clipName];
                 _audioGlobalSource.Stop();
+                _audioGlobalSource.loop = true;
                 _audioGlobalSource.clip = clip;
                 _audioGlobalSource.Play();
             }
@@ -45,6 +46,20 @@ namespace Global.AudioSystem
                 _audioSource.clip = clip;
                 _audioSource.Play();
             }
+        }
+
+        public void PlayOnceButShutAll(string clipName)
+        {
+            var clip = _sceneClips[clipName];
+            _audioGlobalSource.Stop();
+            _audioSource.Stop();
+            _audioSource.clip = clip;
+            _audioSource.Play();
+        }
+        
+        public void StopGlobal()
+        {
+            _audioGlobalSource.Stop();
         }
 
         private void UnloadAssets() {

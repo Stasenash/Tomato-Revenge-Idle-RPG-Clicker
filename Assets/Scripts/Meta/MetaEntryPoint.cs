@@ -46,14 +46,14 @@ namespace Meta
             _audioManager = commonObject.AudioManager;
             _sceneLoader = commonObject.SceneLoader;
             
-            _downPanelManager.Initialize();
+            _downPanelManager.Initialize(_audioManager);
             var wallet = (Wallet) _saveSystem.GetData(SavableObjectType.Wallet);
-            _shopWindow.Initialize(wallet.Coins, _saveSystem);
+            _shopWindow.Initialize(wallet.Coins, _saveSystem, _audioManager);
             
             _achievementsWindow.Initialize();
             _profileWindow.Initialize((Stats)_saveSystem.GetData(SavableObjectType.Stats));
-            _skillShop.Initialize(_saveSystem, _skillsConfig, _shopWindow);
-            _skillShopWindow.Initialize();
+            _skillShop.Initialize(_saveSystem, _skillsConfig, _shopWindow, _audioManager);
+            _skillShopWindow.Initialize(_audioManager);
             UpdateStats();
             _skillShop.OnSkillsChanged += () =>
             {
@@ -63,7 +63,7 @@ namespace Meta
             
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
-            _locationManager.Initialize(progress, StartLevel);
+            _locationManager.Initialize(progress, StartLevel, _audioManager);
 
             var intros = (Cutscenes)_saveSystem.GetData(SavableObjectType.Cutscenes);
             _introCutscene.Initialize();
@@ -76,7 +76,7 @@ namespace Meta
                 _saveSystem.SaveData(SavableObjectType.Cutscenes);
             }
 
-            _audioManager.PlayClip(AudioNames.BackgroundMetaMusic);
+            _audioManager.PlayClip(AudioNames.BackgroundMeta, true);
         }
 
         private void UpdateStats()

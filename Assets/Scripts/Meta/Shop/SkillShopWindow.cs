@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Global.AudioSystem;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Meta.Shop
@@ -16,18 +17,20 @@ namespace Meta.Shop
         [SerializeField] private GameObject _ninjutsuUnderline;
         [SerializeField] private GameObject _taijutsuUnderline;
         [SerializeField] private GameObject _genjutsuUnderline;
+        private AudioManager _audioManager;
 
-        public void Initialize()
+        public void Initialize(AudioManager audioManager)
         {
             _ninjutsuTabButton.onClick.AddListener(()=> ShowTab(_ninjutsuTab, _ninjutsuUnderline));
             _taijutsuTabButton.onClick.AddListener(()=> ShowTab(_taijutsuTab, _taijutsuUnderline));
             _genjutsuTabButton.onClick.AddListener(()=> ShowTab(_genjutsuTab, _genjutsuUnderline));
-            
+            _audioManager = audioManager;
             ShowTab(_ninjutsuTab, _ninjutsuUnderline);
         }
 
         private void ShowTab(GameObject tab, GameObject underline)
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             CloseAllTabs();
             tab.SetActive(true);
             underline.SetActive(true);

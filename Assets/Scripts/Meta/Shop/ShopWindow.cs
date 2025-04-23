@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using Game.Configs.SkillsConfigs;
+using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using TMPro;
@@ -35,14 +36,16 @@ namespace Meta.Shop
         
         private Sequence _sequence;
         private SaveSystem _saveSystem;
+        private AudioManager _audioManager;
 
-        public void Initialize(int coins, SaveSystem saveSystem)
+        public void Initialize(int coins, SaveSystem saveSystem, AudioManager audioManager)
         {
             _skillsTabButton.onClick.AddListener(() => ShowTab(_skillsTab, _skillsUnderline));
             _buffsTabButton.onClick.AddListener(() => ShowTab(_buffsTab,_buffsUnderline));
             _itemsTabButton.onClick.AddListener(() => ShowTab(_itemsTab, _itemsUnderline));
             _coinsTabButton.onClick.AddListener(() => ShowTab(_coinsTab, _coinsUnderline));
             
+            _audioManager = audioManager;
             _saveSystem = saveSystem;
             
             SetCoinsText(coins);
@@ -54,6 +57,7 @@ namespace Meta.Shop
 
         private void ShowAdvertisment()
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             YG2.RewardedAdvShow("BuyButton", SetReward);
             _advButton.interactable = false;
             _sequence = DOTween.Sequence().AppendInterval(120f).OnComplete(()=> { _advButton.interactable = true; });
@@ -75,12 +79,14 @@ namespace Meta.Shop
 
         private void SetMainTabActive()
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             _skillsTab.SetActive(true);
             _skillsUnderline.SetActive(true);
         }
 
         private void ShowTab(GameObject tab, GameObject underline)
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             CloseAllTabs();
             tab.SetActive(true);
             underline.SetActive(true);
@@ -88,6 +94,7 @@ namespace Meta.Shop
 
         public void ShowCoinsTab()
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             CloseAllTabs();
             _coinsTab.SetActive(true);
             _coinsUnderline.SetActive(true);

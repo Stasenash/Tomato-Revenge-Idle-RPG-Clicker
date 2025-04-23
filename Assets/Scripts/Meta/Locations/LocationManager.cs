@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Global.AudioSystem;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
@@ -14,10 +15,12 @@ namespace Meta.Locations
         
         [SerializeField] private List<Location> _locations;
         private int _currentLocation;
+        private AudioManager _audioManager;
 
-        public void Initialize(Progress progress, UnityAction<int, int> startLevelCallback)
+        public void Initialize(Progress progress, UnityAction<int, int> startLevelCallback, AudioManager audioManager)
         {
             _currentLocation = progress.CurrentLocation;
+            _audioManager = audioManager;
             InitLocations(progress, startLevelCallback);
             
             InitialMoveLocationsButton();
@@ -62,6 +65,7 @@ namespace Meta.Locations
 
         private void ShowNextLocation()
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             _locations[_currentLocation].SetActive(false);
             _currentLocation++;
             _locations[_currentLocation].SetActive(true);
@@ -79,6 +83,7 @@ namespace Meta.Locations
 
         private void ShowPreviousLocation()
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             _locations[_currentLocation].SetActive(false);
             _currentLocation--;
             _locations[_currentLocation].SetActive(true);

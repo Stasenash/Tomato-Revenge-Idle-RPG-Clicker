@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Game.Configs.SkillsConfigs;
+using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using UnityEngine;
@@ -18,12 +19,14 @@ namespace Meta.Shop
         private SkillsConfig _skillsConfig;
         private SaveSystem _saveSystem;
         private ShopWindow _shopWindow;
-        
+        private AudioManager _audioManager;
+
         public event UnityAction OnSkillsChanged;
 
-        public void Initialize(SaveSystem saveSystem, SkillsConfig skillsConfig, ShopWindow shopWindow)
+        public void Initialize(SaveSystem saveSystem, SkillsConfig skillsConfig, ShopWindow shopWindow, AudioManager audioManager)
         {
             _saveSystem = saveSystem;
+            _audioManager = audioManager;
             _wallet = (Wallet)saveSystem.GetData(SavableObjectType.Wallet);
             _openedSkills = (OpenedSkills)saveSystem.GetData(SavableObjectType.OpenedSkills);
             _skillsConfig = skillsConfig;
@@ -60,6 +63,7 @@ namespace Meta.Shop
 
         private void SkillUpgrade(string skillId, int cost)
         {
+            _audioManager.PlayClip(AudioNames.BuySound);
             var skillWithLevel = _openedSkills.GetOrCreateSkillWithLevel(skillId);
             skillWithLevel.Level++;
             _wallet.Coins -= cost;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Global.AudioSystem;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Meta.DownPanel
@@ -16,11 +17,13 @@ namespace Meta.DownPanel
 
         private bool isShopOpen;
         private bool isAchievementsOpen;
+        private AudioManager _audioManager;
 
-        public void Initialize()
+        public void Initialize(AudioManager audioManager)
         {
             isAchievementsOpen = false;
             isShopOpen = false;
+            _audioManager = audioManager;
             _shopButton.onClick.AddListener(() => OpenOrCloseShop());
             _achievementsButton.onClick.AddListener(() => OpenOrCloseAchievements());
         }
@@ -38,6 +41,7 @@ namespace Meta.DownPanel
 
         private void OpenOrCloseShop()
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             isAchievementsOpen = false;
             _achievementsWindow.SetActive(isAchievementsOpen);
             _achievementsUnderline.SetActive(isAchievementsOpen);
