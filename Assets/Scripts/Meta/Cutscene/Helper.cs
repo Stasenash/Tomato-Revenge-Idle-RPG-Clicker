@@ -27,6 +27,7 @@ namespace Meta.Cutscene
             _buttonNext.onClick.AddListener(NextFrame);
             _buttonPrevious.onClick.AddListener(PreviousFrame);
             _buttonPrevious.gameObject.SetActive(false);
+            _audioManager.PlayClip(AudioNames.BackgroundMeta);
         }
 
         private void NextFrame()

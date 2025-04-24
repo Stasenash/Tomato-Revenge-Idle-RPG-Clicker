@@ -52,13 +52,15 @@ namespace Meta.Cutscene
                _sequence.AppendInterval(0.5f);
            }
 
-           _sequence.AppendCallback(() => { this.gameObject.SetActive(false); _audioManager.PlayClip(AudioNames.BackgroundMeta);});
+           _sequence.AppendCallback(() => { this.gameObject.SetActive(false);});
            _sequence.AppendCallback(() => { OnGameEnd?.Invoke(); });
+           _sequence.AppendCallback(() => { _audioManager.PlayClip(AudioNames.BackgroundMeta); });
            _sequence.Play();
         }
 
         public void HideEndCutscene()
         {
+            OnGameEnd?.Invoke();
             _audioManager.PlayClip(AudioNames.BackgroundMeta);
             if (_sequence != null && _sequence.IsPlaying())
             {
