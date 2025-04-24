@@ -9567,7 +9567,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: '500
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17346,6 +17348,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826575744}
   m_CullTransparentMesh: 1
+--- !u!114 &1849634804 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5293846650031587606, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+  m_PrefabInstance: {fileID: 8975439796235499505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852151351
 GameObject:
   m_ObjectHideFlags: 0
@@ -20465,6 +20478,11 @@ MonoBehaviour:
   _x2BuffButton: {fileID: 590409754}
   _passsiveBuffButton: {fileID: 811155191}
   _instantKillBuffButton: {fileID: 1372292831}
+  _attackBuffText: {fileID: 1849634804}
+  _critBuffText: {fileID: 2080616150}
+  _x2BuffText: {fileID: 1586013115}
+  _passsiveBuffText: {fileID: 1006616529}
+  _instantKillBuffText: {fileID: 1787854217}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

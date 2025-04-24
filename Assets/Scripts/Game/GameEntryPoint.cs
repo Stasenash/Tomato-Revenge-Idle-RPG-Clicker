@@ -171,7 +171,7 @@ namespace Game
         }
 
         
-        public void ClearBuffs()
+        private void ClearBuffs()
         {
             var buffs = (Buffs)_saveSystem.GetData(SavableObjectType.Buffs);
             buffs.AttackBuff = false;

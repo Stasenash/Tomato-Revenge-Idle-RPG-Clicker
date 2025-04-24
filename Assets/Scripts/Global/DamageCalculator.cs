@@ -75,7 +75,7 @@ namespace Global
             var stats = (Stats)_saveSystem.GetData(SavableObjectType.Stats);
             float damage =  stats.Damage;
             if (CheckChance(stats.CritChance))
-                damage += stats.CritMultiplier * stats.Damage;
+                damage = stats.CritMultiplier * stats.Damage;
             if (CheckChance(stats.X2Chance))
                 damage += stats.Damage;
             if (CheckChance(stats.InstantKillChance))
@@ -103,6 +103,7 @@ namespace Global
                 stats.Damage *= 2f;
             if (buffs.InstantKillBuff)
                 stats.InstantKillChance += 0.0005f;
+            _saveSystem.SaveData(SavableObjectType.Stats);
         }
         
         public void ApplySkills()
@@ -132,6 +133,9 @@ namespace Global
                     case SkillType.PassiveDamage:
                         stats.PassiveDamage += skill.Value;
                         break;
+                    case SkillType.PassivePercents:
+                        stats.PassiveDamage *= 1 + skill.Value;
+                        break;
                     case SkillType.ComboChance:
                         stats.ComboChance = skill.Value;
                         break;
@@ -141,14 +145,15 @@ namespace Global
                     case SkillType.X2Chance:
                         stats.X2Chance = skill.Value;
                         break;
-                    case SkillType.DamagePercents:
-                        stats.Damage *= 1 + skill.Value;
-                        break;
                     case SkillType.DamagePoints:
                         stats.Damage += skill.Value;
                         break;
+                    case SkillType.DamagePercents:
+                        stats.Damage *= 1 + skill.Value;
+                        break;
                 }
             }
+            _saveSystem.SaveData(SavableObjectType.Stats);
         }
     }
 }

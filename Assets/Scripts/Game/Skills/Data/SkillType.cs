@@ -10,6 +10,7 @@
             InstantKillChance,
             X2Chance,
             DamagePercents,
-            DamagePoints
+            DamagePoints,
+            PassivePercents,
     }
 }

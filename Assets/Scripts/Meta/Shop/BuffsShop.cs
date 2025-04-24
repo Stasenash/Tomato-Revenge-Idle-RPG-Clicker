@@ -5,6 +5,7 @@ using Game.EndLevelWindow;
 using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -19,8 +20,15 @@ namespace Meta.Shop
         [SerializeField] private Button _passsiveBuffButton;
         [SerializeField] private Button _instantKillBuffButton;
         
+        [SerializeField] private TextMeshProUGUI _attackBuffText;
+        [SerializeField] private TextMeshProUGUI _critBuffText;
+        [SerializeField] private TextMeshProUGUI _x2BuffText;
+        [SerializeField] private TextMeshProUGUI _passsiveBuffText;
+        [SerializeField] private TextMeshProUGUI _instantKillBuffText;
+        
         private Dictionary<Button, int> _buttonsCost;
         private Dictionary<Button, bool> _buffsBought;
+        private Dictionary<Button, TextMeshProUGUI> _buffsText;
         
         private SaveSystem _saveSystem;
         private ShopWindow _shopWindow;
@@ -42,6 +50,7 @@ namespace Meta.Shop
                 buffs.AttackBuff = true;
                 _saveSystem.SaveData(SavableObjectType.Buffs);
                 UpdateBuffsItems();
+                OnBuffBought?.Invoke();
             });
             
             _critBuffButton.onClick.AddListener(() =>
@@ -51,6 +60,7 @@ namespace Meta.Shop
                 buffs.CritBuff = true;
                 _saveSystem.SaveData(SavableObjectType.Buffs);
                 UpdateBuffsItems();
+                OnBuffBought?.Invoke();
             });
             
             _x2BuffButton.onClick.AddListener(() =>
@@ -60,6 +70,7 @@ namespace Meta.Shop
                 buffs.X2Buff = true;
                 _saveSystem.SaveData(SavableObjectType.Buffs);
                 UpdateBuffsItems();
+                OnBuffBought?.Invoke();
             });
             
             _passsiveBuffButton.onClick.AddListener(() =>
@@ -69,6 +80,7 @@ namespace Meta.Shop
                 buffs.PassiveBuff = true;
                 _saveSystem.SaveData(SavableObjectType.Buffs);
                 UpdateBuffsItems();
+                OnBuffBought?.Invoke();
             });
             
             _instantKillBuffButton.onClick.AddListener(() =>
@@ -78,11 +90,23 @@ namespace Meta.Shop
                 buffs.InstantKillBuff = true;
                 _saveSystem.SaveData(SavableObjectType.Buffs);
                 UpdateBuffsItems();
+                OnBuffBought?.Invoke();
             });
             
             InitializeButtonCost();
             InitializeBuffsBought();
+            InitializeBuffsText();
             UpdateBuffsItems();
+        }
+
+        private void InitializeBuffsText()
+        {
+            _buffsText = new Dictionary<Button, TextMeshProUGUI>();
+            _buffsText.Add(_attackBuffButton, _attackBuffText);
+            _buffsText.Add(_critBuffButton, _critBuffText);
+            _buffsText.Add(_x2BuffButton, _x2BuffText);
+            _buffsText.Add(_passsiveBuffButton, _passsiveBuffText);
+            _buffsText.Add(_instantKillBuffButton, _instantKillBuffText);
         }
 
         private void InitializeButtonCost()
@@ -112,13 +136,17 @@ namespace Meta.Shop
             foreach (var buttonCost in _buttonsCost)
             {
                 buttonCost.Key.interactable = true;
+                _buffsText[buttonCost.Key].color = Color.white;
             }
             
             var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
             foreach (var buttonCost in _buttonsCost)
             {
                 if (wallet.Coins < buttonCost.Value)
+                {
                     buttonCost.Key.interactable = false;
+                    _buffsText[buttonCost.Key].color = Color.red;
+                }
             }
 
             InitializeBuffsBought();
@@ -135,7 +163,6 @@ namespace Meta.Shop
             var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
             wallet.Coins -= cost;
             _saveSystem.SaveData(SavableObjectType.Wallet);
-            OnBuffBought?.Invoke();
         }
     }
 }
