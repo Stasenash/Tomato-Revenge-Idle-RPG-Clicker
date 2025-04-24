@@ -2,20 +2,20 @@
     "stringKeys": [
         "Stats",
         "Cutscenes",
-        "Buffs",
         "Wallet",
+        "Buffs",
+        "OpenedSkills",
         "Progress",
-        "Statistics",
-        "OpenedSkills"
+        "Statistics"
     ],
     "stringValues": [
-        "{\"Damage\":21.0,\"CritChance\":0.20000000298023225,\"CritMultiplier\":3.0,\"PassiveDamage\":29.75,\"PassivePercents\":0.0,\"ComboChance\":0.000699999975040555,\"InstantKillChance\":0.000699999975040555,\"X2Chance\":0.15000000596046449}",
+        "{\"Damage\":801.0,\"CritChance\":0.6000000238418579,\"CritMultiplier\":3.0,\"PassiveDamage\":41259.0,\"PassivePercents\":0.0,\"ComboChance\":0.0,\"InstantKillChance\":0.009999999776482582,\"X2Chance\":0.6000000238418579}",
         "{\"IsIntroShowed\":true,\"IsEndingShowed\":false,\"IsHelperShowed\":false}",
+        "{\"Coins\":466719}",
         "{\"AttackBuff\":false,\"CritBuff\":false,\"X2Buff\":false,\"PassiveBuff\":false,\"InstantKillBuff\":false}",
-        "{\"Coins\":9599}",
-        "{\"CurrentLocation\":3,\"CurrentLevel\":3}",
-        "{\"EnemiesStatistics\":[{\"EnemyId\":\"mushroom_officer\",\"TotalHits\":536,\"TotalDeaths\":11,\"TotalAttempts\":11,\"TempHits\":536},{\"EnemyId\":\"mushroom_torso4\",\"TotalHits\":579,\"TotalDeaths\":11,\"TotalAttempts\":11,\"TempHits\":579},{\"EnemyId\":\"mushroom_boss\",\"TotalHits\":634,\"TotalDeaths\":7,\"TotalAttempts\":11,\"TempHits\":0},{\"EnemyId\":\"nut_grey\",\"TotalHits\":41,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":41},{\"EnemyId\":\"nut_almond\",\"TotalHits\":278,\"TotalDeaths\":3,\"TotalAttempts\":4,\"TempHits\":216},{\"EnemyId\":\"nut_grumpy\",\"TotalHits\":162,\"TotalDeaths\":1,\"TotalAttempts\":2,\"TempHits\":0},{\"EnemyId\":\"veg_onion_teen\",\"TotalHits\":264,\"TotalDeaths\":3,\"TotalAttempts\":3,\"TempHits\":264},{\"EnemyId\":\"veg_onion\",\"TotalHits\":268,\"TotalDeaths\":3,\"TotalAttempts\":3,\"TempHits\":268},{\"EnemyId\":\"veg_warrior_onion\",\"TotalHits\":282,\"TotalDeaths\":1,\"TotalAttempts\":3,\"TempHits\":0},{\"EnemyId\":\"veg_salad\",\"TotalHits\":98,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":98},{\"EnemyId\":\"veg_cucumber_cowboy\",\"TotalHits\":94,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"veg_creepy_pumpkin\",\"TotalHits\":312,\"TotalDeaths\":3,\"TotalAttempts\":3,\"TempHits\":312},{\"EnemyId\":\"veg_tentacles_pumpkin\",\"TotalHits\":400,\"TotalDeaths\":3,\"TotalAttempts\":3,\"TempHits\":400},{\"EnemyId\":\"veg_evil_beet\",\"TotalHits\":382,\"TotalDeaths\":3,\"TotalAttempts\":3,\"TempHits\":382},{\"EnemyId\":\"veg_crazy_zucchini\",\"TotalHits\":311,\"TotalDeaths\":2,\"TotalAttempts\":3,\"TempHits\":0},{\"EnemyId\":\"fruit_smile_pear\",\"TotalHits\":516,\"TotalDeaths\":1,\"TotalAttempts\":5,\"TempHits\":516},{\"EnemyId\":\"fruit_tired_pear\",\"TotalHits\":415,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":415},{\"EnemyId\":\"fruit_fat_pear\",\"TotalHits\":65,\"TotalDeaths\":0,\"TotalAttempts\":1,\"TempHits\":65}]}",
-        "{\"Skills\":[{\"Id\":\"TaijutsuDamageSkill\",\"Level\":0},{\"Id\":\"NinjutsuDamageSkill\",\"Level\":0},{\"Id\":\"GenjutsuDamageSkill\",\"Level\":0},{\"Id\":\"GreatBlackSky\",\"Level\":4},{\"Id\":\"ScarletFlash\",\"Level\":4},{\"Id\":\"MultipleSmokeCloning\",\"Level\":4},{\"Id\":\"SilentFist\",\"Level\":4},{\"Id\":\"ParalyzingFlute\",\"Level\":2},{\"Id\":\"DemonicIllusion\",\"Level\":4},{\"Id\":\"MindTrick\",\"Level\":4}]}"
+        "{\"Skills\":[{\"Id\":\"TaijutsuDamageSkill\",\"Level\":0},{\"Id\":\"NinjutsuDamageSkill\",\"Level\":0},{\"Id\":\"GenjutsuDamageSkill\",\"Level\":0},{\"Id\":\"GreatBlackSky\",\"Level\":10},{\"Id\":\"ScarletFlash\",\"Level\":10},{\"Id\":\"MultipleSmokeCloning\",\"Level\":10},{\"Id\":\"SilentFist\",\"Level\":10},{\"Id\":\"ParalyzingFlute\",\"Level\":10},{\"Id\":\"DemonicIllusion\",\"Level\":10},{\"Id\":\"MindTrick\",\"Level\":10}]}",
+        "{\"CurrentLocation\":3,\"CurrentLevel\":6}",
+        "{\"EnemiesStatistics\":[{\"EnemyId\":\"mushroom_officer\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"mushroom_torso4\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"mushroom_boss\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"nut_grey\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"nut_almond\",\"TotalHits\":2,\"TotalDeaths\":2,\"TotalAttempts\":2,\"TempHits\":1},{\"EnemyId\":\"nut_grumpy\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"veg_onion_teen\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_onion\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_warrior_onion\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"veg_salad\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_cucumber_cowboy\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"veg_creepy_pumpkin\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_tentacles_pumpkin\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_evil_beet\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_crazy_zucchini\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"fruit_smile_pear\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"fruit_tired_pear\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"fruit_fat_pear\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"fruit_pomelo\",\"TotalHits\":2,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":2},{\"EnemyId\":\"fruit_banana\",\"TotalHits\":3,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":3},{\"EnemyId\":\"fruit_yarik_banana\",\"TotalHits\":3,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":3},{\"EnemyId\":\"fruit_pineapple\",\"TotalHits\":4,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":4},{\"EnemyId\":\"fruit_odd_pineapple\",\"TotalHits\":14,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":14},{\"EnemyId\":\"fruit_crazy_pineapple\",\"TotalHits\":22,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0}]}"
     ],
     "floatKeys": [],
     "floatValues": [],
@@ -29,5 +29,5 @@
         false,
         false
     ],
-    "idSave": 6423
+    "idSave": 647
 }
