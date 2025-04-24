@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Global.AudioSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +12,11 @@ namespace Meta.Cutscene
         [SerializeField] private Button _buttonPrevious;
         
         private int _frameIndex;
-        
-        public void Initialize()
+        private AudioManager _audioManager;
+
+        public void Initialize(AudioManager audioManager)
         {
+            _audioManager = audioManager;
             gameObject.SetActive(true);
             foreach (var frame in _frames)
             {
@@ -28,6 +31,7 @@ namespace Meta.Cutscene
 
         private void NextFrame()
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             _frames[_frameIndex].gameObject.SetActive(false);
             _frameIndex++;
             if (_frameIndex >= _frames.Count)
@@ -41,6 +45,7 @@ namespace Meta.Cutscene
         
         private void PreviousFrame()
         {
+            _audioManager.PlayClip(AudioNames.InterfaceClick);
             _frames[_frameIndex].gameObject.SetActive(false);
             _frameIndex--;
             if (_frameIndex == 0)

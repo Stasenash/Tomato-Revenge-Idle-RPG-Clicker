@@ -73,7 +73,7 @@ namespace Meta
             if (!intros.IsIntroShowed)
             {
                 _introCutscene.ShowIntroCutscene();
-                _helper.Initialize();
+                _helper.Initialize(_audioManager);
                 intros.IsIntroShowed = true;
                 _saveSystem.SaveData(SavableObjectType.Cutscenes);
             }

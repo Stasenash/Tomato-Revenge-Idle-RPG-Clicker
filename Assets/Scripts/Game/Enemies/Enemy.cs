@@ -45,6 +45,7 @@ namespace Game.Enemies
 
       public void TakeDamage(float damage)
       {
+         damage *= 10000;
          if (damage >= _health)
          {
             _health = 0;

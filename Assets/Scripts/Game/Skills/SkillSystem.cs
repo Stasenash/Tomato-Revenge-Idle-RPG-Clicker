@@ -44,6 +44,8 @@ namespace Game.Skills
             var damage = new DamageCalculator(_saveSystem, _heroStatsConfig).CalculateTotalDamage();
             var calculatedDamage = _rspConfig.CalculateDamage(techniqueType,
                 _enemyManager.GetCurrentEnemyTechniqueType(), damage);
+            if(calculatedDamage > 10)
+                calculatedDamage = MathF.Round(calculatedDamage);
             _enemyManager.DamageCurrentEnemy(calculatedDamage);
         }
     }

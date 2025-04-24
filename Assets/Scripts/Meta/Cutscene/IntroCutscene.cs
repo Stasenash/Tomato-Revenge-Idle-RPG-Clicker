@@ -37,7 +37,7 @@ namespace Meta.Cutscene
 
         public void ShowIntroCutscene()
         { 
-            _audioManager.PlayOnceButShutAll(AudioNames.IntroCutscene);
+            _audioManager.PlayClip(AudioNames.IntroCutscene, true);
             _sequence = DOTween.Sequence();
             _sequence.AppendInterval(2f);
            for (var i = 0; i < _images.Length; i++)
@@ -48,12 +48,13 @@ namespace Meta.Cutscene
                _sequence.AppendInterval(0.5f);
            }
 
-           _sequence.AppendCallback(() => { this.gameObject.SetActive(false); });
+           _sequence.AppendCallback(() => { this.gameObject.SetActive(false); _audioManager.PlayClip(AudioNames.BackgroundMeta); });
            _sequence.Play();
         }
 
         public void HideIntroCutscene()
         {
+            _audioManager.PlayClip(AudioNames.BackgroundMeta);
             if (_sequence != null && _sequence.IsPlaying())
             {
                 _sequence.Kill();

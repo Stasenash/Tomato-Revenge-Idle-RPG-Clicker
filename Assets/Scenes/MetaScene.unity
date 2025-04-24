@@ -16986,6 +16986,10 @@ PrefabInstance:
       propertyPath: _advCoinsText
       value: 
       objectReference: {fileID: 8975439796235499507}
+    - target: {fileID: 3832071684907952854, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4025015513128527712, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
       propertyPath: m_text
       value: "<color=#FF5733><b>\u0414\u044B\u043C\u043E\u0432\u043E\u0435 \u043A\u043B\u043E\u043D\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435.</b></color>\n\u041F\u043E\u0432\u044B\u0448\u0430\u0435\u0442
@@ -17037,6 +17041,10 @@ PrefabInstance:
       value: "<color=#FF5733><b>\u0410\u043B\u0430\u044F \u0432\u0441\u043F\u044B\u0448\u043A\u0430.</b></color>\n\u041F\u043E\u0432\u044B\u0448\u0430\u0435\u0442
         \u0448\u0430\u043D\u0441 \u043A\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E
         \u0443\u0434\u0430\u0440\u0430."
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816194346428548633, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5869407398374941196, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
       propertyPath: m_text
