@@ -2,19 +2,11 @@
     "stringKeys": [
         "Stats",
         "Cutscenes",
-        "Wallet",
-        "Progress",
-        "OpenedSkills",
-        "Statistics",
         "Buffs"
     ],
     "stringValues": [
-        "{\"Damage\":1.5,\"CritChance\":0.15000000596046449,\"CritMultiplier\":3.0,\"PassiveDamage\":10.0,\"ComboChance\":0.0,\"InstantKillChance\":0.00009999999747378752,\"X2Chance\":0.05000000074505806}",
-        "{\"IsIntroShowed\":true,\"IsEndingShowed\":true,\"IsHelperShowed\":false}",
-        "{\"Coins\":25}",
-        "{\"CurrentLocation\":3,\"CurrentLevel\":6}",
-        "{\"Skills\":[{\"Id\":\"TaijutsuDamageSkill\",\"Level\":0},{\"Id\":\"NinjutsuDamageSkill\",\"Level\":0},{\"Id\":\"GenjutsuDamageSkill\",\"Level\":0},{\"Id\":\"GreatBlackSky\",\"Level\":5},{\"Id\":\"ScarletFlash\",\"Level\":2},{\"Id\":\"MultipleSmokeCloning\",\"Level\":3},{\"Id\":\"SilentFist\",\"Level\":0},{\"Id\":\"ParalyzingFlute\",\"Level\":1},{\"Id\":\"DemonicIllusion\",\"Level\":1},{\"Id\":\"MindTrick\",\"Level\":1}]}",
-        "{\"EnemiesStatistics\":[{\"EnemyId\":\"mushroom_officer\",\"TotalHits\":1406,\"TotalDeaths\":42,\"TotalAttempts\":50,\"TempHits\":1406},{\"EnemyId\":\"mushroom_torso4\",\"TotalHits\":1482,\"TotalDeaths\":35,\"TotalAttempts\":42,\"TempHits\":1482},{\"EnemyId\":\"mushroom_boss\",\"TotalHits\":1295,\"TotalDeaths\":27,\"TotalAttempts\":35,\"TempHits\":0},{\"EnemyId\":\"nut_grey\",\"TotalHits\":143,\"TotalDeaths\":4,\"TotalAttempts\":6,\"TempHits\":143},{\"EnemyId\":\"nut_almond\",\"TotalHits\":149,\"TotalDeaths\":2,\"TotalAttempts\":5,\"TempHits\":1},{\"EnemyId\":\"nut_grumpy\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"veg_onion_teen\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_onion\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_warrior_onion\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"veg_salad\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_cucumber_cowboy\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"veg_creepy_pumpkin\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_tentacles_pumpkin\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_evil_beet\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"veg_crazy_zucchini\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"fruit_smile_pear\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"fruit_tired_pear\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":1},{\"EnemyId\":\"fruit_fat_pear\",\"TotalHits\":1,\"TotalDeaths\":1,\"TotalAttempts\":1,\"TempHits\":0},{\"EnemyId\":\"fruit_pomelo\",\"TotalHits\":4,\"TotalDeaths\":2,\"TotalAttempts\":2,\"TempHits\":4},{\"EnemyId\":\"fruit_banana\",\"TotalHits\":7,\"TotalDeaths\":2,\"TotalAttempts\":2,\"TempHits\":7},{\"EnemyId\":\"fruit_yarik_banana\",\"TotalHits\":9,\"TotalDeaths\":2,\"TotalAttempts\":2,\"TempHits\":9},{\"EnemyId\":\"fruit_pineapple\",\"TotalHits\":8,\"TotalDeaths\":2,\"TotalAttempts\":2,\"TempHits\":8},{\"EnemyId\":\"fruit_odd_pineapple\",\"TotalHits\":24,\"TotalDeaths\":2,\"TotalAttempts\":2,\"TempHits\":24},{\"EnemyId\":\"fruit_crazy_pineapple\",\"TotalHits\":21,\"TotalDeaths\":2,\"TotalAttempts\":2,\"TempHits\":0}]}",
+        "{\"Damage\":1.0,\"CritChance\":0.05000000074505806,\"CritMultiplier\":3.0,\"PassiveDamage\":0.0,\"ComboChance\":0.0,\"InstantKillChance\":0.0,\"X2Chance\":0.0}",
+        "{\"IsIntroShowed\":true,\"IsEndingShowed\":false,\"IsHelperShowed\":false}",
         "{\"AttackBuff\":false,\"CritBuff\":false,\"X2Buff\":false,\"PassiveBuff\":false,\"InstantKillBuff\":false}"
     ],
     "floatKeys": [],
@@ -29,5 +21,5 @@
         false,
         false
     ],
-    "idSave": 5527
+    "idSave": 8
 }

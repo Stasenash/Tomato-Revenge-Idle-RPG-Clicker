@@ -49,13 +49,13 @@ namespace Meta.Cutscene
            }
 
            _sequence.AppendCallback(() => { this.gameObject.SetActive(false);});
-           _sequence.AppendCallback(() => { _audioManager.PlayClip(AudioNames.BackgroundMeta);});
+           _sequence.AppendCallback(() => { _audioManager.PlayClip(AudioNames.BackgroundMeta, true);});
            _sequence.Play();
         }
 
         public void HideIntroCutscene()
         {
-            _audioManager.PlayClip(AudioNames.BackgroundMeta);
+            _audioManager.PlayClip(AudioNames.BackgroundMeta, true);
             if (_sequence != null && _sequence.IsPlaying())
             {
                 _sequence.Kill();

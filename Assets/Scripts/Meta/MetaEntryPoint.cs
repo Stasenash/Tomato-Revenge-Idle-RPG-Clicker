@@ -47,7 +47,7 @@ namespace Meta
             _audioManager = commonObject.AudioManager;
             _sceneLoader = commonObject.SceneLoader;
             
-            _audioManager.PlayClip(AudioNames.BackgroundMeta, true);
+            _audioManager.PlayClip(AudioNames.BackgroundMeta);
             
             _downPanelManager.Initialize(_audioManager);
             var wallet = (Wallet) _saveSystem.GetData(SavableObjectType.Wallet);
