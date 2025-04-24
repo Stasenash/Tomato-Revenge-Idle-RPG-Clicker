@@ -11,6 +11,7 @@ using Global.AudioSystem;
 using Global.SaveSystem;
 using Global.SaveSystem.SavableObjects;
 using Meta.Cutscene;
+using Meta.Shop;
 using SceneManagement;
 using TMPro;
 using UnityEngine;
@@ -74,7 +75,6 @@ namespace Game
             var levelData = _levelsConfig.GetLevel(location, level);
             
             _isLevelHasABoss(levelData);
-            
             _enemyManager.StartLevel(levelData);
         }
 
@@ -126,10 +126,10 @@ namespace Game
             else
             {
                 gameParams = new GameEnterParams(_gameEnterParams.Location, _gameEnterParams.Level + 1);
-            } 
+            }
+
+            ClearBuffs();
             _sceneLoader.LoadGameplayScene(gameParams);
-            
-            
         }
 
         public override void Run(SceneEnterParams enterParams)
@@ -170,14 +170,29 @@ namespace Game
             StartLevel();
         }
 
+        
+        public void ClearBuffs()
+        {
+            var buffs = (Buffs)_saveSystem.GetData(SavableObjectType.Buffs);
+            buffs.AttackBuff = false;
+            buffs.CritBuff = false;
+            buffs.PassiveBuff = false;
+            buffs.X2Buff = false;
+            buffs.InstantKillBuff = false;
+            _saveSystem.SaveData(SavableObjectType.Buffs);
+        }
+        
         private void ReturnToMap()
         {
+            ClearBuffs();
             YG2.InterstitialAdvShow();
             _sceneLoader.LoadMetaScene();
+            
         } 
 
         public void RestartLevel()
         {
+            ClearBuffs();
             _sceneLoader.LoadGameplayScene(_gameEnterParams);
         }
     }

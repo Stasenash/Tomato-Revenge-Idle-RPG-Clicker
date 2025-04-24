@@ -14740,6 +14740,7 @@ MonoBehaviour:
   _downPanelManager: {fileID: 1370758326}
   _profileWindow: {fileID: 95564713}
   _skillShop: {fileID: 1195242127}
+  _buffsShop: {fileID: 8975439796235499511}
   _skillShopWindow: {fileID: 1743710517}
   _heroStatsConfig: {fileID: 11400000, guid: 4530db217722f534a88880d990381e75, type: 2}
   _introCutscene: {fileID: 566115968}
@@ -20398,7 +20399,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2831804496748806438, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
       insertIndex: -1
       addedObject: {fileID: 380335427}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3832071684907952854, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8975439796235499511}
   m_SourcePrefab: {fileID: 100100000, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
 --- !u!114 &8975439796235499506 stripped
 MonoBehaviour:
@@ -20427,6 +20431,39 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2831804496748806438, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
   m_PrefabInstance: {fileID: 8975439796235499505}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8975439796235499509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5462873683139698110, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+  m_PrefabInstance: {fileID: 8975439796235499505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &8975439796235499510 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3832071684907952854, guid: e44964fb7ac376841b119efc6e36d594, type: 3}
+  m_PrefabInstance: {fileID: 8975439796235499505}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8975439796235499511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8975439796235499510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97cd3a40a4847a093d444d333e5b416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackBuffButton: {fileID: 8975439796235499509}
+  _critBuffButton: {fileID: 1546828219}
+  _x2BuffButton: {fileID: 590409754}
+  _passsiveBuffButton: {fileID: 811155191}
+  _instantKillBuffButton: {fileID: 1372292831}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

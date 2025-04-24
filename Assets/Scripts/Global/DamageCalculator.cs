@@ -21,6 +21,7 @@ namespace Global
             _skillsConfig = skillsConfig;
             ResetStats();
             ApplySkills();
+            ApplyBuffs();
         }
 
         public DamageCalculator(SaveSystem.SaveSystem saveSystem, HeroStatsConfig heroHeroConfig)
@@ -86,6 +87,22 @@ namespace Global
         {
             var random = UnityEngine.Random.Range(0f, 1f);
             return random <= chance;
+        }
+
+        public void ApplyBuffs()
+        {
+            var stats = (Stats)_saveSystem.GetData(SavableObjectType.Stats);
+            var buffs = (Buffs)_saveSystem.GetData(SavableObjectType.Buffs);
+            if (buffs.AttackBuff)
+                stats.Damage *= 1.1f;
+            if (buffs.CritBuff)
+                stats.CritMultiplier *= 1.5f;
+            if (buffs.PassiveBuff)
+                stats.PassiveDamage *= 10;
+            if (buffs.X2Buff)
+                stats.Damage *= 2f;
+            if (buffs.InstantKillBuff)
+                stats.InstantKillChance += 0.0005f;
         }
         
         public void ApplySkills()

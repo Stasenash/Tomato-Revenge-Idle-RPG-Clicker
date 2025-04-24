@@ -16,6 +16,7 @@ namespace Global.SaveSystem
                 { SavableObjectType.Stats, new Stats() },
                 { SavableObjectType.Statistics, new Statistics() },
                 { SavableObjectType.Cutscenes, new Cutscenes() },
+                { SavableObjectType.Buffs, new Buffs() },
             };
 
             LoadData();

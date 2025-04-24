@@ -30,6 +30,7 @@ namespace Meta
         [SerializeField] private DownPanelManager _downPanelManager;
         [SerializeField] private ProfileWindow _profileWindow;
         [SerializeField] private SkillShop _skillShop;
+        [SerializeField] private BuffsShop _buffsShop;
         [SerializeField] private SkillShopWindow _skillShopWindow;
         [SerializeField] private HeroStatsConfig _heroStatsConfig;
         [SerializeField] private IntroCutscene _introCutscene;
@@ -55,6 +56,7 @@ namespace Meta
             _achievementsWindow.Initialize();
             _profileWindow.Initialize((Stats)_saveSystem.GetData(SavableObjectType.Stats), _audioManager);
             _skillShop.Initialize(_saveSystem, _skillsConfig, _shopWindow, _audioManager);
+            _buffsShop.Initialize(_saveSystem, _shopWindow, _audioManager);
             _skillShopWindow.Initialize(_audioManager);
             UpdateStats();
             _skillShop.OnSkillsChanged += () =>
@@ -62,7 +64,12 @@ namespace Meta
                 UpdateStats();
                 _shopWindow.SetCoinsText(((Wallet)_saveSystem.GetData(SavableObjectType.Wallet)).Coins);
             };
-            
+            _buffsShop.OnBuffBought += () =>
+            {
+                UpdateStats();
+                _shopWindow.SetCoinsText(((Wallet)_saveSystem.GetData(SavableObjectType.Wallet)).Coins);
+            };
+
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             
             _locationManager.Initialize(progress, StartLevel, _audioManager);

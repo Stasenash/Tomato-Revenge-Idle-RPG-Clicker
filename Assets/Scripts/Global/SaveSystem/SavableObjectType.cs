@@ -7,5 +7,6 @@
         Stats = 4,
         Statistics = 5,
         Cutscenes = 6,
+        Buffs = 7,
     }
 }
