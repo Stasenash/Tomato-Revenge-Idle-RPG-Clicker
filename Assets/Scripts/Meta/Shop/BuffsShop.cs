@@ -45,6 +45,8 @@ namespace Meta.Shop
 
             _attackBuffButton.onClick.AddListener(() =>
             {
+                if (!CheckEnoughMoney(_attackBuffButton, _attackBuffText, 100))
+                    return;
                 BuyBuff(100);
                 var buffs = (Buffs)_saveSystem.GetData(SavableObjectType.Buffs);
                 buffs.AttackBuff = true;
@@ -55,6 +57,8 @@ namespace Meta.Shop
             
             _critBuffButton.onClick.AddListener(() =>
             {
+                if (!CheckEnoughMoney(_critBuffButton, _critBuffText, 150))
+                    return;
                 BuyBuff(150);
                 var buffs = (Buffs)_saveSystem.GetData(SavableObjectType.Buffs);
                 buffs.CritBuff = true;
@@ -65,6 +69,8 @@ namespace Meta.Shop
             
             _x2BuffButton.onClick.AddListener(() =>
             {
+                if (!CheckEnoughMoney(_x2BuffButton, _x2BuffText, 400))
+                    return;
                 BuyBuff(400);
                 var buffs = (Buffs)_saveSystem.GetData(SavableObjectType.Buffs);
                 buffs.X2Buff = true;
@@ -75,6 +81,8 @@ namespace Meta.Shop
             
             _passsiveBuffButton.onClick.AddListener(() =>
             {
+                if (!CheckEnoughMoney(_passsiveBuffButton, _passsiveBuffText, 500))
+                    return;
                 BuyBuff(500);
                 var buffs = (Buffs)_saveSystem.GetData(SavableObjectType.Buffs);
                 buffs.PassiveBuff = true;
@@ -85,6 +93,8 @@ namespace Meta.Shop
             
             _instantKillBuffButton.onClick.AddListener(() =>
             {
+                if (!CheckEnoughMoney(_instantKillBuffButton, _instantKillBuffText, 1000))
+                    return;
                 BuyBuff(1000);
                 var buffs = (Buffs)_saveSystem.GetData(SavableObjectType.Buffs);
                 buffs.InstantKillBuff = true;
@@ -97,6 +107,17 @@ namespace Meta.Shop
             InitializeBuffsBought();
             InitializeBuffsText();
             UpdateBuffsItems();
+        }
+
+        private bool CheckEnoughMoney(Button attackBuffButton, TextMeshProUGUI attackBuffText, int cost)
+        {
+            var wallet = (Wallet)_saveSystem.GetData(SavableObjectType.Wallet);
+            if (wallet.Coins < cost)
+            {
+                attackBuffButton.interactable = false;
+                attackBuffText.color = Color.red;
+            }
+            return !(wallet.Coins < cost);
         }
 
         private void InitializeBuffsText()

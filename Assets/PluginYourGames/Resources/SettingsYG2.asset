@@ -26,6 +26,8 @@ MonoBehaviour:
     postponeCallByFail: 0
     postponeCallTimer: 10
     labelAdvSimLabel: 0
+  Localization:
+    setLanguageMod: 1
   RewardedAdv:
     rewardedAfterClosing: 1
     skipInterAdvAfterReward: 0
@@ -55,7 +57,7 @@ MonoBehaviour:
     loadAdv: 0
     testFailAds: 0
   Templates:
-    logoImageFormat: 1
+    logoImageFormat: 2
     backgroundImgFormat: 0
     gradientBackgroundByLoadGame:
       radial: 0

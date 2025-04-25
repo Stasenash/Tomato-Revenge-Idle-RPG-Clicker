@@ -119,6 +119,16 @@ MonoBehaviour:
     Reward: 50
     Background: {fileID: -9130348366436478418, guid: 425cca24e4a2391459ed6231d1b755fd, type: 3}
   - Location: 1
+    LevelNumber: 2
+    Enemies:
+    - Id: nut_muscle
+      Hp: 300
+      IsBoss: 0
+      BossTime: 0
+      TechniqueType: 0
+    Reward: 30
+    Background: {fileID: 5102612789952899247, guid: 91896e398d725bc4a8bf9cad9dfd6a76, type: 3}
+  - Location: 1
     LevelNumber: 3
     Enemies:
     - Id: nut_grey
@@ -178,16 +188,6 @@ MonoBehaviour:
       TechniqueType: 1
     Reward: 100
     Background: {fileID: 6937817954938267909, guid: 8150aa9d95daa5c4e8138730dbdf2ef8, type: 3}
-  - Location: 1
-    LevelNumber: 2
-    Enemies:
-    - Id: nut_muscle
-      Hp: 1000
-      IsBoss: 0
-      BossTime: 0
-      TechniqueType: 0
-    Reward: 100
-    Background: {fileID: 5102612789952899247, guid: 91896e398d725bc4a8bf9cad9dfd6a76, type: 3}
   - Location: 1
     LevelNumber: 7
     Enemies:

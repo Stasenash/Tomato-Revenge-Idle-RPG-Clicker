@@ -68,6 +68,13 @@ namespace Meta.Shop
         private void SkillUpgrade(string skillId, int cost)
         {
             _audioManager.PlayClip(AudioNames.BuySound);
+            if (_wallet.Coins < cost)
+            {
+                OnSkillsChanged?.Invoke();
+                ShowShopItems();
+                return;
+            }
+
             var skillWithLevel = _openedSkills.GetOrCreateSkillWithLevel(skillId);
             skillWithLevel.Level++;
             _wallet.Coins -= cost;
