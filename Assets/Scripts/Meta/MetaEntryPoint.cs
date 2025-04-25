@@ -69,6 +69,7 @@ namespace Meta
                 UpdateStats();
                 _shopWindow.SetCoinsText(((Wallet)_saveSystem.GetData(SavableObjectType.Wallet)).Coins);
             };
+            _skillShop.OnNotEnoughMoney += () => { _shopWindow.ShowCoinsTab();};
 
             var progress = (Progress)_saveSystem.GetData(SavableObjectType.Progress);
             

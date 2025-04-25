@@ -57,7 +57,7 @@ MonoBehaviour:
     loadAdv: 0
     testFailAds: 0
   Templates:
-    logoImageFormat: 2
+    logoImageFormat: 1
     backgroundImgFormat: 0
     gradientBackgroundByLoadGame:
       radial: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
       color2: {r: 0.36, g: 0.09, b: 1, a: 1}
     pixelRatioEnable: 0
     pixelRatioValue: 1.3
-    developerBuild: 1
+    developerBuild: 0
   platformInfo:
     ownHost: 0
   platformToggles:

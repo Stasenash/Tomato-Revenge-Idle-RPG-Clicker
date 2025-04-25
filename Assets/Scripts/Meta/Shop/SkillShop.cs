@@ -24,6 +24,7 @@ namespace Meta.Shop
         private EndLevelWindow _endLevelWindow;
 
         public event UnityAction OnSkillsChanged;
+        public event UnityAction OnNotEnoughMoney;
 
         public void Initialize(SaveSystem saveSystem, SkillsConfig skillsConfig, ShopWindow shopWindow, AudioManager audioManager)
         {
@@ -70,8 +71,7 @@ namespace Meta.Shop
             _audioManager.PlayClip(AudioNames.BuySound);
             if (_wallet.Coins < cost)
             {
-                OnSkillsChanged?.Invoke();
-                ShowShopItems();
+                OnNotEnoughMoney?.Invoke();
                 return;
             }
 

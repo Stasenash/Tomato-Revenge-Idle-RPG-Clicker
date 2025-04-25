@@ -42,6 +42,7 @@ namespace Meta.Shop
             _audioManager = audioManager;
             _shopWindow = shopWindow;
             _shopWindow.OnChangeCoins += UpdateBuffsItems;
+            
 
             _attackBuffButton.onClick.AddListener(() =>
             {
